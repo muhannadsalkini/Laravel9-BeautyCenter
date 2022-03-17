@@ -59,19 +59,19 @@
                                         <!-- ABOUT US -->
                                         <li><a href="about-us">about</a></li>
 
-                                        <!-- SHOP -->
-                                        <li class="mega-parent item-2"><a href="shop.html">shop</a>
+                                        <!-- SERVICES -->
+                                        <li class="mega-parent item-2"><a href="/shop">serivces</a>
                                             <ul class="mgea-menu">
-                                                <li class="mega-sub"><a href="#">Column one</a>
+                                                <li class="mega-sub"><a href="/shop">SHOP</a>
                                                     <ul class="mega-sub-item">
-                                                        <li><a href="shop.html">shop page</a></li>
-                                                        <li><a href="shop.html">shop sidebar</a></li>
+                                                        <li><a href="/shop">our products</a></li>
+                                                        <li><a href="/shop">shop sidebar</a></li>
                                                         <li><a href="wishlist.html">wishlist</a></li>
                                                         <li><a href="product-details.html">product Details</a></li>
-                                                        <li><a href="cart.html">cart</a></li>
+                                                        <li><a href="/cart">cart</a></li>
                                                     </ul>
                                                 </li>
-                                                <li class="mega-sub"><a href="#">Column two</a>
+                                                <li class="mega-sub"><a href="#">reservation</a>
                                                     <ul class="mega-sub-item">
                                                         <li><a href="checkout.html">checkout</a></li>
                                                         <li><a href="gallery-2.html">Gallery 2</a></li>
@@ -96,10 +96,10 @@
                                                 <li><a href="about-us">about us</a></li>
                                                 <li><a href="404.html">404</a></li>
                                                 <li><a href="contact-us">contact us</a></li>
-                                                <li><a href="blog.html">Blog</a></li>
+                                                <li><a href="/blog">Blog</a></li>
                                                 <li><a href="blog-details.html">blog Deatils</a></li>
                                                 <li><a href="gallery-2.html">gallery</a></li>
-                                                <li><a href="shop.html">shop pages</a></li>
+                                                <li><a href="/shop">shop pages</a></li>
                                             </ul>
                                         </li>-->
 
@@ -146,10 +146,10 @@
                                         </li>
 
                                         <!-- BLOG -->
-                                        <li><a href="blog.html">blog</a></li>
+                                        <li><a href="/blog">blog</a></li>
 
                                         <!-- CONTACT US -->
-                                        <li><a href="contact-us">contact</a></li>
+                                        <li><a href="/contact-us">contact</a></li>
 
                                     </ul>
                                 </nav>
@@ -159,7 +159,7 @@
                             <div class="header-action-box">
                                 <div class="mini-cart" >
                                     <div class="cart-icon">
-                                        <a href="#"><i class="zmdi zmdi-shopping-cart"></i></a>
+                                        <a href="/cart"><i class="zmdi zmdi-shopping-cart"></i></a>
                                         <span>2</span>
                                     </div>
                                     <!-- Mini Cart -->
@@ -232,15 +232,15 @@
                                         <li><a href="index-box-fixed.html">home page seven</a></li>
                                     </ul>
                                 </li>
-                                <li><a href="shop.html">shop</a>
+                                <li><a href="/shop">shop</a>
                                     <ul class="mgea-menu">
                                         <li class="mega-sub"><a href="#">Column one</a>
                                             <ul class="mega-sub-item">
-                                                <li><a href="shop.html">shop page</a></li>
-                                                <li><a href="shop.html">shop sidebar</a></li>
+                                                <li><a href="/shop">shop page</a></li>
+                                                <li><a href="/shop">shop sidebar</a></li>
                                                 <li><a href="wishlist.html">wishlist</a></li>
                                                 <li><a href="product-details.html">product Details</a></li>
-                                                <li><a href="cart.html">cart</a></li>
+                                                <li><a href="/cart">cart</a></li>
                                             </ul>
                                         </li>
                                         <li class="mega-sub"><a href="#">Column two</a>
@@ -260,10 +260,10 @@
                                         <li><a href="about-us">about us</a></li>
                                         <li><a href="404.html">404</a></li>
                                         <li><a href="contact-us">contact us</a></li>
-                                        <li><a href="blog.html">Blog</a></li>
+                                        <li><a href="/blog">Blog</a></li>
                                         <li><a href="blog-details.html">blog Deatils</a></li>
                                         <li><a href="gallery-2.html">gallery</a></li>
-                                        <li><a href="shop.html">shop pages</a></li>
+                                        <li><a href="/shop">shop pages</a></li>
                                     </ul>
                                 </li>-->
                                 <li><a href="#">Feature</a>
@@ -306,7 +306,7 @@
                                         </li>
                                     </ul>
                                 </li>
-                                <li><a href="blog.html">blog</a></li>
+                                <li><a href="/blog">blog</a></li>
                                 <li><a href="contact-us">contact</a></li>
                             </ul>
                         </nav>
