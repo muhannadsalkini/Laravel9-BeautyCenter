@@ -21,8 +21,8 @@
                     </div>
                     <div class="col-md-6 col-sm-6 col-xs-12">
                         <div class="social-icons">
-                            <a href="www.facebook.com"><i class="zmdi zmdi-facebook"></i></a>
-                            <a href="#"><i class="zmdi zmdi-twitter"></i></a>
+                            <a href="https://www.facebook.com/muhannadsalkini02"><i class="zmdi zmdi-facebook"></i></a>
+                            <a href="https://twitter.com/muhannadsalkini"><i class="zmdi zmdi-twitter"></i></a>
                             <a href="#"><i class="zmdi zmdi-dribbble"></i></a>
                             <!--<a href="#"><i class="zmdi zmdi-pinterest"></i></a>-->
                             <a href="https://www.instagram.com/muhannad.salkini/"><i class="zmdi zmdi-instagram"></i></a>
@@ -37,16 +37,16 @@
                     <div class="row">
                         <div class="col-md-2 col-sm-6 col-xs-9">
                             <div class="logo">
-                                <a href="index.html"><img src="{{asset('assets')}}/images/logo/logo.png" alt=""></a>
+                                <a href="/"><img src="{{asset('assets')}}/images/logo/logo.png" alt=""></a>
                             </div>
                         </div>
                         <div class="col-md-8 hidden-sm hidden-xs">
                             <div class="menu">
                                 <nav>
                                     <ul>
-                                        <li><a href="index.html">Home</a>
+                                        <li><a href="/">Home</a>
                                             <!--<ul class="dropdown_menu">
-                                                <li><a href="index.html">home page one</a></li>
+                                                <li><a href="/">home page one</a></li>
                                                 <li><a href="index-2.html">home page two</a></li>
                                                 <li><a href="index-3.html">home page three</a></li>
                                                 <li><a href="index-4.html">home page four</a></li>
@@ -55,6 +55,11 @@
                                                 <li><a href="index-box-fixed.html">home page seven</a></li>
                                             </ul>-->
                                         </li>
+
+                                        <!-- ABOUT US -->
+                                        <li><a href="about-us">about</a></li>
+
+                                        <!-- SHOP -->
                                         <li class="mega-parent item-2"><a href="shop.html">shop</a>
                                             <ul class="mgea-menu">
                                                 <li class="mega-sub"><a href="#">Column one</a>
@@ -82,18 +87,23 @@
                                                 </li>
                                             </ul>
                                         </li>
-                                        <li><a href="about-us.html">about</a></li>
-                                        <li><a href="#">pages</a>
+
+
+
+                                        <!-- PAGES -->
+                                        <!--<li><a href="#">pages</a>
                                             <ul class="dropdown_menu">
-                                                <li><a href="about-us.html">about us</a></li>
+                                                <li><a href="about-us">about us</a></li>
                                                 <li><a href="404.html">404</a></li>
-                                                <li><a href="contact-us.html">contact us</a></li>
+                                                <li><a href="contact-us">contact us</a></li>
                                                 <li><a href="blog.html">Blog</a></li>
                                                 <li><a href="blog-details.html">blog Deatils</a></li>
                                                 <li><a href="gallery-2.html">gallery</a></li>
                                                 <li><a href="shop.html">shop pages</a></li>
                                             </ul>
-                                        </li>
+                                        </li>-->
+
+                                        <!-- FEATURE -->
                                         <li class="mega-parent"><a href="#">Feature</a>
                                             <ul class="mgea-menu">
                                                 <li class="mega-sub"><a href="#">Column one</a>
@@ -134,8 +144,13 @@
                                                 </li>
                                             </ul>
                                         </li>
+
+                                        <!-- BLOG -->
                                         <li><a href="blog.html">blog</a></li>
-                                        <li><a href="contact-us.html">contact</a></li>
+
+                                        <!-- CONTACT US -->
+                                        <li><a href="contact-us">contact</a></li>
+
                                     </ul>
                                 </nav>
                             </div>
@@ -206,9 +221,9 @@
                     <div class="col-md-12">
                         <nav id="dropdown">
                             <ul>
-                                <li><a href="index.html">Home</a>
+                                <li><a href="/">Home</a>
                                     <ul class="dropdown_menu">
-                                        <li><a href="index.html">home page one</a></li>
+                                        <li><a href="/">home page one</a></li>
                                         <li><a href="index-2.html">home page two</a></li>
                                         <li><a href="index-3.html">home page three</a></li>
                                         <li><a href="index-4.html">home page four</a></li>
@@ -239,18 +254,18 @@
                                         </li>
                                     </ul>
                                 </li>
-                                <li><a href="about-us.html">about</a></li>
-                                <li><a href="#">pages</a>
+                                <li><a href="about-us">about</a></li>
+                                <!--<li><a href="#">pages</a>
                                     <ul class="dropdown_menu">
-                                        <li><a href="about-us.html">about us</a></li>
+                                        <li><a href="about-us">about us</a></li>
                                         <li><a href="404.html">404</a></li>
-                                        <li><a href="contact-us.html">contact us</a></li>
+                                        <li><a href="contact-us">contact us</a></li>
                                         <li><a href="blog.html">Blog</a></li>
                                         <li><a href="blog-details.html">blog Deatils</a></li>
                                         <li><a href="gallery-2.html">gallery</a></li>
                                         <li><a href="shop.html">shop pages</a></li>
                                     </ul>
-                                </li>
+                                </li>-->
                                 <li><a href="#">Feature</a>
                                     <ul class="mgea-menu">
                                         <li class="mega-sub"><a href="#">Column one</a>
@@ -292,7 +307,7 @@
                                     </ul>
                                 </li>
                                 <li><a href="blog.html">blog</a></li>
-                                <li><a href="contact-us.html">contact</a></li>
+                                <li><a href="contact-us">contact</a></li>
                             </ul>
                         </nav>
                     </div>

@@ -39,7 +39,6 @@
 @include('home._footer')
 <!--footer end-->
 </div>
-
 @yield('footerjs')
 </body>
 </html>

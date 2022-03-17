@@ -25,21 +25,20 @@
 </head>
 <body>
 <div class="wrapper white-bg">
-<!--header section start-->
+    <!--header section start-->
 @include('home._header')
 <!--header section end-->
 
-<!-- content section start -->
+    <!-- content section start -->
 @section('content')
 
 @show
 <!-- content section end -->
 
-<!--footer start-->
+    <!--footer start-->
 @include('home._footer')
 <!--footer end-->
 </div>
-
 @yield('footerjs')
 </body>
 </html>
