@@ -71,13 +71,13 @@
                                                         <li><a href="/cart">cart</a></li>
                                                     </ul>
                                                 </li>
-                                                <li class="mega-sub"><a href="#">reservation</a>
+                                                <li class="mega-sub"><a href="#">reservations</a>
                                                     <ul class="mega-sub-item">
-                                                        <li><a href="checkout.html">checkout</a></li>
-                                                        <li><a href="gallery-2.html">Gallery 2</a></li>
-                                                        <li><a href="gallery.html">gallery</a></li>
-                                                        <li><a href="elements-feature.html">Feature</a></li>
-                                                        <li><a href="elements-fun-fact.html">Fun fact</a></li>
+                                                        <li><a href="/checkout">lunch</a></li>
+                                                        <li><a href="gallery-2.html">skin care</a></li>
+                                                        <li><a href="gallery.html">hair cut</a></li>
+                                                        <li><a href="elements-feature.html">nail care</a></li>
+                                                        <li><a href="elements-fun-fact.html">beauty spa</a></li>
                                                     </ul>
                                                 </li>
                                                 <li class="mega-sub"><a href="#">Column Three</a>
@@ -192,7 +192,7 @@
                                             </div>
                                         </div>
                                         <div class="mini-cart-checkout text-center">
-                                            <a href="checkout.html">checkout</a>
+                                            <a href="/checkout">checkout</a>
                                         </div>
                                     </div>
                                     <!--mini cart end-->
@@ -245,7 +245,7 @@
                                         </li>
                                         <li class="mega-sub"><a href="#">Column two</a>
                                             <ul class="mega-sub-item">
-                                                <li><a href="checkout.html">checkout</a></li>
+                                                <li><a href="/checkout">checkout</a></li>
                                                 <li><a href="gallery-2.html">Gallery 2</a></li>
                                                 <li><a href="gallery.html">gallery</a></li>
                                                 <li><a href="elements-feature.html">Feature</a></li>

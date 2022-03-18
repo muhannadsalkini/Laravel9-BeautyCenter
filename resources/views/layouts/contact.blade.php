@@ -29,9 +29,12 @@
 @include('home._header')
 <!--header section end-->
 
+<!--Breadcrumbs start-->
+@include('home._breadcrumbs')
+<!--Breadcrumbs end-->
+
 <!-- content section start -->
 @section('content')
-
 @show
 <!-- content section end -->
 

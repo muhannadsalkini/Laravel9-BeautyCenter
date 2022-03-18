@@ -8,10 +8,10 @@
     Version: 1.0
 
 -----------------------------------------------------------------------------------
-    
+
     CSS INDEX
     ===================
-	
+
     1. Theme Default CSS
     2. Heade Css here
     03. slider css here
@@ -24,7 +24,7 @@
     09. Video section css here
     10. our pricing css here
     11. Testimonial css here
-    12. our blog css here 
+    12. our blog css here
     13. partner css here
     14. Footer css here
     15. scrollpu css here
@@ -68,7 +68,7 @@
 img{max-width: 100%}
 
 /*************************************
-         Custom-content all   
+         Custom-content all
  **************************************/
 .boxed-layout .wrapper {
   box-shadow: -3px 0 50px -2px rgba(0, 0, 0, 0.14);
@@ -874,7 +874,7 @@ img{max-width: 100%}
 ------------------------*/
 .testimonial {
   background: #f1f1f1 url(images/common/test-bg-1.png)no-repeat scroll left bottom;
-}                   
+}
 .testimonial .bg-img {
   padding: 100px 0;
   background: url(images/common/test-bg-2.png)no-repeat scroll right center;
@@ -899,7 +899,7 @@ img{max-width: 100%}
   margin: 0;
 }
 /*-------------------
-   12. our blog css here 
+   12. our blog css here
 ------------------*/
 .blog-img {
     float: left;
@@ -990,14 +990,14 @@ img{max-width: 100%}
     -o-filter: grayscale(100%);
        filter: url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg"><filter id="filter"><feColorMatrix type="matrix" color-interpolation-filters="sRGB" values="0.2126 0.7152 0.0722 0 0 0.2126 0.7152 0.0722 0 0 0.2126 0.7152 0.0722 0 0 0 0 0 1 0" /></filter></svg>#filter');
        filter: grayscale(100%);
-    
+
 }
 .single-partner img:hover{
     -webkit-filter: none;
     -mz-filter: none;
     -o-filter: none;
        filter: none;
-    
+
 }
 .our-partner{
    padding: 100px 0;
@@ -2108,7 +2108,7 @@ ul.product-action li:hover i {
   margin-bottom: 25px;
   padding: 12px 10px 12px 0;
   width: 100%;
-} 
+}
 .shop-item-filter .shop-tab {
   margin-top: 8px;
 }
@@ -2717,7 +2717,7 @@ a.continue-shopping:hover, .discount-code > input[type="submit"]:hover, .total.t
   text-transform: uppercase;
   width: auto;
   -webkit-transition: all 0.5s ease 0s;
-  transition: all 0.5s ease 0s;  
+  transition: all 0.5s ease 0s;
 }
 .review-form .submit-box input:hover {
   background-color: #555;
@@ -2870,7 +2870,7 @@ a.continue-shopping:hover, .discount-code > input[type="submit"]:hover, .total.t
   color: #fff !important;
   display: inline-block;
   float: right;
-  font-size: 14px; 
+  font-size: 14px;
   font-weight: 400;
   margin-top: 25px;
   padding: 12px 28px;
@@ -3405,7 +3405,7 @@ a.button.large {
 }
 a.button.medium{
   font-size: 16px;
-  padding: 18px 0;  
+  padding: 18px 0;
 }
 .button.medium span {
   display: inline-block;

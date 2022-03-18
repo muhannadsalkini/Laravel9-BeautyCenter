@@ -6,25 +6,6 @@
 
 
 @section('content')
-    <!--Breadcrumbs start-->
-    <div class="breadcrumbs text-center">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-12">
-                    <div class="breadcrumbs-title">
-                        <h2>Shop page</h2>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="breadcrumbs-menu">
-            <ul>
-                <li><a href="/">hOME <span>//</span></a></li>
-                <li>Shop</li>
-            </ul>
-        </div>
-    </div>
-    <!--Breadcrumbs end-->
     <!--shop page start-->
     <div class="shop-page ptb-100">
         <div class="container">

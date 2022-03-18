@@ -6,26 +6,6 @@
 
 
 @section('content')
-    <!--Breadcrumbs start-->
-    <div class="breadcrumbs text-center">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-12 col-xs-12 col-sm-12">
-                    <div class="breadcrumbs-title">
-                        <h2>About us</h2>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="breadcrumbs-menu">
-            <ul>
-                <li><a href="#">hOME <span>//</span></a></li>
-                <li>About us</li>
-            </ul>
-        </div>
-    </div>
-    <!--Breadcrumbs end-->
-
     <!--About us start-->
     <div class="about-us ptb-100">
         <div class="container">
@@ -130,16 +110,16 @@
                         <div class="team-hover">
                             <div class="team-desc">
                                 <div class="team-desc-tablcell">
-                                    <h5>jesika noor</h5>
-                                    <h6>Specialist</h6>
-                                    <p> Lorem ipsum dolor sit amet, cons adipisicing elit, sed do eiusmo te incididunt ut labore. </p>
+                                    <h5>Yuksel Celik</h5>
+                                    <h6>SIO</h6>
+                                    <p> SIO of Beauty House </p>
                                     <div class="member-follow">
                                         <p>Follow on:</p>
                                         <div class="member-follow-social">
-                                            <a href="#"><i class="zmdi zmdi-facebook"></i></a>
+                                            <a href="https://www.facebook.com/celik.yuksel"><i class="zmdi zmdi-facebook"></i></a>
                                             <a href="#"><i class="zmdi zmdi-twitter"></i></a>
-                                            <a href="#"><i class="zmdi zmdi-dribbble"></i></a>
-                                            <a href="#"><i class="zmdi zmdi-pinterest"></i></a>
+                                            <a href="https://www.youtube.com/channel/UCtdM2qlDnpNr9bTKjVGEWkg"><i class="zmdi zmdi-youtube"></i></a>
+                                            <a href="#"><i class="zmdi zmdi-instagram"></i></a>
                                         </div>
                                     </div>
                                 </div>
@@ -155,16 +135,16 @@
                         <div class="team-hover">
                             <div class="team-desc">
                                 <div class="team-desc-tablcell">
-                                    <h5>jesika noor</h5>
-                                    <h6>Specialist</h6>
-                                    <p> Lorem ipsum dolor sit amet, cons adipisicing elit, sed do eiusmo te incididunt ut labore. </p>
+                                    <h5>Muhannad Salkini</h5>
+                                    <h6>Developer</h6>
+                                    <p>  👌🏻 Dream, It's possible.. <br>👨‍💻 KBÜ/ Computer engineering </p>
                                     <div class="member-follow">
                                         <p>Follow on:</p>
                                         <div class="member-follow-social">
-                                            <a href="#"><i class="zmdi zmdi-facebook"></i></a>
-                                            <a href="#"><i class="zmdi zmdi-twitter"></i></a>
-                                            <a href="#"><i class="zmdi zmdi-dribbble"></i></a>
-                                            <a href="#"><i class="zmdi zmdi-pinterest"></i></a>
+                                            <a href="https://www.facebook.com/muhannadsalkini02"><i class="zmdi zmdi-facebook"></i></a>
+                                            <a href="https://twitter.com/muhannadsalkini"><i class="zmdi zmdi-twitter"></i></a>
+                                            <a href="https://www.youtube.com/channel/UCfrWNQfgw6mKTULUl0ok-8A"><i class="zmdi zmdi-youtube"></i></a>
+                                            <a href="https://www.instagram.com/muhannad.salkini/"><i class="zmdi zmdi-instagram"></i></a>
                                         </div>
                                     </div>
                                 </div>
@@ -200,7 +180,7 @@
                 <div class="col-md-3 hidden-sm col-xs-12">
                     <div class="single-team">
                         <div class="team-img">
-                            <img src="{{asset('assets')}}/images/about/team/1.png" alt="">
+                            <img src="{{asset('assets')}}/images/about/team/4.png" alt="">
                         </div>
                         <div class="team-hover">
                             <div class="team-desc">

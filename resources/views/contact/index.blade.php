@@ -6,25 +6,6 @@
 
 
 @section('content')
-    <!--Breadcrumbs start-->
-    <div class="breadcrumbs text-center">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-12">
-                    <div class="breadcrumbs-title">
-                        <h2>Contact us</h2>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="breadcrumbs-menu">
-            <ul>
-                <li><a href="/">hOME <span>//</span></a></li>
-                <li>Contact us</li>
-            </ul>
-        </div>
-    </div>
-    <!--Breadcrumbs end-->
     <div id="contact-map" class="map-area">
         <div id="googleMap" style="width:100%;height:500px;"></div>
     </div>
