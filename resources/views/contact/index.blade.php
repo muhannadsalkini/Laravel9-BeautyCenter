@@ -4,11 +4,14 @@
 
 @section('keywords','Bakim, Guzellik')
 
-
 @section('content')
     <div id="contact-map" class="map-area">
         <div id="googleMap" style="width:100%;height:500px;"></div>
     </div>
+    <!--<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d12003.838962044536!2d32.655428727337785!3d41.2226
+    47808034!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x408354b21e5b6ab3%3A0xbb104da20a5891d2!2zMTAwLiBZxLFsLCA
+    3ODA1MCBLYXJhYsO8ayBNZXJrZXovS2FyYWLDvGs!5e0!3m2!1sen!2str!4v1647651420433!5m2!1sen!2str"
+            style="border:0;width:100%;height:500px";allowfullscreen="" loading="lazy"></iframe>-->
     <!--Contact start-->
     <div class="contact-us">
         <div class="container">
@@ -40,7 +43,7 @@
                                 <a href="#"><i class="zmdi zmdi-pin"></i></a>
                             </div>
                             <div class="contact-desc">
-                                <p> ur address goes here,<br>street,Crossroad123.</p>
+                                <p> 100. YIL MAH. MERKEZ <br> KARABÜK / TURKIYE </p>
                             </div>
                         </div>
                     </div>
@@ -81,4 +84,5 @@
         </div>
     </div>
     <!--Contact form end-->
+
 @endsection

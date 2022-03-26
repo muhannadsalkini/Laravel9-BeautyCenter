@@ -21,11 +21,11 @@
                     </div>
                     <div class="col-md-6 col-sm-6 col-xs-12">
                         <div class="social-icons">
-                            <a href="https://www.facebook.com/muhannadsalkini02"><i class="zmdi zmdi-facebook"></i></a>
-                            <a href="https://twitter.com/muhannadsalkini"><i class="zmdi zmdi-twitter"></i></a>
-                            <a href="#"><i class="zmdi zmdi-dribbble"></i></a>
-                            <!--<a href="#"><i class="zmdi zmdi-pinterest"></i></a>-->
-                            <a href="https://www.instagram.com/muhannad.salkini/"><i class="zmdi zmdi-instagram"></i></a>
+                            <a href="https://www.facebook.com/muhannadsalkini02" target="_blank"><i class="zmdi zmdi-facebook"></i></a>
+                            <a href="https://twitter.com/muhannadsalkini" target="_blank"><i class="zmdi zmdi-twitter"></i></a>
+                            <a href="https://www.youtube.com/channel/UCfrWNQfgw6mKTULUl0ok-8A" target="_blank"><i class="zmdi zmdi-youtube"></i></a>
+                            <!--<a href="#" target="_blank"><i class="zmdi zmdi-pinterest"></i></a>-->
+                            <a href="https://www.instagram.com/muhannad.salkini/" target="_blank"><i class="zmdi zmdi-instagram"></i></a>
                         </div>
                     </div>
                 </div>
@@ -65,7 +65,7 @@
                                                 <li class="mega-sub"><a href="/shop">SHOP</a>
                                                     <ul class="mega-sub-item">
                                                         <li><a href="/shop">our products</a></li>
-                                                        <li><a href="/shop">shop sidebar</a></li>
+                                                        <li><a href="/shop">top sales</a></li>
                                                         <li><a href="wishlist.html">wishlist</a></li>
                                                         <li><a href="product-details.html">product Details</a></li>
                                                         <li><a href="/cart">cart</a></li>
@@ -318,3 +318,4 @@
     </div>
     <!--header section end-->
     <!--header section end-->
+</div>

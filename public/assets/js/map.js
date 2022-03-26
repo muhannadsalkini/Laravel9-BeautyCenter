@@ -2,7 +2,7 @@ function initialize() {
     var mapOptions = {
         zoom: 8,
         scrollwheel: false,
-        center: new google.maps.LatLng(40.740610, -73.935242), // New York
+        center: new google.maps.LatLng(41.2200468, 32.6692453), // Karabuk
     };
     var map = new google.maps.Map(document.getElementById('googleMap'),
           mapOptions);
@@ -99,5 +99,5 @@ function initialize() {
 
     map.setOptions({styles: styles});
 }
-google.maps.event.addDomListener(window, 'load', initialize);	
+google.maps.event.addDomListener(window, 'load', initialize);
 

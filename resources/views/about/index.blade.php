@@ -111,15 +111,15 @@
                             <div class="team-desc">
                                 <div class="team-desc-tablcell">
                                     <h5>Yuksel Celik</h5>
-                                    <h6>SIO</h6>
-                                    <p> SIO of Beauty House </p>
+                                    <h6>SIO & Cofounder</h6>
+                                    <p> 🤵‍ SIO & Cofounder <br>of Beauty House </p>
                                     <div class="member-follow">
                                         <p>Follow on:</p>
                                         <div class="member-follow-social">
-                                            <a href="https://www.facebook.com/celik.yuksel"><i class="zmdi zmdi-facebook"></i></a>
-                                            <a href="#"><i class="zmdi zmdi-twitter"></i></a>
-                                            <a href="https://www.youtube.com/channel/UCtdM2qlDnpNr9bTKjVGEWkg"><i class="zmdi zmdi-youtube"></i></a>
-                                            <a href="#"><i class="zmdi zmdi-instagram"></i></a>
+                                            <a href="https://www.facebook.com/celik.yuksel" target="_blank"><i class="zmdi zmdi-facebook"></i></a>
+                                            <a href="#" target="_blank"><i class="zmdi zmdi-twitter"></i></a>
+                                            <a href="https://www.youtube.com/channel/UCtdM2qlDnpNr9bTKjVGEWkg" target="_blank"><i class="zmdi zmdi-youtube"></i></a>
+                                            <a href="#" target="_blank"><i class="zmdi zmdi-instagram"></i></a>
                                         </div>
                                     </div>
                                 </div>
@@ -141,10 +141,10 @@
                                     <div class="member-follow">
                                         <p>Follow on:</p>
                                         <div class="member-follow-social">
-                                            <a href="https://www.facebook.com/muhannadsalkini02"><i class="zmdi zmdi-facebook"></i></a>
-                                            <a href="https://twitter.com/muhannadsalkini"><i class="zmdi zmdi-twitter"></i></a>
-                                            <a href="https://www.youtube.com/channel/UCfrWNQfgw6mKTULUl0ok-8A"><i class="zmdi zmdi-youtube"></i></a>
-                                            <a href="https://www.instagram.com/muhannad.salkini/"><i class="zmdi zmdi-instagram"></i></a>
+                                            <a href="https://www.facebook.com/muhannadsalkini02" target="_blank"><i class="zmdi zmdi-facebook"></i></a>
+                                            <a href="https://twitter.com/muhannadsalkini" target="_blank"><i class="zmdi zmdi-twitter"></i></a>
+                                            <a href="https://www.youtube.com/channel/UCfrWNQfgw6mKTULUl0ok-8A" target="_blank"><i class="zmdi zmdi-youtube"></i></a>
+                                            <a href="https://www.instagram.com/muhannad.salkini/" target="_blank"><i class="zmdi zmdi-instagram"></i></a>
                                         </div>
                                     </div>
                                 </div>

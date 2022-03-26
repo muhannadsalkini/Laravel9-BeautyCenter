@@ -10,8 +10,7 @@
                         </div>
                         <div class="contact-action mb-15">
                             <span><i class="zmdi zmdi-pin"></i></span>
-                            <p>100. YIL MAH. MERKEZ / KARABÜK</p>
-                            <p>TURKIYE</p>
+                            <p> 100. YIL MAH. MERKEZ <br> KARABÜK / TURKIYE </p>
                         </div>
                         <div class="contact-action mb-15">
                             <span><i class="zmdi zmdi-email"></i></span>
