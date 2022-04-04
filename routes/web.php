@@ -7,6 +7,7 @@ use App\Http\Controllers\BlogController;
 use App\Http\Controllers\ShopController;
 use App\Http\Controllers\CartController;
 use App\Http\Controllers\CheckotController;
+//use App\Http\Controllers\Admin\HomeController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -21,18 +22,16 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', [HomeController::class, 'index']);
-
 Route::get('/contact-us', [ContactController::class, 'index']);
-
 Route::get('/about-us', [AboutController::class, 'index']);
-
 Route::get('/blog', [BlogController::class, 'index']);
-
 Route::get('/shop', [ShopController::class, 'index']);
-
 Route::get('/cart', [CartController::class, 'index']);
-
 Route::get('/checkout', [CheckotController::class, 'index']);
+
+
+Route::get('/admin', [App\Http\Controllers\Admin\HomeController::class, 'index'])->name('adminhome');
+
 
 Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
     return view('dashboard');
