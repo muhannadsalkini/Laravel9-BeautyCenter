@@ -534,7 +534,7 @@
                                         title="Billy Hopkins"
                                         class="avatar pull-up"
                                     >
-                                        <img src="../../../app-assets/images/portrait/small/avatar-s-9.jpg" alt="Avatar" width="33" height="33" />
+                                        <img src="{{asset('assets')}}/admin/app-assets/images/portrait/small/avatar-s-9.jpg" alt="Avatar" width="33" height="33" />
                                     </div>
                                     <div
                                         data-bs-toggle="tooltip"
@@ -543,7 +543,7 @@
                                         title="Amy Carson"
                                         class="avatar pull-up"
                                     >
-                                        <img src="../../../app-assets/images/portrait/small/avatar-s-6.jpg" alt="Avatar" width="33" height="33" />
+                                        <img src="{{asset('assets')}}/admin/app-assets/images/portrait/small/avatar-s-6.jpg" alt="Avatar" width="33" height="33" />
                                     </div>
                                     <div
                                         data-bs-toggle="tooltip"
@@ -552,7 +552,7 @@
                                         title="Brandon Miles"
                                         class="avatar pull-up"
                                     >
-                                        <img src="../../../app-assets/images/portrait/small/avatar-s-8.jpg" alt="Avatar" width="33" height="33" />
+                                        <img src="{{asset('assets')}}/admin/app-assets/images/portrait/small/avatar-s-8.jpg" alt="Avatar" width="33" height="33" />
                                     </div>
                                     <div
                                         data-bs-toggle="tooltip"
@@ -562,7 +562,7 @@
                                         class="avatar pull-up"
                                     >
                                         <img
-                                            src="../../../app-assets/images/portrait/small/avatar-s-20.jpg"
+                                            src="{{asset('assets')}}/admin/app-assets/images/portrait/small/avatar-s-20.jpg"
                                             alt="Avatar"
                                             width="33"
                                             height="33"
@@ -576,7 +576,7 @@
                                         class="avatar pull-up"
                                     >
                                         <img
-                                            src="../../../app-assets/images/portrait/small/avatar-s-20.jpg"
+                                            src="{{asset('assets')}}/admin/app-assets/images/portrait/small/avatar-s-20.jpg"
                                             alt="Avatar"
                                             width="33"
                                             height="33"
@@ -610,7 +610,7 @@
                                 <div class="browser-states">
                                     <div class="d-flex">
                                         <img
-                                            src="../../../app-assets/images/icons/google-chrome.png"
+                                            src="{{asset('assets')}}/admin/app-assets/images/icons/google-chrome.png"
                                             class="rounded me-1"
                                             height="30"
                                             alt="Google Chrome"
@@ -625,7 +625,7 @@
                                 <div class="browser-states">
                                     <div class="d-flex">
                                         <img
-                                            src="../../../app-assets/images/icons/mozila-firefox.png"
+                                            src="{{asset('assets')}}/admin/app-assets/images/icons/mozila-firefox.png"
                                             class="rounded me-1"
                                             height="30"
                                             alt="Mozila Firefox"
@@ -640,7 +640,7 @@
                                 <div class="browser-states">
                                     <div class="d-flex">
                                         <img
-                                            src="../../../app-assets/images/icons/apple-safari.png"
+                                            src="{{asset('assets')}}/admin/app-assets/images/icons/apple-safari.png"
                                             class="rounded me-1"
                                             height="30"
                                             alt="Apple Safari"
@@ -655,7 +655,7 @@
                                 <div class="browser-states">
                                     <div class="d-flex">
                                         <img
-                                            src="../../../app-assets/images/icons/internet-explorer.png"
+                                            src="{{asset('assets')}}/admin/app-assets/images/icons/internet-explorer.png"
                                             class="rounded me-1"
                                             height="30"
                                             alt="Internet Explorer"
@@ -669,7 +669,7 @@
                                 </div>
                                 <div class="browser-states">
                                     <div class="d-flex">
-                                        <img src="../../../app-assets/images/icons/opera.png" class="rounded me-1" height="30" alt="Opera Mini" />
+                                        <img src="{{asset('assets')}}/admin/app-assets/images/icons/opera.png" class="rounded me-1" height="30" alt="Opera Mini" />
                                         <h6 class="align-self-center mb-0">Opera Mini</h6>
                                     </div>
                                     <div class="d-flex align-items-center">
@@ -932,3 +932,52 @@
             </div>
         </div>
         <hr />
+
+        <!-- Footer -->
+        @include('admin._footer')
+    </div>
+
+</div>
+<!-- End: Customizer-->
+
+<!-- Buynow Button-->
+<div class="buy-now"><a href="https://1.envato.market/vuexy_admin" target="_blank" class="btn btn-danger">Buy Now</a>
+
+</div>
+<div class="sidenav-overlay"></div>
+<div class="drag-target"></div>
+
+<!-- BEGIN: Footer-->
+<footer class="footer footer-static footer-light">
+    <p class="clearfix mb-0"><span class="float-md-start d-block d-md-inline-block mt-25">COPYRIGHT  &copy; 2021<a class="ms-25" href="https://1.envato.market/pixinvent_portfolio" target="_blank">Pixinvent</a><span class="d-none d-sm-inline-block">, All rights Reserved</span></span><span class="float-md-end d-none d-md-block">Hand-crafted & Made with<i data-feather="heart"></i></span></p>
+</footer>
+<button class="btn btn-primary btn-icon scroll-top" type="button"><i data-feather="arrow-up"></i></button>
+<!-- END: Footer-->
+
+
+<!-- BEGIN: Vendor JS-->
+<script src="{{asset('assets')}}/admin/app-assets/vendors/js/vendors.min.js"></script>
+<!-- BEGIN Vendor JS-->
+
+<!-- BEGIN: Page Vendor JS-->
+<script src="{{asset('assets')}}/admin/app-assets/vendors/js/charts/apexcharts.min.js"></script>
+<script src="{{asset('assets')}}/admin/app-assets/vendors/js/extensions/toastr.min.js"></script>
+<!-- END: Page Vendor JS-->
+
+<!-- BEGIN: Theme JS-->
+<script src="{{asset('assets')}}/admin/app-assets/js/core/app-menu.min.js"></script>
+<script src="{{asset('assets')}}/admin/app-assets/js/core/app.min.js"></script>
+<script src="{{asset('assets')}}/admin/app-assets/js/scripts/customizer.min.js"></script>
+<!-- END: Theme JS-->
+
+<!-- BEGIN: Page JS-->
+<script src="{{asset('assets')}}/admin/app-assets/js/scripts/pages/dashboard-ecommerce.min.js"></script>
+<!-- END: Page JS-->
+
+<script>
+    $(window).on('load',  function(){
+        if (feather) {
+            feather.replace({ width: 14, height: 14 });
+        }
+    })
+</script>
