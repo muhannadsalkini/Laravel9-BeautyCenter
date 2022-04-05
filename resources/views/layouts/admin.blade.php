@@ -46,16 +46,17 @@
 
 <!-- BEGIN: Body-->
 <body class="vertical-layout vertical-menu-modern  navbar-floating footer-static  " data-open="click" data-menu="vertical-menu-modern" data-col="">
-<!--header section start-->
+<!--header section-->
 @include('admin._header')
-<!--header section end-->
 
+<!--menu section-->
 @include('admin._mainmenu')
 
-
+<!--content section-->
 @yield('content')
 
-
+<!--footer section-->
+@include('admin._footer')
 
 
 </body>

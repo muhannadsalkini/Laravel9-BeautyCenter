@@ -123,8 +123,8 @@
             <div class="row">
                 <div class="col-md-3 col-sm-3 col-xs-12">
                     <div class="single-fun-fact float-left">
-                        <div class="fun-icon">
-                            <a href="#"><i class="fa fa-trophy" aria-hidden="true"></i></a>
+                        <div class="fun-icon" >
+                            <a href="#" style="padding-top: 17px;"><i class="fa fa-trophy" aria-hidden="true"></i></a>
                         </div>
                         <p class="counter">200</p>
                         <h5>win awards</h5>
@@ -133,7 +133,7 @@
                 <div class="col-md-2 col-sm-3 col-xs-12">
                     <div class="single-fun-fact middle-margin-left">
                         <div class="fun-icon">
-                            <a href="#"><i class="zmdi zmdi-favorite"></i></a>
+                            <a href="#"style="padding-top: 17px;"><i class="zmdi zmdi-favorite"></i></a>
                         </div>
                         <p class="counter">150</p>
                         <h5>Happy client</h5>
@@ -142,7 +142,7 @@
                 <div class="col-md-4 col-sm-3 col-xs-12">
                     <div class="single-fun-fact middle-margin">
                         <div class="fun-icon">
-                            <a href="#"><i class="zmdi zmdi-male-female"></i></a>
+                            <a href="#"style="padding-top: 17px;"><i class="zmdi zmdi-male-female"></i></a>
                         </div>
                         <p class="counter">100</p>
                         <h5>trainer</h5>
@@ -151,7 +151,7 @@
                 <div class="col-md-3 col-sm-3 col-xs-12">
                     <div class="single-fun-fact float-right">
                         <div class="fun-icon">
-                            <a href="#"><i class="fa fa-pagelines" aria-hidden="true"></i></a>
+                            <a href="#"style="padding-top: 17px;"><i class="fa fa-pagelines" aria-hidden="true"></i></a>
                         </div>
                         <p class="counter">300</p>
                         <h5>Treatment</h5>
