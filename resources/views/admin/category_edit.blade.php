@@ -1,6 +1,6 @@
 @extends('layouts.admin')
 
-@section('title', 'Category Add')
+@section('title', 'Category Edit')
 
 @section('vendor_css')
     <!-- BEGIN: Vendor CSS-->
@@ -30,41 +30,42 @@
             <div class="content-body">
                 <div class="card">
                     <div class="card-header">
-                        <h4 class="card-title">Add New Record</h4>
+                        <h4 class="card-title">Edit: {{ $data->id }} - {{ $data->title }}</h4>
                     </div>
 
                     <div class="card-body">
-                        <form class="needs-validation" novalidate="" action="{{route('admin_category_store')}}" method="post">
+                        <form class="needs-validation" action="{{route('admin_category_update',['id'=>$data->id])}}" method="post">
                             @csrf
                             <div class="mb-1">
                                 <label class="form-label">Parent ID</label>
                                 <select class="form-select" name="parent_id" required="">
-                                    <option value="0" selected="selected">0 - Main Category</option>
+                                    <option value="0">0 - Main Category</option>
                                     @foreach ($datalist as $rs)
-                                    <option value="{{ $rs->id }}">{{ $rs->id }} - {{ $rs->title }}</option>
+                                        <option value="{{ $rs->id }}" @if ($rs->id == $data->parent_id) selected="selected" @endif >{{ $rs->id }} - {{ $rs->title }}</option>
                                     @endforeach
                                 </select>
                             </div>
                             <div class="mb-1">
                                 <label class="form-label">Title</label>
-                                <input type="text" name="title" class="form-control" placeholder="Title" aria-label="Title">
+                                <input type="text" name="title"  value="{{ $data->title }}" class="form-control" placeholder="Title" aria-label="Title">
                             </div>
                             <div class="mb-1">
                                 <label class="form-label">Keywords</label>
-                                <input type="text" name="Keywords" class="form-control" placeholder="Keywords" aria-label="Keywords">
+                                <input type="text" name="Keywords" value="{{ $data->keywords }}" class="form-control" placeholder="Keywords" aria-label="Keywords">
                             </div>
                             <div class="mb-1">
                                 <label class="d-block form-label">Description</label>
-                                <textarea name="description" class="form-control" id="validationBioBootstrap" rows="2"></textarea>
+                                <textarea name="description" value="{{ $data->description }}" class="form-control" id="validationBioBootstrap" rows="2"></textarea>
                             </div>
                             <div class="mb-1">
                                 <label class="form-label">Status</label>
                                 <select name="status" class="form-select">
-                                    <option selected="selected" >False</option>
+                                    <option selected="selected"> {{ $data->status }} </option>
+                                    <option> False</option>
                                     <option >True</option>
                                 </select>
                             </div>
-                            <button type="submit" class="btn btn-primary waves-effect waves-float waves-light">Add Category</button>
+                            <button type="submit" class="btn btn-primary waves-effect waves-float waves-light">Save</button>
                         </form>
                     </div>
                 </div>
