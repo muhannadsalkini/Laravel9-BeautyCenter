@@ -30,9 +30,7 @@
 <!--header section end-->
 
 <!-- content section start -->
-@section('content')
-
-@show
+@yield('content')
 <!-- content section end -->
 
 <!--footer start-->

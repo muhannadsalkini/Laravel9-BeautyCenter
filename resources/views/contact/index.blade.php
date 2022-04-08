@@ -1,10 +1,30 @@
-@extends('layouts.contact')
+@extends('layouts.home')
 
 @section('title', 'Contact Us')
 
 @section('keywords','Bakim, Guzellik')
 
 @section('content')
+    <!--Breadcrumbs start-->
+    <div class="breadcrumbs text-center">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="breadcrumbs-title">
+                        <h2>@yield('title')</h2>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="breadcrumbs-menu">
+            <ul>
+                <li><a href="/">HOME <span>//</span></a></li>
+                <li>@yield('title')</li>
+            </ul>
+        </div>
+    </div>
+    <!--Breadcrumbs end-->
+    <!-- map -->
     <div id="contact-map" class="map-area">
         <div id="googleMap" style="width:100%;height:500px;"></div>
     </div>
@@ -12,6 +32,7 @@
     47808034!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x408354b21e5b6ab3%3A0xbb104da20a5891d2!2zMTAwLiBZxLFsLCA
     3ODA1MCBLYXJhYsO8ayBNZXJrZXovS2FyYWLDvGs!5e0!3m2!1sen!2str!4v1647651420433!5m2!1sen!2str"
             style="border:0;width:100%;height:500px";allowfullscreen="" loading="lazy"></iframe>-->
+    <!-- map end -->
     <!--Contact start-->
     <div class="contact-us">
         <div class="container">
@@ -86,3 +107,9 @@
     <!--Contact form end-->
 
 @endsection
+
+@yield('footerjs')
+<!-- Map js code here -->
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAdWLY_Y6FL7QGW5vcO3zajUEsrKfQPNzI"></script>
+<script type="text/javascript" src="https://www.google.com/jsapi"></script>
+<script src="{{asset('assets')}}/js/map.js"></script>

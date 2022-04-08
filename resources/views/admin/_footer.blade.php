@@ -11,8 +11,7 @@
 <!-- BEGIN Vendor JS-->
 
 <!-- BEGIN: Page Vendor JS-->
-<script src="{{asset('assets')}}/admin/app-assets/vendors/js/charts/apexcharts.min.js"></script>
-<script src="{{asset('assets')}}/admin/app-assets/vendors/js/extensions/toastr.min.js"></script>
+@yield('page_vendor_js')
 <!-- END: Page Vendor JS-->
 
 <!-- BEGIN: Theme JS-->
@@ -22,7 +21,7 @@
 <!-- END: Theme JS-->
 
 <!-- BEGIN: Page JS-->
-<script src="{{asset('assets')}}/admin/app-assets/js/scripts/pages/dashboard-ecommerce.min.js"></script>
+@yield('page_js')
 <!-- END: Page JS-->
 
 <script>
