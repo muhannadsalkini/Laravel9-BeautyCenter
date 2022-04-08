@@ -2,35 +2,96 @@
 <div class="main-menu menu-fixed menu-light menu-accordion menu-shadow" data-scroll-to-active="true">
     <div class="navbar-header">
         <ul class="nav navbar-nav flex-row">
-            <a class="navbar-brand" href="/admin"><img  src="{{asset('assets')}}/images/logo/logo.png" alt="" ></a><br
+            <li class="nav-item me-auto">
+                <a class="navbar-brand" href="{{route('admin_home')}}">
+                    <img  src="{{asset('assets')}}/images/logo/logo.png" alt="" >
+		            <span class="brand-logo">
+                        <svg viewbox="0 0 139 95" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" height="24">
+                            <defs>
+                            <lineargradient id="linearGradient-1" x1="100%" y1="10.5120544%" x2="50%" y2="89.4879456%">
+                                <stop stop-color="#000000" offset="0%"></stop>
+                                <stop stop-color="#FFFFFF" offset="100%"></stop>
+                            </lineargradient>
+                            <lineargradient id="linearGradient-2" x1="64.0437835%" y1="46.3276743%" x2="37.373316%" y2="100%">
+                                <stop stop-color="#EEEEEE" stop-opacity="0" offset="0%"></stop>
+                                <stop stop-color="#FFFFFF" offset="100%"></stop>
+                            </lineargradient>
+                            </defs>
+                        </svg>
+				    </span>
+                </a>
+            </li>
+            <li class="nav-item nav-toggle"><a class="nav-link modern-nav-toggle pe-0" data-bs-toggle="collapse"><i class="d-block d-xl-none text-primary toggle-icon font-medium-4" data-feather="x"></i><i class="d-none d-xl-block collapse-toggle-icon font-medium-4  text-primary" data-feather="disc" data-ticon="disc"></i></a></li>
         </ul>
     </div>
     <div class="shadow-bottom"></div>
     <div class="main-menu-content">
         <ul class="navigation navigation-main" id="main-menu-navigation" data-menu="menu-navigation">
-            <li class=" nav-item"><a class="d-flex align-items-center" href="/admin"><i data-feather="home"></i><span class="menu-title text-truncate" data-i18n="Dashboards">Dashboards</span><span class="badge badge-light-warning rounded-pill ms-auto me-1">2</span></a>
+            <!--<li class=" nav-item">
+                <a class="d-flex align-items-center" href="/admin">
+                    <i data-feather="home"></i>
+                    <span class="menu-title text-truncate" data-i18n="Dashboards">Home</span>
+                    <span class="badge badge-light-warning rounded-pill ms-auto me-1">2</span>
+                </a>
                 <ul class="menu-content">
-                    <li><a class="d-flex align-items-center" href="dashboard-analytics.html"><i data-feather="circle"></i><span class="menu-item text-truncate" data-i18n="Analytics">Analytics</span></a>
+                    <li><a class="d-flex align-items-center" href="dashboard-analytics.html">
+                            <i data-feather="circle"></i>
+                            <span class="menu-item text-truncate" data-i18n="Analytics">Analytics</span>
+                        </a>
                     </li>
-                    <li class="active"><a class="d-flex align-items-center" href="dashboard-ecommerce.html"><i data-feather="circle"></i><span class="menu-item text-truncate" data-i18n="eCommerce">eCommerce</span></a>
+                    <li class="active">
+                        <a class="d-flex align-items-center" href="dashboard-ecommerce.html">
+                            <i data-feather="circle"></i>
+                            <span class="menu-item text-truncate" data-i18n="eCommerce">eCommerce</span>
+                        </a>
                     </li>
                 </ul>
+            </li>-->
+
+            <!-- Apps &amp; Pages -->
+            <li class=" navigation-header">
+                <span data-i18n="Apps &amp; Pages">Apps &amp; Pages</span>
+                <i data-feather="more-horizontal">
+                </i>
             </li>
-            <li class=" navigation-header"><span data-i18n="Apps &amp; Pages">Apps &amp; Pages</span><i data-feather="more-horizontal"></i>
+
+            <li class=" nav-item">
+                <a class="d-flex align-items-center" href="{{route('admin_category')}}">
+                    <i data-feather="grid"></i>
+                    <span class="menu-title text-truncate" data-i18n="Kanban">Categories</span>
+                </a>
             </li>
-            <li class=" nav-item"><a class="d-flex align-items-center" href="app-email.html"><i data-feather="mail"></i><span class="menu-title text-truncate" data-i18n="Email">Email</span></a>
+
+            <li class=" nav-item">
+                <a class="d-flex align-items-center" href="app-email.html">
+                    <i data-feather="mail"></i>
+                    <span class="menu-title text-truncate" data-i18n="Email">Email</span>
+                </a>
             </li>
-            <li class=" nav-item"><a class="d-flex align-items-center" href="app-chat.html"><i data-feather="message-square"></i><span class="menu-title text-truncate" data-i18n="Chat">Chat</span></a>
+            <li class=" nav-item">
+                <a class="d-flex align-items-center" href="app-chat.html">
+                    <i data-feather="message-square"></i>
+                    <span class="menu-title text-truncate" data-i18n="Chat">Chat</span>
+                </a>
             </li>
-            <li class=" nav-item"><a class="d-flex align-items-center" href="app-todo.html"><i data-feather="check-square"></i><span class="menu-title text-truncate" data-i18n="Todo">Todo</span></a>
+            <li class=" nav-item">
+                <a class="d-flex align-items-center" href="app-todo.html">
+                    <i data-feather="check-square"></i>
+                    <span class="menu-title text-truncate" data-i18n="Todo">Todo</span>
+                </a>
             </li>
-            <li class=" nav-item"><a class="d-flex align-items-center" href="app-calendar.html"><i data-feather="calendar"></i><span class="menu-title text-truncate" data-i18n="Calendar">Calendar</span></a>
-            </li>
-            <li class=" nav-item"><a class="d-flex align-items-center" href="app-kanban.html"><i data-feather="grid"></i><span class="menu-title text-truncate" data-i18n="Kanban">Kanban</span></a>
+            <li class=" nav-item"><a class="d-flex align-items-center" href="app-calendar.html">
+                    <i data-feather="calendar"></i>
+                    <span class="menu-title text-truncate" data-i18n="Calendar">Calendar</span>
+                </a>
             </li>
             <li class=" nav-item"><a class="d-flex align-items-center" href="#"><i data-feather="file-text"></i><span class="menu-title text-truncate" data-i18n="Invoice">Invoice</span></a>
                 <ul class="menu-content">
-                    <li><a class="d-flex align-items-center" href="app-invoice-list.html"><i data-feather="circle"></i><span class="menu-item text-truncate" data-i18n="List">List</span></a>
+                    <li>
+                        <a class="d-flex align-items-center" href="app-invoice-list.html">
+                            <i data-feather="circle"></i>
+                            <span class="menu-item text-truncate" data-i18n="List">List</span>
+                        </a>
                     </li>
                     <li><a class="d-flex align-items-center" href="app-invoice-preview.html"><i data-feather="circle"></i><span class="menu-item text-truncate" data-i18n="Preview">Preview</span></a>
                     </li>
