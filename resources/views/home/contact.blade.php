@@ -6,23 +6,7 @@
 
 @section('content')
     <!--Breadcrumbs start-->
-    <div class="breadcrumbs text-center">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-12">
-                    <div class="breadcrumbs-title">
-                        <h2>@yield('title')</h2>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="breadcrumbs-menu">
-            <ul>
-                <li><a href="/">HOME <span>//</span></a></li>
-                <li>@yield('title')</li>
-            </ul>
-        </div>
-    </div>
+    @include('home._breadcrumbs')
     <!--Breadcrumbs end-->
     <!-- map -->
     <div id="contact-map" class="map-area">
@@ -41,7 +25,7 @@
                     <div class="col-md-4 col-sm-4 col-xs-12">
                         <div class="single-contact">
                             <div class="contact-icon">
-                                <a href="#"><i class="zmdi zmdi-phone"></i></a>
+                                <a href="#" style="padding-top: 11px;"><i class="zmdi zmdi-phone" ></i></a>
                             </div>
                             <div class="contact-desc">
                                 <p>+012 345 678 102<br>+012 345 678 102</p>
@@ -51,7 +35,7 @@
                     <div class="col-md-4 col-sm-4 col-xs-12">
                         <div class="single-contact text-center">
                             <div class="contact-icon">
-                                <a href="#"><i class="zmdi zmdi-dribbble"></i></a>
+                                <a href="#" style="padding-top: 11px;"><i class="zmdi zmdi-dribbble"></i></a>
                             </div>
                             <div class="contact-desc">
                                 <p>urname@email.com<br>urwebsitenaem.com</p>
@@ -61,7 +45,7 @@
                     <div class="col-md-4 col-sm-4 col-xs-12">
                         <div class="single-contact float-right">
                             <div class="contact-icon">
-                                <a href="#"><i class="zmdi zmdi-pin"></i></a>
+                                <a href="#" style="padding-top: 11px;"><i class="zmdi zmdi-pin"></i></a>
                             </div>
                             <div class="contact-desc">
                                 <p> 100. YIL MAH. MERKEZ <br> KARABÜK / TURKIYE </p>
@@ -108,8 +92,9 @@
 
 @endsection
 
-@yield('footerjs')
+@section('footer_js')
 <!-- Map js code here -->
 <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAdWLY_Y6FL7QGW5vcO3zajUEsrKfQPNzI"></script>
 <script type="text/javascript" src="https://www.google.com/jsapi"></script>
 <script src="{{asset('assets')}}/js/map.js"></script>
+@endsection

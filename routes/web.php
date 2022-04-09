@@ -21,13 +21,15 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+// Home
 Route::get('/', [HomeController::class, 'index']);
-Route::get('/contact-us', [ContactController::class, 'index']);
-Route::get('/about-us', [AboutController::class, 'index']);
-Route::get('/blog', [BlogController::class, 'index']);
-Route::get('/shop', [ShopController::class, 'index']);
-Route::get('/cart', [CartController::class, 'index']);
-Route::get('/checkout', [CheckotController::class, 'index']);
+Route::get('/about-us', [HomeController::class, 'about']);
+Route::get('/blog', [HomeController::class, 'blog']);
+Route::get('/cart', [HomeController::class, 'cart']);
+Route::get('/checkout', [HomeController::class, 'checkout']);
+Route::get('/contact-us', [HomeController::class, 'contact']);
+Route::get('/shop', [HomeController::class, 'shop']);
+
 
 
 // Admin
@@ -42,9 +44,7 @@ Route::middleware('auth')->prefix('admin')->group(function (){
     Route::get('category/delete/{id}', [App\Http\Controllers\Admin\CategoryController::class, 'destroy'])->name('admin_category_delete');
     Route::get('category/show', [App\Http\Controllers\Admin\CategoryController::class, 'show'])->name('admin_category_show');
 });
-
-
-
+//Admin login
 Route::get('/admin/login', [HomeController::class, 'login'])->name('admin_login');
 Route::post('/admin/logincheck', [HomeController::class, 'logincheck'])->name('admin_logincheck');
 Route::get('/admin/logout', [HomeController::class, 'logout'])->name('admin_logout');

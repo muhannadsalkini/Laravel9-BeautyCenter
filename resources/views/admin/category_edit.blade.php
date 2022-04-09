@@ -60,9 +60,8 @@
                             <div class="mb-1">
                                 <label class="form-label">Status</label>
                                 <select name="status" class="form-select">
-                                    <option selected="selected"> {{ $data->status }} </option>
-                                    <option> False</option>
-                                    <option >True</option>
+                                    <option @if ($data->status == "False") selected="selected" @endif> False</option>
+                                    <option @if ($data->status == "True") selected="selected" @endif>True</option>
                                 </select>
                             </div>
                             <button type="submit" class="btn btn-primary waves-effect waves-float waves-light">Save</button>

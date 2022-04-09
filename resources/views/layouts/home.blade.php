@@ -21,7 +21,7 @@
     <!-- Modernizr JS -->
     <script src="{{asset('assets')}}/js/vendor/modernizr-2.8.3.min.js"></script>
     @yield('css')
-    @yield('headerjs')
+    @yield('header_js')
 </head>
 <body>
 <div class="wrapper white-bg">
@@ -38,6 +38,6 @@
 <!--footer end-->
 </div>
 
-@yield('footerjs')
+@yield('footer_js')
 </body>
 </html>
