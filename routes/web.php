@@ -36,13 +36,25 @@ Route::get('/shop', [HomeController::class, 'shop']);
 Route::middleware('auth')->prefix('admin')->group(function (){
     Route::get('/', [App\Http\Controllers\Admin\HomeController::class, 'index'])->name('admin_home');
 
+    // Category table
     Route::get('category', [App\Http\Controllers\Admin\CategoryController::class, 'index'])->name('admin_category');
     Route::get('category/add', [App\Http\Controllers\Admin\CategoryController::class, 'add'])->name('admin_category_add');
     Route::post('category/store', [App\Http\Controllers\Admin\CategoryController::class, 'store'])->name('admin_category_store');
+    Route::get('category/show', [App\Http\Controllers\Admin\CategoryController::class, 'show'])->name('admin_category_show');
     Route::get('category/edit/{id}', [App\Http\Controllers\Admin\CategoryController::class, 'edit'])->name('admin_category_edit');
     Route::post('category/update/{id}', [App\Http\Controllers\Admin\CategoryController::class, 'update'])->name('admin_category_update');
     Route::get('category/delete/{id}', [App\Http\Controllers\Admin\CategoryController::class, 'destroy'])->name('admin_category_delete');
-    Route::get('category/show', [App\Http\Controllers\Admin\CategoryController::class, 'show'])->name('admin_category_show');
+
+    // Service Table
+    route::prefix('service')->group(function (){
+        Route::get('/', [App\Http\Controllers\Admin\ServiceController::class, 'index'])->name('admin_service');
+        Route::get('/create', [App\Http\Controllers\Admin\ServiceController::class, 'create'])->name('admin_service_add');
+        Route::post('/store', [App\Http\Controllers\Admin\ServiceController::class, 'store'])->name('admin_service_create');
+        Route::get('/edit/{id}', [App\Http\Controllers\Admin\ServiceController::class, 'edit'])->name('admin_service_edit');
+        Route::post('/update/{id}', [App\Http\Controllers\Admin\ServiceController::class, 'update'])->name('admin_service_update');
+        Route::get('/delete/{id}', [App\Http\Controllers\Admin\ServiceController::class, 'delete'])->name('admin_service_delete');
+        Route::get('/show', [App\Http\Controllers\Admin\ServiceController::class, 'show'])->name('admin_service_show');
+    });
 });
 //Admin login
 Route::get('/admin/login', [HomeController::class, 'login'])->name('admin_login');

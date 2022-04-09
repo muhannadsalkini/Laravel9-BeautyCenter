@@ -1,7 +1,7 @@
 @extends('layouts.admin')
 
-@section('title', 'Admin Panel Category')
-@section('Categories_status', 'active')
+@section('title', 'Admin Panel Services')
+@section('Services_status', 'active')
 
 @section('vendor_css')
     <!-- BEGIN: Vendor CSS-->
@@ -38,7 +38,7 @@
                             <div id="DataTables_Table_0_wrapper" class="dataTables_wrapper dt-bootstrap5 no-footer">
                                 <div class="card-header border-bottom p-1">
                                     <div class="head-label">
-                                        <h4 class="mb-0">Categories</h4>
+                                        <h4 class="mb-0">Services</h4>
                                     </div>
                                     <div class="dt-action-buttons text-end">
                                         <div class="dt-buttons d-inline-flex">
@@ -83,9 +83,10 @@
                                     <thead>
                                     <tr>
                                         <th>Id</th>
-                                        <th>Parent Id</th>
-                                        <th>Image</th>
+                                        <th>Category Id</th>
                                         <th>Title</th>
+                                        <th>Price</th>
+                                        <th>Image</th>
                                         <th>Status</th>
                                         <th>Actions</th>
                                     </tr>
@@ -95,16 +96,17 @@
                                     @foreach ($datalist as $rs)
                                         <tr class="item">
                                             <td>{{ $rs->id }}</td>
-                                            <td>{{ $rs->parent_id }}</td>
+                                            <td>{{ $rs->category_id }}</td>
+                                            <td>
+                                                <span class="fw-bold">{{ $rs->title }}</span>
+                                            </td>
+                                            <td>{{ $rs->price }}</td>
                                             <td>
                                                 <div class="avatar-group">
                                                     <div data-bs-toggle="tooltip" data-popup="tooltip-custom" data-bs-placement="top" class="avatar pull-up my-0" title="" data-bs-original-title="Lilian Nenez">
                                                         <img src="{{ $rs->image }}" alt="Avatar" height="26" width="26">
                                                     </div>
                                                 </div>
-                                            </td>
-                                            <td>
-                                                <span class="fw-bold">{{ $rs->title }}</span>
                                             </td>
                                             <td>
                                                 <?php
@@ -117,7 +119,6 @@
                                                 ?>
                                                 <span class="{{$temp}}">{{ $rs->status }}</span>
                                             </td>
-
                                             <td>
                                                 <div class="dropdown">
                                                     <button type="button" class="btn btn-sm dropdown-toggle hide-arrow waves-effect waves-float waves-light" data-bs-toggle="dropdown">
