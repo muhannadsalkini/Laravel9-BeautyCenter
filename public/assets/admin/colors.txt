@@ -1,0 +1,16 @@
+old 
+rgba(115,103,240,.7))
+#7367F0
+
+#6258CC  "background-color"
+#5C52C0  "border-color"
+#5E50EE
+
+
+new 
+rgba(96,177,17,.7))
+#6bc513
+
+#60b111  "background-color"
+#559d0f  "border-color"
+#79ca2a

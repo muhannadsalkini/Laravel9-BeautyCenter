@@ -1,6 +1,7 @@
 @extends('layouts.admin')
 
 @section('title', 'Category Add')
+@section('Categories_status', 'active')
 
 @section('vendor_css')
     <!-- BEGIN: Vendor CSS-->
@@ -47,11 +48,11 @@
                             </div>
                             <div class="mb-1">
                                 <label class="form-label">Title</label>
-                                <input type="text" name="title" class="form-control" placeholder="Title" aria-label="Title">
+                                <input type="text" name="title" class="form-control" placeholder="Title">
                             </div>
                             <div class="mb-1">
                                 <label class="form-label">Keywords</label>
-                                <input type="text" name="Keywords" class="form-control" placeholder="Keywords" aria-label="Keywords">
+                                <input type="text" name="Keywords" class="form-control" placeholder="Keywords">
                             </div>
                             <div class="mb-1">
                                 <label class="d-block form-label">Description</label>

@@ -1,6 +1,7 @@
 @extends('layouts.admin')
 
-@section('title', 'Category Add')
+@section('title', 'service Add')
+@section('Services_status', 'active')
 
 @section('vendor_css')
     <!-- BEGIN: Vendor CSS-->
@@ -34,28 +35,39 @@
                     </div>
 
                     <div class="card-body">
-                        <form class="needs-validation" novalidate="" action="{{route('admin_category_store')}}" method="post">
+                        <form class="needs-validation" action="{{route('admin_service_store')}}" method="post">
                             @csrf
                             <div class="mb-1">
-                                <label class="form-label">Parent ID</label>
-                                <select class="form-select" name="parent_id" required="">
-                                    <option value="0" selected="selected">0 - Main Category</option>
-                                    @foreach ($datalist as $rs)
-                                    <option value="{{ $rs->id }}">{{ $rs->id }} - {{ $rs->title }}</option>
-                                    @endforeach
-                                </select>
-                            </div>
-                            <div class="mb-1">
                                 <label class="form-label">Title</label>
-                                <input type="text" name="title" class="form-control" placeholder="Title" aria-label="Title">
+                                <input type="text" name="title" class="form-control" placeholder="Title">
                             </div>
                             <div class="mb-1">
                                 <label class="form-label">Keywords</label>
-                                <input type="text" name="Keywords" class="form-control" placeholder="Keywords" aria-label="Keywords">
+                                <input type="text" name="keywords" class="form-control" placeholder="Keywords">
                             </div>
                             <div class="mb-1">
                                 <label class="d-block form-label">Description</label>
                                 <textarea name="description" class="form-control" id="validationBioBootstrap" rows="2"></textarea>
+                            </div>
+                            <div class="mb-1">
+                                <label class="form-label">Image</label>
+                                <input type="text" name=image" class="form-control" placeholder="Image">
+                            </div>
+                            <div class="mb-1">
+                                <label class="form-label">Category ID</label>
+                                <select class="form-select" name="category_id" required="">
+                                    @foreach ($datalist as $cl)
+                                        <option value="{{ $cl->id }}">{{ $cl->id }} - {{ $cl->title }}</option>
+                                    @endforeach
+                                </select>
+                            </div>
+                            <div class="mb-1">
+                                <label class="form-label">Price</label>
+                                <input type="number" name="price" class="form-control" placeholder="Price">
+                            </div>
+                            <div class="mb-1">
+                                <label class="form-label">Tax</label>
+                                <input type="number" name="tax" value="18" class="form-control" placeholder="Tax">
                             </div>
                             <div class="mb-1">
                                 <label class="form-label">Status</label>
@@ -64,7 +76,11 @@
                                     <option >True</option>
                                 </select>
                             </div>
-                            <button type="submit" class="btn btn-primary waves-effect waves-float waves-light">Add Category</button>
+                            <div class="mb-1">
+                                <label class="d-block form-label">Detail</label>
+                                <textarea name="detail" class="form-control" id="validationBioBootstrap" rows="2"></textarea>
+                            </div>
+                            <button type="submit" class="btn btn-primary waves-effect waves-float waves-light">Add Service</button>
                         </form>
                     </div>
                 </div>

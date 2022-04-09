@@ -1,6 +1,7 @@
 @extends('layouts.admin')
 
 @section('title', 'Category Edit')
+@section('Services_status', 'active')
 
 @section('vendor_css')
     <!-- BEGIN: Vendor CSS-->
@@ -34,28 +35,39 @@
                     </div>
 
                     <div class="card-body">
-                        <form class="needs-validation" action="{{route('admin_category_update',['id'=>$data->id])}}" method="post">
+                        <form class="needs-validation" action="{{route('admin_service_update',['id'=>$data->id])}}" method="post">
                             @csrf
                             <div class="mb-1">
-                                <label class="form-label">Parent ID</label>
-                                <select class="form-select" name="parent_id" required="">
-                                    <option value="0">0 - Main Category</option>
+                                <label class="form-label">Title</label>
+                                <input type="text" name="title"  value="{{ $data->title }}" class="form-control" placeholder="Title">
+                            </div>
+                            <div class="mb-1">
+                                <label class="form-label">Keywords</label>
+                                <input type="text" name="Keywords" value="{{ $data->keywords }}" class="form-control" placeholder="Keywords">
+                            </div>
+                            <div class="mb-1">
+                                <label class="d-block form-label">Description</label>
+                                <textarea name="description" class="form-control" id="validationBioBootstrap" rows="2">{{ $data->description }}</textarea>
+                            </div>
+                            <div class="mb-1">
+                                <label class="form-label">Image</label>
+                                <input type="text" name="image" value="{{ $data->image }}" class="form-control" placeholder="Image">
+                            </div>
+                            <div class="mb-1">
+                                <label class="form-label">Category ID</label>
+                                <select class="form-select" name="category_id" required="">
                                     @foreach ($datalist as $rs)
-                                        <option value="{{ $rs->id }}" @if ($rs->id == $data->parent_id) selected="selected" @endif >{{ $rs->id }} - {{ $rs->title }}</option>
+                                        <option value="{{ $rs->id }}" @if ($rs->id == $data->category_id) selected="selected" @endif >{{ $rs->id }} - {{ $rs->title }}</option>
                                     @endforeach
                                 </select>
                             </div>
                             <div class="mb-1">
-                                <label class="form-label">Title</label>
-                                <input type="text" name="title"  value="{{ $data->title }}" class="form-control" placeholder="Title" aria-label="Title">
+                                <label class="form-label">Price</label>
+                                <input type="number" name="price" value="{{ $data->price }}" class="form-control" placeholder="Price">
                             </div>
                             <div class="mb-1">
-                                <label class="form-label">Keywords</label>
-                                <input type="text" name="Keywords" value="{{ $data->keywords }}" class="form-control" placeholder="Keywords" aria-label="Keywords">
-                            </div>
-                            <div class="mb-1">
-                                <label class="d-block form-label">Description</label>
-                                <textarea name="description" value="{{ $data->description }}" class="form-control" id="validationBioBootstrap" rows="2"></textarea>
+                                <label class="form-label">Tax</label>
+                                <input type="number" name="tax" value="{{ $data->tax }}" class="form-control" placeholder="Tax">
                             </div>
                             <div class="mb-1">
                                 <label class="form-label">Status</label>

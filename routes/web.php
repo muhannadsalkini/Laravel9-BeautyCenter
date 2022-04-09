@@ -49,11 +49,12 @@ Route::middleware('auth')->prefix('admin')->group(function (){
     route::prefix('service')->group(function (){
         Route::get('/', [App\Http\Controllers\Admin\ServiceController::class, 'index'])->name('admin_service');
         Route::get('/create', [App\Http\Controllers\Admin\ServiceController::class, 'create'])->name('admin_service_add');
-        Route::post('/store', [App\Http\Controllers\Admin\ServiceController::class, 'store'])->name('admin_service_create');
+        Route::post('/store', [App\Http\Controllers\Admin\ServiceController::class, 'store'])->name('admin_service_store');
+        Route::get('/show', [App\Http\Controllers\Admin\ServiceController::class, 'show'])->name('admin_service_show');
         Route::get('/edit/{id}', [App\Http\Controllers\Admin\ServiceController::class, 'edit'])->name('admin_service_edit');
         Route::post('/update/{id}', [App\Http\Controllers\Admin\ServiceController::class, 'update'])->name('admin_service_update');
-        Route::get('/delete/{id}', [App\Http\Controllers\Admin\ServiceController::class, 'delete'])->name('admin_service_delete');
-        Route::get('/show', [App\Http\Controllers\Admin\ServiceController::class, 'show'])->name('admin_service_show');
+        Route::get('/delete/{id}', [App\Http\Controllers\Admin\ServiceController::class, 'destroy'])->name('admin_service_delete');
+
     });
 });
 //Admin login

@@ -1,0 +1,15 @@
+
+----Category Table Commends-----
+1- php artisan make:model Category -m  // migration dosyalari ile olusur
+2- Databse->Migration->xxx_create_categories_table.php  // olusan tabloya alanlari ekleme
+3- php artisan migrate  // degisiklikleri kayd etme
+4- php artisan make:controller Admin\CategoryController --resource
+5- // wep dosyasinda route'leri ayarlama
+
+
+----Service Table Commends-----
+1- php artisan make:model Service -m  // migration dosyalari ile olusur
+2- Databse->Migration->xxx_create_products_table.php  // olusan tabloya alanlari ekleme
+3- php artisan migrate
+4- php artisan make:controller Admin\ServiceController --resource --model=Service // controller olusturma
+5- // wep dosyasinda route'leri ayarlama

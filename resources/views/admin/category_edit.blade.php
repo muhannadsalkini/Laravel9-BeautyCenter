@@ -1,6 +1,7 @@
 @extends('layouts.admin')
 
 @section('title', 'Category Edit')
+@section('Categories_status', 'active')
 
 @section('vendor_css')
     <!-- BEGIN: Vendor CSS-->
@@ -55,7 +56,7 @@
                             </div>
                             <div class="mb-1">
                                 <label class="d-block form-label">Description</label>
-                                <textarea name="description" value="{{ $data->description }}" class="form-control" id="validationBioBootstrap" rows="2"></textarea>
+                                <textarea name="description" class="form-control" id="validationBioBootstrap" rows="2">{{ $data->description }}</textarea>
                             </div>
                             <div class="mb-1">
                                 <label class="form-label">Status</label>
