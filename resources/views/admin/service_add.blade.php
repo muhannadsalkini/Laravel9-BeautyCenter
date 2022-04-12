@@ -5,14 +5,14 @@
 @section('Services_status', 'active')
 
 @section('vendor_css')
-    <!-- BEGIN: Vendor CSS-->
+    <!-- BEGIN: Vendor CSS -->
     <link rel="stylesheet" type="text/css" href="{{asset('assets')}}/admin/app-assets/vendors/css/vendors.min.css">
     <link rel="stylesheet" type="text/css" href="{{asset('assets')}}/admin/app-assets/vendors/css/tables/datatable/dataTables.bootstrap5.min.css">
     <link rel="stylesheet" type="text/css" href="{{asset('assets')}}/admin/app-assets/vendors/css/tables/datatable/responsive.bootstrap4.min.css">
     <link rel="stylesheet" type="text/css" href="{{asset('assets')}}/admin/app-assets/vendors/css/tables/datatable/buttons.bootstrap5.min.css">
     <link rel="stylesheet" type="text/css" href="{{asset('assets')}}/admin/app-assets/vendors/css/tables/datatable/rowGroup.bootstrap4.min.css">
     <link rel="stylesheet" type="text/css" href="{{asset('assets')}}/admin/app-assets/vendors/css/pickers/flatpickr/flatpickr.min.css">
-    <!-- END: Vendor CSS-->
+    <!-- END: Vendor CSS -->
 @endsection
 
 @section('header_js')
@@ -23,9 +23,9 @@
 @endsection
 
 @section('page_css')
-    <!-- BEGIN: Page CSS-->
+    <!-- BEGIN: Page CSS -->
     <link rel="stylesheet" type="text/css" href="{{asset('assets')}}/admin/app-assets/css/core/menu/menu-types/vertical-menu.min.css">
-    <!-- END: Page CSS-->
+    <!-- END: Page CSS -->
 @endsection
 
 @section('content')

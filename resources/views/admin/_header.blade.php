@@ -2,7 +2,7 @@
 use Illuminate\Support\Facades\Auth;
 ?>
 
-<!-- BEGIN: Header-->
+<!-- BEGIN: Header -->
 <nav class="header-navbar navbar navbar-expand-lg align-items-center floating-nav navbar-light navbar-shadow container-xxl">
     <div class="navbar-container d-flex content">
         <div class="bookmark-wrapper d-flex align-items-center">

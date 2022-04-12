@@ -45,7 +45,7 @@ class ServiceController extends Controller
         $data->keywords = $request->input('keywords');
         $data->description = $request->input('description');
         if ($request->file('image')){
-            $data->image = $request->file('image')->store('images'); // file upload //Storage::putFile('images', $request->file('image'));
+            $data->image = $request->file('image')->store('images'); // file upload // Storage::putFile('images', $request->file('image'));
         }
         $data->user_id = Auth::id();
         $data->category_id = $request->input('category_id');
