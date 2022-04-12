@@ -42,7 +42,7 @@
                                 <select class="form-select" name="parent_id" required="">
                                     <option value="0" selected="selected">0 - Main Category</option>
                                     @foreach ($datalist as $rs)
-                                    <option value="{{ $rs->id }}">{{ $rs->id }} - {{ $rs->title }}</option>
+                                        <option value="{{ $rs->id }}">{{ $rs->id }} - {{ $rs->title }}</option>
                                     @endforeach
                                 </select>
                             </div>
@@ -83,4 +83,3 @@
     <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.11.5/js/jquery.dataTables.js"></script>
     <!-- END: Page JS-->
 @endsection
-

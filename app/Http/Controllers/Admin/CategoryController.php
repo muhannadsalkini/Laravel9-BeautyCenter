@@ -45,7 +45,8 @@ class CategoryController extends Controller
             'title' => $request->input('title'),
             'keywords' => $request->input('keywords'),
             'description' => $request->input('description'),
-            'status' => $request->input('status')
+            'status' => $request->input('status'),
+            'created_at' => date('Y-m-d H:i:s')
         ]);
         return redirect()->route('admin_category')->with('success', 'Category Added');
     }

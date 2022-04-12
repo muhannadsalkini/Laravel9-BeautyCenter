@@ -14,6 +14,13 @@
     <!-- END: Vendor CSS-->
 @endsection
 
+@section('header_js')
+    <!-- summernote text editor -->
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+    <link href="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote-lite.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote-lite.min.js"></script>
+@endsection
+
 @section('page_css')
     <!-- BEGIN: Page CSS-->
     <link rel="stylesheet" type="text/css" href="{{asset('assets')}}/admin/app-assets/css/core/menu/menu-types/vertical-menu.min.css">
@@ -77,8 +84,16 @@
                                 </select>
                             </div>
                             <div class="mb-1">
-                                <label class="d-block form-label">Detail</label>
-                                <textarea name="detail" class="form-control" id="validationBioBootstrap" rows="2"></textarea>
+                                <label class="d-block form-label">Details</label>
+
+                                <textarea name="detail" id="summernote">{{ $data->detail }}</textarea>
+                                <script>
+                                    $('#summernote').summernote({
+                                        placeholder: 'Details',
+                                        tabsize: 2,
+                                        height: 100
+                                    });
+                                </script>
                             </div>
                             <button type="submit" class="btn btn-primary waves-effect waves-float waves-light">Add Service</button>
                         </form>

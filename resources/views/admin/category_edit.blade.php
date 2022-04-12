@@ -52,7 +52,7 @@
                             </div>
                             <div class="mb-1">
                                 <label class="form-label">Keywords</label>
-                                <input type="text" name="Keywords" value="{{ $data->keywords }}" class="form-control" placeholder="Keywords" aria-label="Keywords">
+                                <input type="text" name="keywords" value="{{ $data->keywords }}" class="form-control" placeholder="Keywords" aria-label="Keywords">
                             </div>
                             <div class="mb-1">
                                 <label class="d-block form-label">Description</label>

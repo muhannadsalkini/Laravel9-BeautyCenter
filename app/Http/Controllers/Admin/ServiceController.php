@@ -51,7 +51,8 @@ class ServiceController extends Controller
             'price' => $request->input('price'),
             'tax' => $request->input('tax'),
             'detail' => $request->input('detail'),
-            'status' => $request->input('status')
+            'status' => $request->input('status'),
+            'created_at' => date('Y-m-d H:i:s')
         ]);
         return redirect()->route('admin_service')->with('success', 'Service Added');
     }
