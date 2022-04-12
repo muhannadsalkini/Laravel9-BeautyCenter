@@ -3,7 +3,6 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
-use App\Models\Category;
 use App\Models\Service;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -41,19 +40,21 @@ class ServiceController extends Controller
      */
     public function store(Request $request)
     {
-        DB::table('services')->insert([
-            'title' => $request->input('title'),
-            'keywords' => $request->input('keywords'),
-            'description' => $request->input('description'),
-            'image' => $request->input('image'),
-            'category_id' => $request->input('category_id'),
-            'user_id' => Auth::id(),
-            'price' => $request->input('price'),
-            'tax' => $request->input('tax'),
-            'detail' => $request->input('detail'),
-            'status' => $request->input('status'),
-            'created_at' => date('Y-m-d H:i:s')
-        ]);
+        $data = new Service();
+        $data->title = $request->input('title');
+        $data->keywords = $request->input('keywords');
+        $data->description = $request->input('description');
+        if ($request->file('image')){
+            $data->image = $request->file('image')->store('images'); // file upload //Storage::putFile('images', $request->file('image'));
+        }
+        $data->user_id = Auth::id();
+        $data->category_id = $request->input('category_id');
+        $data->price = $request->input('price');
+        $data->tax = $request->input('tax');
+        $data->detail = $request->input('detail');
+        $data->status = $request->input('status');
+
+        $data->save();
         return redirect()->route('admin_service')->with('success', 'Service Added');
     }
 
@@ -95,11 +96,15 @@ class ServiceController extends Controller
         $data->title = $request->input('title');
         $data->keywords = $request->input('keywords');
         $data->description = $request->input('description');
+        if ($request->file('image')){
+            $data->image = $request->file('image')->store('images'); // file upload
+        }
         $data->category_id = $request->input('category_id');
         $data->price = $request->input('price');
         $data->tax = $request->input('tax');
         $data->detail = $request->input('detail');
         $data->status = $request->input('status');
+
         $data->save();
         return redirect()->route('admin_service')->with('success', 'Service Edited');
     }

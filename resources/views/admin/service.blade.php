@@ -103,8 +103,10 @@
                                             <td>{{ $rs->price }}</td>
                                             <td>
                                                 <div class="avatar-group">
-                                                    <div data-bs-toggle="tooltip" data-popup="tooltip-custom" data-bs-placement="top" class="avatar pull-up my-0" title="" data-bs-original-title="Lilian Nenez">
-                                                        <img src="{{ $rs->image }}" alt="Avatar" height="26" width="26">
+                                                    <div data-bs-toggle="tooltip" data-popup="tooltip-custom" data-bs-placement="top" class="avatar pull-up my-0" title="" data-bs-original-title="{{ $rs->title }}">
+                                                        @if($rs->image)
+                                                            <img src="{{ Storage::url($rs->image)}}" alt="" height="26" width="26">
+                                                        @endif
                                                     </div>
                                                 </div>
                                             </td>

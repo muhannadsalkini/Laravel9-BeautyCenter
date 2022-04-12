@@ -1,3 +1,4 @@
+
 @extends('layouts.admin')
 
 @section('title', 'service Add')
@@ -42,7 +43,7 @@
                     </div>
 
                     <div class="card-body">
-                        <form class="needs-validation" action="{{route('admin_service_store')}}" method="post">
+                        <form class="needs-validation" action="{{route('admin_service_store')}}" method="post" enctype="multipart/form-data">
                             @csrf
                             <div class="mb-1">
                                 <label class="form-label">Title</label>
@@ -57,8 +58,10 @@
                                 <textarea name="description" class="form-control" id="validationBioBootstrap" rows="2"></textarea>
                             </div>
                             <div class="mb-1">
-                                <label class="form-label">Image</label>
-                                <input type="text" name=image" class="form-control" placeholder="Image">
+                                <div class=" col-md-12 mb-sm-0">
+                                    <label for="formFile" class="form-label">Image</label>
+                                    <input class="form-control" type="file" id="formFile" name="image">
+                                </div>
                             </div>
                             <div class="mb-1">
                                 <label class="form-label">Category ID</label>
@@ -86,7 +89,7 @@
                             <div class="mb-1">
                                 <label class="d-block form-label">Details</label>
 
-                                <textarea name="detail" id="summernote">{{ $data->detail }}</textarea>
+                                <textarea name="detail" id="summernote"></textarea>
                                 <script>
                                     $('#summernote').summernote({
                                         placeholder: 'Details',

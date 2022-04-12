@@ -42,7 +42,7 @@
                     </div>
 
                     <div class="card-body">
-                        <form class="needs-validation" action="{{route('admin_service_update',['id'=>$data->id])}}" method="post">
+                        <form class="needs-validation" action="{{route('admin_service_update',['id'=>$data->id])}}" method="post" enctype="multipart/form-data">
                             @csrf
                             <div class="mb-1">
                                 <label class="form-label">Title</label>
@@ -50,15 +50,17 @@
                             </div>
                             <div class="mb-1">
                                 <label class="form-label">Keywords</label>
-                                <input type="text" name="Keywords" value="{{ $data->keywords }}" class="form-control" placeholder="Keywords">
+                                <input type="text" name="keywords" value="{{ $data->keywords }}" class="form-control" placeholder="Keywords">
                             </div>
                             <div class="mb-1">
                                 <label class="d-block form-label">Description</label>
                                 <textarea name="description" class="form-control" id="validationBioBootstrap" rows="2">{{ $data->description }}</textarea>
                             </div>
                             <div class="mb-1">
-                                <label class="form-label">Image</label>
-                                <input type="text" name="image" value="{{ $data->image }}" class="form-control" placeholder="Image">
+                                <div class=" col-md-12 mb-sm-0">
+                                    <label for="formFile" class="form-label">Image</label>
+                                    <input class="form-control" type="file" id="formFile" name="image">
+                                </div>
                             </div>
                             <div class="mb-1">
                                 <label class="form-label">Category ID</label>
