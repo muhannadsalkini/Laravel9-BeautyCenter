@@ -1,26 +1,24 @@
-@extends('layouts.admin')
+<?php $__env->startSection('title', 'Admin Panel Services'); ?>
+<?php $__env->startSection('Services_status', 'active'); ?>
 
-@section('title', 'Admin Panel Services')
-@section('Services_status', 'active')
-
-@section('vendor_css')
+<?php $__env->startSection('vendor_css'); ?>
     <!-- BEGIN: Vendor CSS -->
-    <link rel="stylesheet" type="text/css" href="{{asset('assets')}}/admin/app-assets/vendors/css/vendors.min.css">
-    <link rel="stylesheet" type="text/css" href="{{asset('assets')}}/admin/app-assets/vendors/css/tables/datatable/dataTables.bootstrap5.min.css">
-    <link rel="stylesheet" type="text/css" href="{{asset('assets')}}/admin/app-assets/vendors/css/tables/datatable/responsive.bootstrap4.min.css">
-    <link rel="stylesheet" type="text/css" href="{{asset('assets')}}/admin/app-assets/vendors/css/tables/datatable/buttons.bootstrap5.min.css">
-    <link rel="stylesheet" type="text/css" href="{{asset('assets')}}/admin/app-assets/vendors/css/tables/datatable/rowGroup.bootstrap4.min.css">
-    <link rel="stylesheet" type="text/css" href="{{asset('assets')}}/admin/app-assets/vendors/css/pickers/flatpickr/flatpickr.min.css">
+    <link rel="stylesheet" type="text/css" href="<?php echo e(asset('assets')); ?>/admin/app-assets/vendors/css/vendors.min.css">
+    <link rel="stylesheet" type="text/css" href="<?php echo e(asset('assets')); ?>/admin/app-assets/vendors/css/tables/datatable/dataTables.bootstrap5.min.css">
+    <link rel="stylesheet" type="text/css" href="<?php echo e(asset('assets')); ?>/admin/app-assets/vendors/css/tables/datatable/responsive.bootstrap4.min.css">
+    <link rel="stylesheet" type="text/css" href="<?php echo e(asset('assets')); ?>/admin/app-assets/vendors/css/tables/datatable/buttons.bootstrap5.min.css">
+    <link rel="stylesheet" type="text/css" href="<?php echo e(asset('assets')); ?>/admin/app-assets/vendors/css/tables/datatable/rowGroup.bootstrap4.min.css">
+    <link rel="stylesheet" type="text/css" href="<?php echo e(asset('assets')); ?>/admin/app-assets/vendors/css/pickers/flatpickr/flatpickr.min.css">
     <!-- END: Vendor CSS -->
-@endsection
+<?php $__env->stopSection(); ?>
 
-@section('page_css')
+<?php $__env->startSection('page_css'); ?>
     <!-- BEGIN: Page CSS -->
-    <link rel="stylesheet" type="text/css" href="{{asset('assets')}}/admin/app-assets/css/core/menu/menu-types/vertical-menu.min.css">
+    <link rel="stylesheet" type="text/css" href="<?php echo e(asset('assets')); ?>/admin/app-assets/css/core/menu/menu-types/vertical-menu.min.css">
     <!-- END: Page CSS -->
-@endsection
+<?php $__env->stopSection(); ?>
 
-@section('content')
+<?php $__env->startSection('content'); ?>
     <!-- BEGIN: Content -->
     <div class="app-content content ">
         <div class="content-overlay"></div>
@@ -49,7 +47,7 @@
                                                     Export
                                                 </span>
                                             </button>
-                                            <button onclick="window.location.href='{{route('admin_service_add')}}'" type="button" class="btn btn-primary waves-effect waves-float waves-light">+ Add New Record</button>
+                                            <button onclick="window.location.href='<?php echo e(route('admin_service_add')); ?>'" type="button" class="btn btn-primary waves-effect waves-float waves-light">+ Add New Record</button>
                                         </div>
                                     </div>
                                 </div>
@@ -90,20 +88,20 @@
                                     </thead>
 
                                     <tbody>
-                                    @foreach ($datalist as $rs)
+                                    <?php $__currentLoopData = $datalist; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $rs): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
                                         <tr class="item">
-                                            <td>{{ $rs->id }}</td>
-                                            <td>{{ $rs->category_id }}</td>
+                                            <td><?php echo e($rs->id); ?></td>
+                                            <td><?php echo e($rs->category_id); ?></td>
                                             <td>
-                                                <span class="fw-bold">{{ $rs->title }}</span>
+                                                <span class="fw-bold"><?php echo e($rs->title); ?></span>
                                             </td>
-                                            <td>{{ $rs->price }}</td>
+                                            <td><?php echo e($rs->price); ?></td>
                                             <td>
                                                 <div class="avatar-group">
                                                     <div data-bs-toggle="tooltip" data-popup="tooltip-custom" data-bs-placement="top" class="avatar pull-up my-0">
-                                                        @if($rs->image)
-                                                            <img src="{{ asset('/images/'.$rs->image) }} "  height="26" width="26">
-                                                        @endif
+                                                        <?php if($rs->image): ?>
+                                                            <img src="<?php echo e(Storage::url($rs->image)); ?> "  height="26" width="26">
+                                                        <?php endif; ?>
                                                     </div>
                                                 </div>
                                             </td>
@@ -116,7 +114,7 @@
                                                     $temp ="badge rounded-pill badge-light-warning me-1";
                                                 }
                                                 ?>
-                                                <span class="{{$temp}}">{{ $rs->status }}</span>
+                                                <span class="<?php echo e($temp); ?>"><?php echo e($rs->status); ?></span>
                                             </td>
                                             <td>
                                                 <div class="dropdown">
@@ -124,13 +122,13 @@
                                                         <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-more-vertical"><circle cx="12" cy="12" r="1"></circle><circle cx="12" cy="5" r="1"></circle><circle cx="12" cy="19" r="1"></circle></svg>
                                                     </button>
                                                     <div class="dropdown-menu">
-                                                        <a class="dropdown-item"href="{{route('admin_service_edit', ['id' => $rs->id])}}">
+                                                        <a class="dropdown-item"href="<?php echo e(route('admin_service_edit', ['id' => $rs->id])); ?>">
                                                             <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-edit-2 me-50">
                                                                 <path d="M17 3a2.828 2.828 0 1 1 4 4L7.5 20.5 2 22l1.5-5.5L17 3z"></path>
                                                             </svg>
                                                             <span>Edit</span>
                                                         </a>
-                                                        <a class="dropdown-item" href="{{route('admin_service_delete', ['id' => $rs->id])}}" onclick="return confirm('Delete! Are you sure?');">
+                                                        <a class="dropdown-item" href="<?php echo e(route('admin_service_delete', ['id' => $rs->id])); ?>" onclick="return confirm('Delete! Are you sure?');">
                                                             <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-trash me-50">
                                                                 <polyline points="3 6 5 6 21 6"></polyline>
                                                                 <path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"></path>
@@ -141,7 +139,7 @@
                                                 </div>
                                             </td>
                                         </tr>
-                                    @endforeach
+                                    <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
                                     </tbody>
                                 </table>
                                 <div class="d-flex justify-content-between mx-0 row">
@@ -172,29 +170,29 @@
         </div>
     </div>
     <!-- END: Content-->
-@endsection
+<?php $__env->stopSection(); ?>
 
-@section('page_vendor_js')
+<?php $__env->startSection('page_vendor_js'); ?>
     <!-- BEGIN: Page Vendor JS-->
-    <script src="{{asset('assets')}}/admin/app-assets/vendors/js/tables/datatable/jquery.dataTables.min.js"></script>
-    <script src="{{asset('assets')}}/admin/app-assets/vendors/js/tables/datatable/dataTables.bootstrap5.min.js"></script>
-    <script src="{{asset('assets')}}/admin/app-assets/vendors/js/tables/datatable/dataTables.responsive.min.js"></script>
-    <script src="{{asset('assets')}}/admin/app-assets/vendors/js/tables/datatable/responsive.bootstrap4.min.js"></script>
-    <script src="{{asset('assets')}}/admin/app-assets/vendors/js/tables/datatable/datatables.checkboxes.min.js"></script>
-    <script src="{{asset('assets')}}/admin/app-assets/vendors/js/tables/datatable/datatables.buttons.min.js"></script>
-    <script src="{{asset('assets')}}/admin/app-assets/vendors/js/tables/datatable/jszip.min.js"></script>
-    <script src="{{asset('assets')}}/admin/app-assets/vendors/js/tables/datatable/pdfmake.min.js"></script>
-    <script src="{{asset('assets')}}/admin/app-assets/vendors/js/tables/datatable/vfs_fonts.js"></script>
-    <script src="{{asset('assets')}}/admin/app-assets/vendors/js/tables/datatable/buttons.html5.min.js"></script>
-    <script src="{{asset('assets')}}/admin/app-assets/vendors/js/tables/datatable/buttons.print.min.js"></script>
-    <script src="{{asset('assets')}}/admin/app-assets/vendors/js/tables/datatable/dataTables.rowGroup.min.js"></script>
-    <script src="{{asset('assets')}}/admin/app-assets/vendors/js/pickers/flatpickr/flatpickr.min.js"></script>
+    <script src="<?php echo e(asset('assets')); ?>/admin/app-assets/vendors/js/tables/datatable/jquery.dataTables.min.js"></script>
+    <script src="<?php echo e(asset('assets')); ?>/admin/app-assets/vendors/js/tables/datatable/dataTables.bootstrap5.min.js"></script>
+    <script src="<?php echo e(asset('assets')); ?>/admin/app-assets/vendors/js/tables/datatable/dataTables.responsive.min.js"></script>
+    <script src="<?php echo e(asset('assets')); ?>/admin/app-assets/vendors/js/tables/datatable/responsive.bootstrap4.min.js"></script>
+    <script src="<?php echo e(asset('assets')); ?>/admin/app-assets/vendors/js/tables/datatable/datatables.checkboxes.min.js"></script>
+    <script src="<?php echo e(asset('assets')); ?>/admin/app-assets/vendors/js/tables/datatable/datatables.buttons.min.js"></script>
+    <script src="<?php echo e(asset('assets')); ?>/admin/app-assets/vendors/js/tables/datatable/jszip.min.js"></script>
+    <script src="<?php echo e(asset('assets')); ?>/admin/app-assets/vendors/js/tables/datatable/pdfmake.min.js"></script>
+    <script src="<?php echo e(asset('assets')); ?>/admin/app-assets/vendors/js/tables/datatable/vfs_fonts.js"></script>
+    <script src="<?php echo e(asset('assets')); ?>/admin/app-assets/vendors/js/tables/datatable/buttons.html5.min.js"></script>
+    <script src="<?php echo e(asset('assets')); ?>/admin/app-assets/vendors/js/tables/datatable/buttons.print.min.js"></script>
+    <script src="<?php echo e(asset('assets')); ?>/admin/app-assets/vendors/js/tables/datatable/dataTables.rowGroup.min.js"></script>
+    <script src="<?php echo e(asset('assets')); ?>/admin/app-assets/vendors/js/pickers/flatpickr/flatpickr.min.js"></script>
     <!-- END: Page Vendor JS-->
-@endsection
+<?php $__env->stopSection(); ?>
 
-@section('page_js')
+<?php $__env->startSection('page_js'); ?>
     <!-- BEGIN: Page JS-->
-    <script src="{{asset('assets')}}/admin/app-assets/js/scripts/tables/table-datatables-basic.min.js"></script>
+    <script src="<?php echo e(asset('assets')); ?>/admin/app-assets/js/scripts/tables/table-datatables-basic.min.js"></script>
     <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.11.5/js/jquery.dataTables.js"></script>
     <script src="https://www.kryogenix.org/code/browser/sorttable/sorttable.js"></script>
     <script>
@@ -221,9 +219,9 @@
         }
     </script>
     <!-- END: Page JS-->
-@endsection
+<?php $__env->stopSection(); ?>
 
-@section('footer')
+<?php $__env->startSection('footer'); ?>
     <script>
         $(window).on('load',  function(){
             if (feather) {
@@ -231,4 +229,6 @@
             }
         })
     </script>
-@endsection
+<?php $__env->stopSection(); ?>
+
+<?php echo $__env->make('layouts.admin', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?><?php /**PATH C:\Php\Laravel9-BeautyCenter\resources\views/admin/service.blade.php ENDPATH**/ ?>

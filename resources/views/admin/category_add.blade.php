@@ -35,7 +35,7 @@
                     </div>
 
                     <div class="card-body">
-                        <form class="needs-validation" novalidate="" action="{{route('admin_category_store')}}" method="post">
+                        <form class="needs-validation" novalidate="" action="{{route('admin_category_store')}}" method="post" enctype="multipart/form-data">
                             @csrf
                             <div class="mb-1">
                                 <label class="form-label">Parent ID</label>
@@ -57,6 +57,10 @@
                             <div class="mb-1">
                                 <label class="d-block form-label">Description</label>
                                 <textarea name="description" class="form-control" id="validationBioBootstrap" rows="2"></textarea>
+                            </div>
+                            <div class=" col-md-12 mb-sm-0">
+                                <label for="formFile" class="form-label">Image</label>
+                                <input class="form-control" type="file" id="formFile" name="image">
                             </div>
                             <div class="mb-1">
                                 <label class="form-label">Status</label>

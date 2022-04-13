@@ -59,7 +59,7 @@
                             <div class="mb-1">
                                 <div class=" col-md-12 mb-sm-0">
                                     <label for="formFile" class="form-label">Image</label>
-                                    <input class="form-control" type="file" id="formFile" name="image">
+                                    <input class="form-control" value="{{ $data->image }}" type="file" id="formFile" name="image">
                                 </div>
                             </div>
                             <div class="mb-1">

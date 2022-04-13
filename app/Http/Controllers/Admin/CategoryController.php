@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Models\Category;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Storage;
 
 class CategoryController extends Controller
 {
@@ -39,15 +40,16 @@ class CategoryController extends Controller
      */
     public function store(Request $request)
     {
-        //echo "test";
-        DB::table('categories')->insert([
-            'parent_id' => $request->input('parent_id'),
-            'title' => $request->input('title'),
-            'keywords' => $request->input('keywords'),
-            'description' => $request->input('description'),
-            'status' => $request->input('status'),
-            'created_at' => date('Y-m-d H:i:s')
-        ]);
+        $data = new Category();
+        $data->parent_id = $request->input('parent_id');
+        $data->title = $request->input('title');
+        $data->keywords = $request->input('keywords');
+        $data->description = $request->input('description');
+        if ($request->file('image')){
+            $data->image = $request->file('image')->store('images'); // file upload // Storage::putFile('images', $request->file('image'));
+        }
+        $data->status = $request->input('status');
+
         return redirect()->route('admin_category')->with('success', 'Category Added');
     }
 
@@ -90,6 +92,9 @@ class CategoryController extends Controller
         $data->title = $request->input('title');
         $data->keywords = $request->input('keywords');
         $data->description = $request->input('description');
+        if ($request->file('image')){
+            $data->image = $request->file('image')->store('images'); // file upload // Storage::putFile('images', $request->file('image'));
+        }
         $data->status = $request->input('status');
         $data->save();
         return redirect()->route('admin_category')->with('success', 'Category Edited');
