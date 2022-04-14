@@ -64,10 +64,10 @@
                                 </div>
                             </div>
                             <div class="mb-1">
-                                <label class="form-label">Category ID</label>
+                                <label class="form-label">Category</label>
                                 <select class="form-select" name="category_id" required="">
                                     @foreach ($datalist as $cl)
-                                        <option value="{{ $cl->id }}">{{ $cl->id }} - {{ $cl->title }}</option>
+                                        <option value="{{ $cl->id }}">{{ \App\Http\Controllers\Admin\CategoryController::getParentTree($cl, $cl->title) }}</option>
                                     @endforeach
                                 </select>
                             </div>

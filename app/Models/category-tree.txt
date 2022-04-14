@@ -1,0 +1,9 @@
+------ Category Tree (Category->sub Category) ------
+1- Model Relationship - Parent ve Children fonksiyonlarini ayarlama
+2- Controllerde Category fonksyonunu ekleme
+3- Controller ve Service Category sorgusunu degistirme
+	$datalist = Category::whith('children')->get();
+4- vew kismini dzenleme (list, edit, add.. sayfalari)
+5- Home categories
+    controller sorgu fonksoyonu yazma
+    view cagirma fonksiyounu yazma

@@ -10,6 +10,24 @@ use Illuminate\Support\Facades\Storage;
 
 class CategoryController extends Controller
 {
+    protected $appends = [
+        'getParentTree'
+    ];
+
+    // get parent tree function
+    public static function getParentTree($category, $title)
+    {
+        if ($category->parent_id == 0)
+        {
+            return $title;
+        }
+
+        $parent = Category::find($category->parent_id);
+        $title = $parent->title.'>'.$title;
+
+        return CategoryController::getParentTree($parent,$title);
+    }
+
     /**
      * Display a listing of the resource.
      *
@@ -17,7 +35,7 @@ class CategoryController extends Controller
      */
     public function index(Request $request)
     {
-        $datalist = DB::select('select * from categories');
+        $datalist = Category::with('children')->get();
         return view('admin.category', ['datalist' => $datalist]);
     }
 
@@ -28,7 +46,7 @@ class CategoryController extends Controller
      */
     public function add()
     {
-        $datalist = DB::select('select * from categories');
+        $datalist = Category::with('children')->get();
         return view('admin.category_add', ['datalist' => $datalist]);
     }
 
@@ -73,7 +91,7 @@ class CategoryController extends Controller
     public function edit(Category $category, $id)
     {
         $data = Category::find($id);  //DB::select("SELECT * FROM categories WHERE Id=?",[$id]);
-        $datalist = DB::select("SELECT * FROM categories");
+        $datalist = Category::with('children')->get();
 
         return view('admin.category_edit', ['data' => $data, 'datalist' => $datalist]);
     }

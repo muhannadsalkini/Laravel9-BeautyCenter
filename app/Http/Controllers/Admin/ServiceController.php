@@ -18,7 +18,8 @@ class ServiceController extends Controller
      */
     public function index()
     {
-        $datalist = DB::select('select * from services');
+        $datalist = Service::with('category')->get();
+        //$datalist = DB::select('select * from categories');
         return view('admin.service', ['datalist' => $datalist]);
     }
 
@@ -29,7 +30,7 @@ class ServiceController extends Controller
      */
     public function create()
     {
-        $datalist = DB::select('select * from categories');
+        $datalist = Service::with('category')->get();
         return view('admin.service_add', ['datalist' => $datalist]);
     }
 
@@ -65,9 +66,11 @@ class ServiceController extends Controller
      * @param  \App\Models\Service  $service
      * @return \Illuminate\Http\Response
      */
-    public function show(Service $service)
+    public function show(Service $service, $id)
     {
-        //
+        $data = Service::find($id);
+        //echo $data;
+        return view('admin.service_show', ['data' => $data]);
     }
 
     /**

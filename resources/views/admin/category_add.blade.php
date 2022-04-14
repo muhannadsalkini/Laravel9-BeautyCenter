@@ -40,9 +40,9 @@
                             <div class="mb-1">
                                 <label class="form-label">Parent ID</label>
                                 <select class="form-select" name="parent_id" required="">
-                                    <option value="0" selected="selected">0 - Main Category</option>
+                                    <option value="0" selected="selected">Main Category</option>
                                     @foreach ($datalist as $rs)
-                                        <option value="{{ $rs->id }}">{{ $rs->id }} - {{ $rs->title }}</option>
+                                        <option value="{{ $rs->id }}">{{ \App\Http\Controllers\Admin\CategoryController::getParentTree($rs, $rs->title) }}</option>
                                     @endforeach
                                 </select>
                             </div>

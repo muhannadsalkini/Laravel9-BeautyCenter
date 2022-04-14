@@ -43,6 +43,7 @@
                         <div class="col-md-8 hidden-sm hidden-xs">
                             <div class="menu">
                                 <nav>
+
                                     <ul>
                                         <li><a href="/">Home</a>
                                             <!--<ul class="dropdown_menu">
@@ -103,47 +104,8 @@
                                             </ul>
                                         </li>-->
 
-                                        <!-- FEATURE -->
-                                        <li class="mega-parent"><a href="#">Feature</a>
-                                            <ul class="mgea-menu">
-                                                <li class="mega-sub"><a href="#">Column one</a>
-                                                    <ul class="mega-sub-item">
-                                                        <li><a href="elements-accordion.html">Accordion</a></li>
-                                                        <li><a href="elements-tab.html">Tab</a></li>
-                                                        <li><a href="elements-table.html">table</a></li>
-                                                        <li><a href="elements-progessbar.html">progressbar</a></li>
-                                                        <li><a href="elements-alerts.html">Alerts</a></li>
-                                                    </ul>
-                                                </li>
-                                                <li class="mega-sub"><a href="#">Column two</a>
-                                                    <ul class="mega-sub-item">
-                                                        <li><a href="elements-audio.html">Audio</a></li>
-                                                        <li><a href="elements-video.html">video</a></li>
-                                                        <li><a href="elements-gallery.html">gallery one</a></li>
-                                                        <li><a href="gallery-2.html">Gallery two</a></li>
-                                                        <li><a href="elements-typhograpy.html">typhogrpahy</a></li>
-                                                    </ul>
-                                                </li>
-                                                <li class="mega-sub"><a href="#">Column Three</a>
-                                                    <ul class="mega-sub-item">
-                                                        <li><a href="elements-testimonial.html">Testimonial</a></li>
-                                                        <li><a href="elements-brand.html">brand</a></li>
-                                                        <li><a href="elements-team.html">Team</a></li>
-                                                        <li><a href="elements-button.html">Button</a></li>
-                                                        <li><a href="elements-map.html">map</a></li>
-                                                    </ul>
-                                                </li>
-                                                <li class="mega-sub"><a href="#">Column one</a>
-                                                    <ul class="mega-sub-item">
-                                                        <li><a href="elements-pricing.html">Pricing table</a></li>
-                                                        <li><a href="elements-fun-fact.html">Fun fact</a></li>
-                                                        <li><a href="elements-feature.html">Features</a></li>
-                                                        <li><a href="elements-video-2.html">Video section</a></li>
-                                                        <li><a href="elements-no-sticky.html">No sticky</a></li>
-                                                    </ul>
-                                                </li>
-                                            </ul>
-                                        </li>
+                                        <!-- Categories -->
+                                        <?php echo $__env->make('home._category', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
 
                                         <!-- BLOG -->
                                         <li><a href="/blog">blog</a></li>
@@ -222,7 +184,7 @@
                         <nav id="dropdown">
                             <ul>
                                 <li><a href="/">Home</a>
-                                    <ul class="dropdown_menu">
+                                    <!--<ul class="dropdown_menu">
                                         <li><a href="/">home page one</a></li>
                                         <li><a href="index-2.html">home page two</a></li>
                                         <li><a href="index-3.html">home page three</a></li>
@@ -230,31 +192,44 @@
                                         <li><a href="index-5.html">home page five</a></li>
                                         <li><a href="index-box.html">home page six</a></li>
                                         <li><a href="index-box-fixed.html">home page seven</a></li>
-                                    </ul>
+                                    </ul>-->
                                 </li>
-                                <li><a href="/shop">shop</a>
+
+                                <!-- ABOUT US -->
+                                <li><a href="about-us">about</a></li>
+
+                                <!-- SERVICES -->
+                                <li class="mega-parent item-2"><a href="/shop">serivces</a>
                                     <ul class="mgea-menu">
-                                        <li class="mega-sub"><a href="#">Column one</a>
+                                        <li class="mega-sub"><a href="/shop">SHOP</a>
                                             <ul class="mega-sub-item">
-                                                <li><a href="/shop">shop page</a></li>
-                                                <li><a href="/shop">shop sidebar</a></li>
+                                                <li><a href="/shop">our products</a></li>
+                                                <li><a href="/shop">top sales</a></li>
                                                 <li><a href="wishlist.html">wishlist</a></li>
                                                 <li><a href="product-details.html">product Details</a></li>
                                                 <li><a href="/cart">cart</a></li>
                                             </ul>
                                         </li>
-                                        <li class="mega-sub"><a href="#">Column two</a>
+                                        <li class="mega-sub"><a href="#">reservations</a>
                                             <ul class="mega-sub-item">
-                                                <li><a href="/checkout">checkout</a></li>
-                                                <li><a href="gallery-2.html">Gallery 2</a></li>
-                                                <li><a href="gallery.html">gallery</a></li>
-                                                <li><a href="elements-feature.html">Feature</a></li>
-                                                <li><a href="elements-fun-fact.html">Fun fact</a></li>
+                                                <li><a href="/checkout">lunch</a></li>
+                                                <li><a href="gallery-2.html">skin care</a></li>
+                                                <li><a href="gallery.html">hair cut</a></li>
+                                                <li><a href="elements-feature.html">nail care</a></li>
+                                                <li><a href="elements-fun-fact.html">beauty spa</a></li>
                                             </ul>
+                                        </li>
+                                        <li class="mega-sub"><a href="#">Column Three</a>
+                                            <div class="mega-img">
+                                                <img src="<?php echo e(asset('assets')); ?>/images/product/mega.jpg" alt="">
+                                            </div>
                                         </li>
                                     </ul>
                                 </li>
-                                <li><a href="about-us">about</a></li>
+
+
+
+                                <!-- PAGES -->
                                 <!--<li><a href="#">pages</a>
                                     <ul class="dropdown_menu">
                                         <li><a href="about-us">about us</a></li>
@@ -266,48 +241,15 @@
                                         <li><a href="/shop">shop pages</a></li>
                                     </ul>
                                 </li>-->
-                                <li><a href="#">Feature</a>
-                                    <ul class="mgea-menu">
-                                        <li class="mega-sub"><a href="#">Column one</a>
-                                            <ul class="mega-sub-item">
-                                                <li><a href="elements-accordion.html">Accordion</a></li>
-                                                <li><a href="elements-tab.html">Tab</a></li>
-                                                <li><a href="elements-table.html">table</a></li>
-                                                <li><a href="elements-progessbar.html">progressbar</a></li>
-                                                <li><a href="elements-alerts.html">Alerts</a></li>
-                                            </ul>
-                                        </li>
-                                        <li class="mega-sub"><a href="#">Column two</a>
-                                            <ul class="mega-sub-item">
-                                                <li><a href="elements-audio.html">Audio</a></li>
-                                                <li><a href="elements-video.html">video</a></li>
-                                                <li><a href="elements-gallery.html">gallery one</a></li>
-                                                <li><a href="gallery-2.html">Gallery two</a></li>
-                                                <li><a href="elements-typhograpy.html">typhogrpahy</a></li>
-                                            </ul>
-                                        </li>
-                                        <li class="mega-sub"><a href="#">Column Three</a>
-                                            <ul class="mega-sub-item">
-                                                <li><a href="elements-testimonial.html">Testimonial</a></li>
-                                                <li><a href="elements-brand.html">brand</a></li>
-                                                <li><a href="elements-team.html">Team</a></li>
-                                                <li><a href="elements-button.html">Button</a></li>
-                                                <li><a href="elements-map.html">map</a></li>
-                                            </ul>
-                                        </li>
-                                        <li class="mega-sub"><a href="#">Column one</a>
-                                            <ul class="mega-sub-item">
-                                                <li><a href="elements-pricing.html">Pricing table</a></li>
-                                                <li><a href="elements-fun-fact.html">Fun fact</a></li>
-                                                <li><a href="elements-feature.html">Features</a></li>
-                                                <li><a href="elements-video-2.html">Video section</a></li>
-                                                <li><a href="elements-no-sticky.html">No sticky</a></li>
-                                            </ul>
-                                        </li>
-                                    </ul>
-                                </li>
+
+                                <!-- Categories -->
+                            <?php echo $__env->make('home._category', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
+
+                            <!-- BLOG -->
                                 <li><a href="/blog">blog</a></li>
-                                <li><a href="contact-us">contact</a></li>
+
+                                <!-- CONTACT US -->
+                                <li><a href="/contact-us">contact</a></li>
                             </ul>
                         </nav>
                     </div>

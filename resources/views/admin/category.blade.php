@@ -83,7 +83,7 @@
                                     <thead>
                                     <tr>
                                         <th>Id</th>
-                                        <th>Parent Id</th>
+                                        <th>Parent</th>
                                         <th>Image</th>
                                         <th>Title</th>
                                         <th>Status</th>
@@ -95,7 +95,7 @@
                                     @foreach ($datalist as $rs)
                                         <tr class="item">
                                             <td>{{ $rs->id }}</td>
-                                            <td>{{ $rs->parent_id }}</td>
+                                            <td>{{ \App\Http\Controllers\Admin\CategoryController::getParentTree($rs, $rs->title) }}</td>
                                             <td>
                                                 <div class="avatar-group">
                                                     <div data-bs-toggle="tooltip" data-popup="tooltip-custom" data-bs-placement="top" class="avatar pull-up my-0" title="" data-bs-original-title="{{ $rs->title }}">
