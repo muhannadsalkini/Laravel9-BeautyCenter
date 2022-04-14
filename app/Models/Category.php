@@ -8,4 +8,11 @@ use Illuminate\Database\Eloquent\Model;
 class Category extends Model
 {
     use HasFactory;
+
+    // One To Many
+    public function services()
+    {
+        return $this->hasMany(Service::class);
+    }
+
 }

@@ -78,7 +78,7 @@
                                     <thead>
                                     <tr>
                                         <th>Id</th>
-                                        <th>Category Id</th>
+                                        <th>Category</th>
                                         <th>Title</th>
                                         <th>Price</th>
                                         <th>Image</th>
@@ -91,10 +91,8 @@
                                     <?php $__currentLoopData = $datalist; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $rs): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
                                         <tr class="item">
                                             <td><?php echo e($rs->id); ?></td>
-                                            <td><?php echo e($rs->category_id); ?></td>
-                                            <td>
-                                                <span class="fw-bold"><?php echo e($rs->title); ?></span>
-                                            </td>
+                                            <td><?php echo e($rs->category->title); ?></td>
+                                            <td><?php echo e($rs->title); ?></td>
                                             <td><?php echo e($rs->price); ?></td>
                                             <td>
                                                 <div class="avatar-group">
@@ -136,6 +134,7 @@
                                                             <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-trash me-50">
                                                                 <polyline points="3 6 5 6 21 6"></polyline>
                                                                 <path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"></path>
+
                                                             </svg>
                                                             <span>Delete</span>
                                                         </a>

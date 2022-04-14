@@ -57,7 +57,7 @@
                     <div class="card mb-0">
                         <div class="card-body">
                             <a href="/admin" class="brand-logo">
-                                <img src="{{asset('assets')}}/images/logo/logo.png" alt="">
+                                <img src="{{asset('assets')}}/images/logo/admin-logo.png" alt="">
                             </a>
 
                             <h4 class="card-title mb-1">Welcome to Beauty House! 👋</h4>
