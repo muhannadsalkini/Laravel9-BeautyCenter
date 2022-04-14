@@ -5,7 +5,13 @@
             <li class="nav-item me-auto">
                 <a class="navbar-brand" href="{{route('admin_home')}}">
 		            <span class="brand-logo"><img  src="{{asset('assets')}}/images/logo/logo-icon.png" alt="" ></span>
-                    <img  class="brand-text"  src="{{asset('assets')}}/images/logo/logo-text.png" alt="" >
+                    <?php
+                    $logo_name = 'admin-logo-text.png';
+                    /**if($_REQUEST('theme')){
+                    $logo_name = 'admin-logo-text-white.png';
+                    }**/
+                    ?>
+                    <img class="brand-text" src="{{asset('assets')}}/images/logo/{{ $logo_name }}" alt="" >
                 </a>
             </li>
             <li class="nav-item nav-toggle">
@@ -61,14 +67,13 @@
                     <span class="menu-title text-truncate" data-i18n="Invoice">Services</span>
                 </a>
             </li>
-
-
-            <li class=" nav-item">
-                <a class="d-flex align-items-center" href="app-todo.html">
-                    <i data-feather="check-square"></i>
-                    <span class="menu-title text-truncate" data-i18n="Todo">Todo</span>
+            <li class=" nav-item" @yield('Setting_status')>
+                <a class="d-flex align-items-center" href="{{route('admin_setting')}}">
+                    <i data-feather='settings'></i>
+                    <span class="menu-title text-truncate" data-i18n="settings">Settings</span>
                 </a>
             </li>
+
             <li class=" nav-item"><a class="d-flex align-items-center" href="app-calendar.html">
                     <i data-feather="calendar"></i>
                     <span class="menu-title text-truncate" data-i18n="Calendar">Calendar</span>

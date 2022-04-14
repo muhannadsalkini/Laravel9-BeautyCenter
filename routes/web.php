@@ -7,7 +7,6 @@ use App\Http\Controllers\BlogController;
 use App\Http\Controllers\ShopController;
 use App\Http\Controllers\CartController;
 use App\Http\Controllers\CheckotController;
-//use App\Http\Controllers\Admin\HomeController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -24,7 +23,7 @@ use Illuminate\Support\Facades\Route;
 // Home
 Route::get('/', [HomeController::class, 'index']);
 Route::get('/about-us', [HomeController::class, 'about']);
-Route::get('/blog', [HomeController::class, 'blog']);
+Route::get('/blog', [HomeController::class, 'comingsoon']);
 Route::get('/cart', [HomeController::class, 'cart']);
 Route::get('/checkout', [HomeController::class, 'checkout']);
 Route::get('/contact-us', [HomeController::class, 'contact']);
@@ -54,9 +53,22 @@ Route::middleware('auth')->prefix('admin')->group(function (){
         Route::get('/edit/{id}', [App\Http\Controllers\Admin\ServiceController::class, 'edit'])->name('admin_service_edit');
         Route::post('/update/{id}', [App\Http\Controllers\Admin\ServiceController::class, 'update'])->name('admin_service_update');
         Route::get('/delete/{id}', [App\Http\Controllers\Admin\ServiceController::class, 'destroy'])->name('admin_service_delete');
-
     });
+
+    // Service Image Gallery
+    route::prefix('image')->group(function (){
+        Route::get('/create/{service_id}', [App\Http\Controllers\Admin\ImageController::class, 'create'])->name('admin_image_add');
+        Route::post('/store/{service_id}', [App\Http\Controllers\Admin\ImageController::class, 'store'])->name('admin_image_store');
+        Route::get('/show', [App\Http\Controllers\Admin\ImageController::class, 'show'])->name('admin_image_show');
+        Route::get('/delete/{id}/{service_id}', [App\Http\Controllers\Admin\ImageController::class, 'destroy'])->name('admin_image_delete');
+    });
+
+    // Settings
+    Route::get('setting', [App\Http\Controllers\Admin\SettingController::class, 'index'])->name('admin_setting');
+    Route::post('setting/update', [App\Http\Controllers\Admin\SettingController::class, 'update'])->name('admin_setting_update');
+
 });
+
 //Admin login
 Route::get('/admin/login', [HomeController::class, 'login'])->name('admin_login');
 Route::post('/admin/logincheck', [HomeController::class, 'logincheck'])->name('admin_logincheck');

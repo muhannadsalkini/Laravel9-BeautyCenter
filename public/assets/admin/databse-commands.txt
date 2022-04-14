@@ -5,6 +5,8 @@
 3- php artisan migrate  // degisiklikleri kayd etme
 4- php artisan make:controller Admin\CategoryController --resource
 5- // wep dosyasinda route'leri ayarlama
+7- View
+8- Controller
 
 
 ----Service Table Commends-----
@@ -13,3 +15,37 @@
 3- php artisan migrate
 4- php artisan make:controller Admin\ServiceController --resource --model=Service // controller olusturma
 5- // wep dosyasinda route'leri ayarlama
+7- View
+8- Controller
+
+
+----Service Image Commends-----
+1- php artisan make:model Image -m  // migration dosyalari ile olusur
+2- Databse->Migration->xxx_create_images_table.php  // olusan tabloya alanlari ekleme
+3- php artisan migrate
+4- php artisan make:controller Admin\ImageController --resource --model=Image // controller olusturma
+5- // wep dosyasinda route'leri ayarlama
+7- View
+8- Controller
+
+----Settings Commends-----
+1- php artisan make:model Setting -m  // migration dosyalari ile olusur
+2- Databse->Migration->xxx_create_settings_table.php  // olusan tabloya alanlari ekleme
+3- php artisan migrate
+4- php artisan make:controller Admin\SettingController --resource --model=Setting // controller olusturma
+5- // wep dosyasinda route'leri ayarlama // edit ve update
+7- View  // duzenleme sayfasi ve text editoru ekleme
+8- Controller  // duzenleme ve ekleme fonksiyonlari
+9- Admin Sidebar setting linki olusturma
+
+
+----Sosyal Media Commends-----
+1- php artisan make:model SocialMedia-m  // migration dosyalari ile olusur
+2- Databse->Migration->xxx_create_SocialMedias_table.php  // olusan tabloya alanlari ekleme
+3- php artisan migrate
+4- php artisan make:controller Admin\SocialMediaController --resource --model=SocialMedia // controller olusturma
+5- // wep dosyasinda route'leri ayarlama // 
+7- View  // 
+8- Controller  // 
+
+

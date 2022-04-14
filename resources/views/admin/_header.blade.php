@@ -29,11 +29,15 @@ use Illuminate\Support\Facades\Auth;
             <!--<li class="nav-item dropdown dropdown-language"><a class="nav-link dropdown-toggle" id="dropdown-flag" href="#" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="flag-icon flag-icon-us"></i><span class="selected-language">English</span></a>
                 <div class="dropdown-menu dropdown-menu-end" aria-labelledby="dropdown-flag"><a class="dropdown-item" href="#" data-language="en"><i class="flag-icon flag-icon-us"></i> English</a><a class="dropdown-item" href="#" data-language="fr"><i class="flag-icon flag-icon-fr"></i> French</a><a class="dropdown-item" href="#" data-language="de"><i class="flag-icon flag-icon-de"></i> German</a><a class="dropdown-item" href="#" data-language="pt"><i class="flag-icon flag-icon-pt"></i> Portuguese</a></div>
             </li>-->
-            <li class="nav-item d-none d-lg-block"><a class="nav-link nav-link-style"><i class="ficon" data-feather="moon"></i></a></li>
+            <li class="nav-item d-none d-lg-block">
+                <a class="nav-link nav-link-style">
+                    <i class="ficon" data-feather="moon"></i>
+                </a>
+            </li>
             <li class="nav-item nav-search"><a class="nav-link nav-link-search"><i class="ficon" data-feather="search"></i></a>
                 <div class="search-input">
                     <div class="search-input-icon"><i data-feather="search"></i></div>
-                    <input class="form-control input" type="text" placeholder="Explore Vuexy..." tabindex="-1" data-search="search">
+                    <input class="form-control input" type="text" placeholder="Explore..." tabindex="-1" data-search="search">
                     <div class="search-input-close"><i data-feather="x"></i></div>
                     <ul class="search-list search-list-main"></ul>
                 </div>
@@ -202,7 +206,7 @@ use Illuminate\Support\Facades\Auth;
                 <div class="dropdown-menu dropdown-menu-end" aria-labelledby="dropdown-user"><a class="dropdown-item" href="page-profile.html"><i class="me-50" data-feather="user"></i> Profile</a><a class="dropdown-item" href="app-email.html"><i class="me-50" data-feather="mail"></i> Inbox</a><a class="dropdown-item" href="app-todo.html"><i class="me-50" data-feather="check-square"></i> Task</a><a class="dropdown-item" href="app-chat.html"><i class="me-50" data-feather="message-square"></i> Chats</a>
                     <div class="dropdown-divider"></div>
                     @auth
-                    <a class="dropdown-item" href="page-account-settings.html"><i class="me-50" data-feather="settings"></i> Settings</a>
+                    <a class="dropdown-item" href="{{ route('admin_setting') }}"><i class="me-50" data-feather="settings"></i> Settings</a>
                     <a class="dropdown-item" href="page-pricing.html"><i class="me-50" data-feather="credit-card"></i> Pricing</a>
                     <a class="dropdown-item" href="page-faq.html"><i class="me-50" data-feather="help-circle"></i> FAQ</a>
                     <a class="dropdown-item" href="{{ route('admin_logout') }}"><i class="me-50" data-feather="power"></i> Logout</a>
