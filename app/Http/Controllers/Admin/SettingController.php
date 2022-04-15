@@ -107,7 +107,7 @@ class SettingController extends Controller
         $data->status = $request->input('status');
 
         $data->save();
-        return redirect()->route('admin.setting_edit')->with('success', 'Service Edited');
+        return redirect()->route('admin_setting')->with('success', 'Service Edited');
     }
 
     /**

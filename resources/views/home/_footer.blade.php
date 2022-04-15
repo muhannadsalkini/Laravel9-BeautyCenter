@@ -1,3 +1,7 @@
+@php
+    $setting = \App\Http\Controllers\HomeController::getsetting();
+@endphp
+
 <!--footer start-->
 <div class="footer">
     <div class="footer-top ptb-100">
@@ -10,17 +14,15 @@
                         </div>
                         <div class="contact-action mb-15">
                             <span><i class="zmdi zmdi-pin"></i></span>
-                            <p> 100. YIL MAH. MERKEZ <br> KARABÜK / TURKIYE </p>
+                            @if($setting->address)<p style="padding-top: 15px"> {{ $setting->address }} </p>@endif
                         </div>
                         <div class="contact-action mb-15">
                             <span><i class="zmdi zmdi-email"></i></span>
-                            <p>demo@example.com<br>demo@example.com</p>
+                            @if($setting->email)<p style="padding-top: 15px"> {{ $setting->email }} </p>@endif
                         </div>
                         <div class="contact-action">
-                                    <span>
-                                        <i class="zmdi zmdi-phone"></i>
-                                    </span>
-                            <p>0123456789<br>0123456789</p>
+                            <span><i class="zmdi zmdi-phone"></i></span>
+                            @if($setting->phone)<p style="padding-top: 15px"> {{ $setting->phone }} </p>@endif
                         </div>
                     </div>
                 </div>
@@ -75,7 +77,7 @@
             <div class="row">
                 <div class="col-md-12 col-sm-12 col-xs-12">
                     <div class="copyright">
-                        <p class="copyright-text">©  2022 beautyhouse Mede with ❤️ by  <a href="https://www.instagram.com/muhannad.salkini/" target="_blank">Muhannad SALKINI</a> </p>
+                        <p class="copyright-text">© 2022 {{ $setting->company }} | Mede with ❤️ by  <a href="https://www.instagram.com/muhannad.salkini/" target="_blank">Muhannad SALKINI</a> </p>
                     </div>
                 </div>
             </div>

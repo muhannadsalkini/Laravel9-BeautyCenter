@@ -2,9 +2,11 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
-    <title>Beautyhouse | <?php echo $__env->yieldContent('title'); ?></title>
-    <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title><?php echo $__env->yieldContent('title'); ?></title>
+    <meta name="description" content="<?php echo $__env->yieldContent('description'); ?>">
+    <meta name="keywords" content="<?php echo $__env->yieldContent('keywords'); ?>">
 
     <!-- Place favicon.ico in the root directory -->
     <link href="<?php echo e(asset('assets')); ?>/images/apple-touch-icon.png" type="<?php echo e(asset('assets')); ?>/images/x-icon" rel="shortcut icon">

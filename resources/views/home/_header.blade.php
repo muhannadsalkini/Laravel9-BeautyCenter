@@ -1,3 +1,7 @@
+@php
+$setting = \App\Http\Controllers\HomeController::getsetting();
+@endphp
+
 <!--[if lt IE 8]>
 <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
 <![endif]-->
@@ -12,20 +16,20 @@
                     <div class="col-md-6 col-sm-6 hidden-xs">
                         <div class="header-left">
                             <div class="call-center">
-                                <p><i class="zmdi zmdi-phone"></i>0123456789</p>
+                                @if($setting->phone != null)<p><i class="zmdi zmdi-phone"></i>{{$setting->phone}}</p>@endif
                             </div>
                             <div class="mail-address">
-                                <p><i class="zmdi zmdi-email"></i>demo@example.com</p>
+                                @if($setting->email)<p><i class="zmdi zmdi-email"></i>{{$setting->email}}</p>@endif
                             </div>
                         </div>
                     </div>
                     <div class="col-md-6 col-sm-6 col-xs-12">
                         <div class="social-icons">
-                            <a href="https://www.facebook.com/muhannadsalkini02" target="_blank"><i class="zmdi zmdi-facebook"></i></a>
-                            <a href="https://twitter.com/muhannadsalkini" target="_blank"><i class="zmdi zmdi-twitter"></i></a>
-                            <a href="https://www.youtube.com/channel/UCfrWNQfgw6mKTULUl0ok-8A" target="_blank"><i class="zmdi zmdi-youtube"></i></a>
+                            @if($setting->facebook != null)<a href="{{ $setting->facebook }}" target="_blank"><i class="zmdi zmdi-facebook"></i></a>@endif
+                            @if($setting->instagram)<a href="{{ $setting->instagram }}" target="_blank"><i class="zmdi zmdi-instagram"></i></a>@endif
+                            @if($setting->twitter)<a href="{{ $setting->twitter }}" target="_blank"><i class="zmdi zmdi-twitter"></i></a>@endif
+                            @if($setting->youtube)<a href="{{ $setting->youtube }}" target="_blank"><i class="zmdi zmdi-youtube"></i></a>@endif
                             <!--<a href="#" target="_blank"><i class="zmdi zmdi-pinterest"></i></a>-->
-                            <a href="https://www.instagram.com/muhannad.salkini/" target="_blank"><i class="zmdi zmdi-instagram"></i></a>
                         </div>
                     </div>
                 </div>
@@ -46,7 +50,7 @@
                                     <ul>
                                         <li><a href="/">Home</a></li>
                                         <li><a href="about-us">about</a></li>
-                                        <li class="mega-parent item-2"><a href="/shop">serivces</a>
+                                        <!--<li class="mega-parent item-2"><a href="/shop">serivces</a>
                                             <ul class="mgea-menu">
                                                 <li class="mega-sub"><a href="/shop">SHOP</a>
                                                     <ul class="mega-sub-item">
@@ -72,7 +76,7 @@
                                                     </div>
                                                 </li>
                                             </ul>
-                                        </li>
+                                        </li>-->
                                         <!-- Categories -->
                                         @include('home._category')
                                         <!-- BLOG -->
@@ -86,33 +90,53 @@
                         </div>
                         <div class="col-md-2 col-sm-6 col-xs-3">
                             <div class="header-action-box">
+
+                                @auth
+                                <div class="mini-cart" >
+                                    <div class="cart-icon">
+                                        <a href=""><i class="zmdi zmdi-account"></i></a>
+                                    </div>
+                                    <div class="mini-cart-box right">
+                                        <div class="mini-cart-product fix">
+                                            <div class="content fix">
+                                                <a href="#" class="title"><i class="zmdi zmdi-account"></i> My account</a>
+                                            </div>
+                                        </div>
+                                        <div class="mini-cart-product fix">
+                                            <div class="content fix">
+                                                <a href="#" class="title"><i class="zmdi zmdi-badge-chec"></i> My Wishlist</a>
+                                            </div>
+                                        </div>
+                                        <div class="mini-cart-product fix">
+                                            <div class="content fix">
+                                                <a href="#" class="title"><i class="zmdi zmdi-settings"></i> Settings</a>
+                                            </div>
+                                        </div>
+                                        <div class="mini-cart-product fix">
+                                            <div class="content fix">
+                                                <a href=" {{ route('logout') }}" class="title"><i class="zmdi zmdi-account"></i> Logout</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                @endauth
+                                @guest
+                                    <div class="mini-cart" >
+                                        <div  class="cart-icon">
+                                            <a style="height: 5px"href="/login" > Login</a><a style="height: 5px" href="/register" >/ Register</a>
+                                        </div>
+                                    </div>
+                                @endguest
+
+                                <!-- Mini Cart -->
                                 <div class="mini-cart" >
                                     <div class="cart-icon">
                                         <a href="/cart"><i class="zmdi zmdi-shopping-cart"></i></a>
                                         <span>2</span>
                                     </div>
-                                    <!-- Mini Cart -->
                                     <div class="mini-cart-box right">
                                         <div class="mini-cart-product fix">
                                             <a href="#" class="image"><img src="{{asset('assets')}}/images/cart/mini-1.jpg" alt="" /></a>
-                                            <div class="content fix">
-                                                <a href="#" class="title">wooden furniture</a>
-                                                <p>Color: Black</p>
-                                                <p>Size: SL</p>
-                                                <button class="remove"><i class="zmdi zmdi-close"></i></button>
-                                            </div>
-                                        </div>
-                                        <div class="mini-cart-product fix">
-                                            <a href="#" class="image"><img src="{{asset('assets')}}/images/cart/mini-1.jpg" alt="" /></a>
-                                            <div class="content fix">
-                                                <a href="#" class="title">wooden furniture</a>
-                                                <p>Color: Black</p>
-                                                <p>Size: SL</p>
-                                                <button class="remove"><i class="zmdi zmdi-close"></i></button>
-                                            </div>
-                                        </div>
-                                        <div class="mini-cart-product fix">
-                                            <a href="#" class="image"><img src="images/cart/mini-1.jpg" alt="" /></a>
                                             <div class="content fix">
                                                 <a href="#" class="title">wooden furniture</a>
                                                 <p>Color: Black</p>
@@ -124,8 +148,9 @@
                                             <a href="/checkout">checkout</a>
                                         </div>
                                     </div>
-                                    <!--mini cart end-->
                                 </div>
+                                <!--mini cart end-->
+
                                 <div class="search">
                                     <a href="#"><i class="zmdi zmdi-search"></i></a>
                                 </div>
@@ -140,6 +165,7 @@
                                     </form>
                                 </div>
                             </div>
+
                         </div>
                     </div>
                 </div>

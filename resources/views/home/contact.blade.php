@@ -28,7 +28,7 @@
                                 <a href="#" style="padding-top: 11px;"><i class="zmdi zmdi-phone" ></i></a>
                             </div>
                             <div class="contact-desc">
-                                <p>+012 345 678 102<br>+012 345 678 102</p>
+                                @if($setting->phone)<p style="padding-top: 15px"> {{ $setting->phone }} </p>@endif
                             </div>
                         </div>
                     </div>
@@ -38,7 +38,7 @@
                                 <a href="#" style="padding-top: 11px;"><i class="zmdi zmdi-dribbble"></i></a>
                             </div>
                             <div class="contact-desc">
-                                <p>urname@email.com<br>urwebsitenaem.com</p>
+                                @if($setting->email)<p style="padding-top: 15px"> {{ $setting->email }} </p>@endif
                             </div>
                         </div>
                     </div>
@@ -48,7 +48,7 @@
                                 <a href="#" style="padding-top: 11px;"><i class="zmdi zmdi-pin"></i></a>
                             </div>
                             <div class="contact-desc">
-                                <p> 100. YIL MAH. MERKEZ <br> KARABÜK / TURKIYE </p>
+                                @if($setting->address)<p style="padding-top: 15px"> {{ $setting->address }} </p>@endif
                             </div>
                         </div>
                     </div>

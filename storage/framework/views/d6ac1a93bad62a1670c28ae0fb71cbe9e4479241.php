@@ -1,6 +1,9 @@
-<?php $__env->startSection('title', 'Home'); ?>
+<?php $__env->startSection('title', $setting->title); ?>
+<?php $__env->startSection('description'); ?>
+    <?php echo e($setting->description); ?>
 
-<?php $__env->startSection('keywords','Bakim, Guzellik'); ?>
+<?php $__env->stopSection(); ?>
+<?php $__env->startSection('keywords',$setting->keywords); ?>
 
 
 <?php $__env->startSection('content'); ?>
