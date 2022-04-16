@@ -44,8 +44,8 @@ $setting = \App\Http\Controllers\HomeController::getsetting();
                                 <a href="/"><img src="{{asset('assets')}}/images/logo/logo.png" alt=""></a>
                             </div>
                         </div>
-                        <div class="col-md-8 hidden-sm hidden-xs">
-                            <div class="menu">
+                        <div class="col-md-8 hidden-sm hidden-xs" style="width: 55%;">
+                            <div class="menu" >
                                 <nav>
                                     <ul>
                                         <li><a href="/">Home</a></li>
@@ -88,33 +88,44 @@ $setting = \App\Http\Controllers\HomeController::getsetting();
                                 </nav>
                             </div>
                         </div>
+
                         <div class="col-md-2 col-sm-6 col-xs-3">
-                            <div class="header-action-box">
+                            <div class="header-action-box" style="width: 330px;">
 
                                 @auth
                                 <div class="mini-cart" >
                                     <div class="cart-icon">
-                                        <a href=""><i class="zmdi zmdi-account"></i></a>
+                                        <a href=""><i class="zmdi zmdi-account"></i><i style="font-size: small; padding-left: 8px; ">{{ \Illuminate\Support\Facades\Auth::user()->name }}</i></a>
                                     </div>
-                                    <div class="mini-cart-box right">
+                                    <div class="mini-cart-box left" style=" width:120px;">
                                         <div class="mini-cart-product fix">
                                             <div class="content fix">
-                                                <a href="#" class="title"><i class="zmdi zmdi-account"></i> My account</a>
+                                                <a href="{{ route('myprofile') }}" class="title"><i class="zmdi zmdi-account" style="padding-right: 5px"></i> Account</a>
                                             </div>
                                         </div>
                                         <div class="mini-cart-product fix">
                                             <div class="content fix">
-                                                <a href="#" class="title"><i class="zmdi zmdi-badge-chec"></i> My Wishlist</a>
+                                                <a href="#" class="title">
+                                                    <svg
+                                                        xmlns="http://www.w3.org/2000/svg" style="padding-right: 5px" width="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-heart">
+                                                        <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path>
+                                                    </svg> Wishlist</a>
                                             </div>
                                         </div>
                                         <div class="mini-cart-product fix">
                                             <div class="content fix">
-                                                <a href="#" class="title"><i class="zmdi zmdi-settings"></i> Settings</a>
+                                                <a href="#" class="title"><i class="zmdi zmdi-settings" style="padding-right: 5px"></i> Settings</a>
                                             </div>
                                         </div>
                                         <div class="mini-cart-product fix">
                                             <div class="content fix">
-                                                <a href=" {{ route('logout') }}" class="title"><i class="zmdi zmdi-account"></i> Logout</a>
+                                                <a href=" {{ route('logout') }}" class="title">
+                                                    <svg
+                                                        xmlns="http://www.w3.org/2000/svg" style="padding-right: 5px" width="16"  viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" >
+                                                        <path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"></path>
+                                                        <polyline points="16 17 21 12 16 7"></polyline>
+                                                        <line x1="21" y1="12" x2="9" y2="12"></line>
+                                                    </svg> Logout</a>
                                             </div>
                                         </div>
                                     </div>
@@ -123,7 +134,7 @@ $setting = \App\Http\Controllers\HomeController::getsetting();
                                 @guest
                                     <div class="mini-cart" >
                                         <div  class="cart-icon">
-                                            <a style="height: 5px"href="/login" > Login</a><a style="height: 5px" href="/register" >/ Register</a>
+                                            <a style="font-size: medium" href="/login" > Login</a><a style="font-size: medium" href="/register" >/ Register</a>
                                         </div>
                                     </div>
                                 @endguest

@@ -7,6 +7,7 @@ use App\Http\Controllers\BlogController;
 use App\Http\Controllers\ShopController;
 use App\Http\Controllers\CartController;
 use App\Http\Controllers\CheckotController;
+use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -69,10 +70,14 @@ Route::middleware('auth')->prefix('admin')->group(function (){
 
 });
 
+Route::middleware('auth')->prefix('myaccount')->namespace('myaccount')->group(function (){
+    Route::get('/', [UserController::class, 'index'])->name('myprofile');
+});
+
 
 Route::get('/admin/login', [HomeController::class, 'login'])->name('admin_login');
 Route::post('/admin/logincheck', [HomeController::class, 'logincheck'])->name('admin_logincheck');
-Route::get('/logout', [HomeController::class, 'logout'])->name('admin_logout');
+Route::get('/logout', [HomeController::class, 'logout'])->name('logout');
 
 
 Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
