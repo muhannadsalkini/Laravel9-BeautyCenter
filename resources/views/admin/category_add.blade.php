@@ -48,15 +48,18 @@
                             </div>
                             <div class="mb-1">
                                 <label class="form-label">Title</label>
-                                <input type="text" name="title" class="form-control" placeholder="Title">
+                                <input type="text" name="title" class="@error('title') is-invalid @enderror form-control" placeholder="Title">
+                                @error('title')<div class="alert alert-danger">{{ $message }}</div>@enderror
                             </div>
                             <div class="mb-1">
                                 <label class="form-label">Keywords</label>
-                                <input type="text" name="Keywords" class="form-control" placeholder="Keywords">
+                                <input type="text" name="keywords" class="@error('keywords') is-invalid @enderror form-control" placeholder="Keywords">
+                                @error('keywords')<div class="alert alert-danger">{{ $message }}</div>@enderror
                             </div>
                             <div class="mb-1">
                                 <label class="d-block form-label">Description</label>
-                                <textarea name="description" class="form-control" id="validationBioBootstrap" rows="2"></textarea>
+                                <textarea name="description" class="@error('description') is-invalid @enderror form-control" id="validationBioBootstrap" rows="2"></textarea>
+                                @error('description')<div class="alert alert-danger">{{ $message }}</div>@enderror
                             </div>
                             <div class=" col-md-12 mb-sm-0">
                                 <label for="formFile" class="form-label">Image</label>

@@ -23,7 +23,7 @@ class CategoryController extends Controller
         }
 
         $parent = Category::find($category->parent_id);
-        $title = $parent->title.'>'.$title;
+        $title = $parent->title.' > '.$title;
 
         return CategoryController::getParentTree($parent,$title);
     }
@@ -58,6 +58,14 @@ class CategoryController extends Controller
      */
     public function store(Request $request)
     {
+        $this->validate($request,[
+            'parent_id'=>'required',
+            'title'=>'required|min:2|max:149',
+            'keywords'=>'required',
+            'description'=>'required',
+            'status'=>'required',
+        ]);
+
         $data = new Category();
         $data->parent_id = $request->input('parent_id');
         $data->title = $request->input('title');

@@ -93,7 +93,8 @@
                                     @foreach ($datalist as $rs)
                                         <tr class="item">
                                             <td>{{ $rs->id }}</td>
-                                            <td>{{ \App\Http\Controllers\Admin\CategoryController::getParentTree($rs->category, $rs->category->title) }}</td>
+                                            <td>@if($rs->category){{ \App\Http\Controllers\Admin\CategoryController::getParentTree($rs->category, $rs->category->title) }}
+                                                @else NO CATEGORY! @endif</td>
                                             <td>{{ $rs->title }}</td>
                                             <td>{{ $rs->price }}</td>
                                             <td>

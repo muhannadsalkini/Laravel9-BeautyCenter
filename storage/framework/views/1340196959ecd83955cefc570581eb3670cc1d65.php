@@ -91,7 +91,9 @@
                                     <?php $__currentLoopData = $datalist; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $rs): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
                                         <tr class="item">
                                             <td><?php echo e($rs->id); ?></td>
-                                            <td><?php echo e(\App\Http\Controllers\Admin\CategoryController::getParentTree($rs->category, $rs->category->title)); ?></td>
+                                            <td><?php if($rs->category): ?><?php echo e(\App\Http\Controllers\Admin\CategoryController::getParentTree($rs->category, $rs->category->title)); ?>
+
+                                                <?php else: ?> NO CATEGORY! <?php endif; ?></td>
                                             <td><?php echo e($rs->title); ?></td>
                                             <td><?php echo e($rs->price); ?></td>
                                             <td>

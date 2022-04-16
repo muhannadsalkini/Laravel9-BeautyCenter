@@ -47,25 +47,29 @@
                             @csrf
                             <div class="mb-1">
                                 <label class="form-label">Title</label>
-                                <input type="text" name="title" class="form-control" placeholder="Title">
+                                <input type="text" name="title" class="@error('title') is-invalid @enderror form-control" placeholder="Title">
+                                @error('title')<div class="alert alert-danger">{{ $message }}</div>@enderror
                             </div>
                             <div class="mb-1">
                                 <label class="form-label">Keywords</label>
-                                <input type="text" name="keywords" class="form-control" placeholder="Keywords">
+                                <input type="text" name="keywords" class="@error('keywords') is-invalid @enderror form-control" placeholder="Keywords">
+                                @error('keywords')<div class="alert alert-danger">{{ $message }}</div>@enderror
                             </div>
                             <div class="mb-1">
                                 <label class="d-block form-label">Description</label>
-                                <textarea name="description" class="form-control" id="validationBioBootstrap" rows="2"></textarea>
+                                <textarea name="description" class="@error('description') is-invalid @enderror form-control" id="validationBioBootstrap" rows="2"></textarea>
+                                @error('description')<div class="alert alert-danger">{{ $message }}</div>@enderror
                             </div>
                             <div class="mb-1">
                                 <div class=" col-md-12 mb-sm-0">
                                     <label for="formFile" class="form-label">Image</label>
-                                    <input class="form-control" type="file" id="formFile" name="image">
+                                    <input type="file" id="formFile" name="image" class="@error('image') is-invalid @enderror form-control">
+                                    @error('image')<div class="alert alert-danger">{{ $message }}</div>@enderror
                                 </div>
                             </div>
                             <div class="mb-1">
                                 <label class="form-label">Category</label>
-                                <select class="form-select" name="category_id" required="">
+                                <select name="category_id" class="form-select">
                                     @foreach ($datalist as $cl)
                                         <option value="{{ $cl->id }}">{{ \App\Http\Controllers\Admin\CategoryController::getParentTree($cl, $cl->title) }}</option>
                                     @endforeach
@@ -73,11 +77,13 @@
                             </div>
                             <div class="mb-1">
                                 <label class="form-label">Price</label>
-                                <input type="number" name="price" class="form-control" placeholder="Price">
+                                <input type="number" name="price" class="@error('price') is-invalid @enderror form-control" placeholder="Price">
+                                @error('price')<div class="alert alert-danger">{{ $message }}</div>@enderror
                             </div>
                             <div class="mb-1">
                                 <label class="form-label">Tax</label>
-                                <input type="number" name="tax" value="18" class="form-control" placeholder="Tax">
+                                <input type="number" name="tax" value="18" class="@error('tax') is-invalid @enderror form-control" placeholder="Tax">
+                                @error('tax')<div class="alert alert-danger">{{ $message }}</div>@enderror
                             </div>
                             <div class="mb-1">
                                 <label class="form-label">Status</label>
@@ -88,8 +94,7 @@
                             </div>
                             <div class="mb-1">
                                 <label class="d-block form-label">Details</label>
-
-                                <textarea name="detail" id="summernote"></textarea>
+                                <textarea name="detail" id="summernote" class="@error('detail') is-invalid @enderror"></textarea>
                                 <script>
                                     $('#summernote').summernote({
                                         placeholder: 'Details',
@@ -97,6 +102,7 @@
                                         height: 100
                                     });
                                 </script>
+                                @error('detail')<div class="alert alert-danger">{{ $message }}</div>@enderror
                             </div>
                             <button type="submit" class="btn btn-primary waves-effect waves-float waves-light">Add Service</button>
                         </form>

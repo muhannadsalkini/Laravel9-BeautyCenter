@@ -42,6 +42,18 @@ class ServiceController extends Controller
      */
     public function store(Request $request)
     {
+        $this->validate($request,[
+            'title'=>'required|min:2|max:149',
+            'keywords'=>'required',
+            'description'=>'required',
+            'image'=>'required',
+            'category_id'=>'required',
+            'price'=>'required',
+            'tax'=>'required',
+            'detail'=>'required',
+            'status'=>'required',
+        ]);
+
         $data = new Service();
         $data->title = $request->input('title');
         $data->keywords = $request->input('keywords');
