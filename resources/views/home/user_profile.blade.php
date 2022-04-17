@@ -6,10 +6,10 @@
 @section('content')
     @include('home._breadcrumbs')
     <div class="shop-page ptb-100">
-        <div class="container">
+        <div class="container" >
             <div class="row">
                 <!--shop sidebar start-->
-                <div class="col-md-3">
+                <div class="col-md-2">
                     <div class="shop sidebar">
                         <aside class="widget categories grey-bg mb-30">
                             <div class="widget-title">
@@ -38,7 +38,7 @@
                         </aside>
                     </div>
                 </div>
-                <div class="col-md-9">
+                <div class="col-md-10" >
                     @include('profile.show')
                 </div>
                 <!--shop sidebar end-->

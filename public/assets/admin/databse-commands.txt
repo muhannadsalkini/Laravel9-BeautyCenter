@@ -44,8 +44,8 @@
 2- Databse->Migration->xxx_create_SocialMedias_table.php  // olusan tabloya alanlari ekleme
 3- php artisan migrate
 4- php artisan make:controller Admin\SocialMediaController --resource --model=SocialMedia // controller olusturma
-5- // wep dosyasinda route'leri ayarlama // 
-7- View  // 
-8- Controller  // 
+5- // wep dosyasinda route'leri ayarlama //
+7- View  //
+8- Controller  //
 
 

@@ -1,0 +1,7 @@
+----- 1. way: Add new fild to tabel -----
+for each fild;
+1- php artisan make:migration add_address_to_users  // make a migration
+2- add required fild  // $table->string('address',200)->nullable();
+3- php artisan migrate
+
+----- 2. way: remove all files and creat agen -----

@@ -4,10 +4,10 @@
 <?php $__env->startSection('content'); ?>
     <?php echo $__env->make('home._breadcrumbs', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
     <div class="shop-page ptb-100">
-        <div class="container">
+        <div class="container" >
             <div class="row">
                 <!--shop sidebar start-->
-                <div class="col-md-3">
+                <div class="col-md-2">
                     <div class="shop sidebar">
                         <aside class="widget categories grey-bg mb-30">
                             <div class="widget-title">
@@ -36,7 +36,7 @@
                         </aside>
                     </div>
                 </div>
-                <div class="col-md-9">
+                <div class="col-md-10" >
                     <?php echo $__env->make('profile.show', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
                 </div>
                 <!--shop sidebar end-->
