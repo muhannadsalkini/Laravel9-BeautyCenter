@@ -6,7 +6,7 @@
     <ul class="mgea-menu">
 
         @foreach($parentCategories as $rs)
-        <li class="mega-sub"><a href="">{{ $rs->title }}</a>
+        <li class="mega-sub"><a href="{{ route('categoryservice',['id'=>$rs->id] )}}">{{ $rs->title }}</a>
             @if(count($rs->children))
                 @include('home.categorytree',['children' =>$rs->children])
             @endif

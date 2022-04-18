@@ -1,13 +1,13 @@
 @foreach($children as $subcategory)
     <ul class="mega-sub-item">
         @if(count($subcategory->children))
-            <li class="mega-sub"><a href="">{{ $rs->title }}</a>
+            <li class="mega-sub"><a href="">{{ $subcategory->title }}</a>
                 <ul class="mega-sub-item">
-                    @include('home.categorytree',['children' =>$rs->children])
+                    @include('home.categorytree',['children' =>$subcategory->children])
                 </ul>
             </li>
         @else
-            <li><a href="elements-accordion.html">{{ $subcategory->title }}</a></li>
+            <li><a href="{{ route('categoryservice',['id'=>$subcategory->id] )}}">{{ $subcategory->title }}</a></li>
         @endif
     </ul>
 @endforeach

@@ -15,7 +15,7 @@
                         <p><?php echo e($rs->description); ?></p>
                     </div>
                     <div class="explore-now wow bounceInUp" data-wow-duration="1.3s" data-wow-delay=".5s">
-                        <a href="#">Explore now</a>
+                        <a href="#">Explore Now</a>
                     </div>
                 </div>
             </div>

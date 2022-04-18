@@ -6,7 +6,7 @@
     <ul class="mgea-menu">
 
         <?php $__currentLoopData = $parentCategories; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $rs): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
-        <li class="mega-sub"><a href=""><?php echo e($rs->title); ?></a>
+        <li class="mega-sub"><a href="<?php echo e(route('categoryservice',['id'=>$rs->id] )); ?>"><?php echo e($rs->title); ?></a>
             <?php if(count($rs->children)): ?>
                 <?php echo $__env->make('home.categorytree',['children' =>$rs->children], \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
             <?php endif; ?>

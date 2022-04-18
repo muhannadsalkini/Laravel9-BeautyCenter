@@ -37,6 +37,23 @@ class HomeController extends Controller
         return view('home.index', $data);
     }
 
+    public function service($id)
+    {
+        $data = Service::find($id);
+        print_r($data);
+        exit();
+    }
+
+    public function categoryservice($id)
+    {
+        $setting = HomeController::getsetting();
+        $datalist = Service::where('category_id', $id)->get();
+        $data = Service::find($id);
+        //print_r($data);
+        //exit();
+        return view('home.category_services', ['data'=>$data,'datalist'=>$datalist, 'setting'=>$setting]);
+    }
+
     public function login()
     {
         return view('admin.login');

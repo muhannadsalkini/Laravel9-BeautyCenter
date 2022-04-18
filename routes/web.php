@@ -23,6 +23,8 @@ Route::get('/cart', [HomeController::class, 'cart']);
 Route::get('/checkout', [HomeController::class, 'checkout']);
 Route::get('/contact-us', [HomeController::class, 'contact']);
 Route::post('/sendmessage', [HomeController::class, 'sendmessage'])->name('sendmessage');
+Route::get('/service/{id}', [HomeController::class, 'service'])->name('service');
+Route::get('/services/{id}', [HomeController::class, 'categoryservice'])->name('categoryservice');
 Route::get('/shop', [HomeController::class, 'shop']);
 
 
