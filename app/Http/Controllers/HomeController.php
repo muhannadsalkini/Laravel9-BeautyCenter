@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Category;
 use App\Models\Message;
+use App\Models\Service;
 use App\Models\Setting;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -24,7 +25,16 @@ class HomeController extends Controller
     public function index()
     {
         $setting = HomeController::getsetting();
-        return view('home.index', ['setting'=>$setting]);
+        $slider = Service::with('category')->select('title','image','price','category_id', 'description')->limit(4)->get();
+        $category = Category::get();
+        //print_r($slider);
+        //exit();
+        $data = [
+            'setting'=>$setting,
+            'slider'=>$slider,
+            'category'=>$category,
+        ];
+        return view('home.index', $data);
     }
 
     public function login()

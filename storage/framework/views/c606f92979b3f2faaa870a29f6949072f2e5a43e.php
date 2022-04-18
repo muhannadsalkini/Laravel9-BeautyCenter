@@ -67,18 +67,19 @@
                     <span class="menu-title text-truncate" data-i18n="Invoice">Services</span>
                 </a>
             </li>
-            <li class=" nav-item <?php echo $__env->yieldContent('Setting_status'); ?>">
-                <a class="d-flex align-items-center" href="<?php echo e(route('admin_setting')); ?>">
-                    <i data-feather='settings'></i>
-                    <span class="menu-title text-truncate" data-i18n="settings">Settings</span>
-                </a>
-            </li>
             <li class=" nav-item <?php echo $__env->yieldContent('Messages_status'); ?>">
                 <a class="d-flex align-items-center" href="<?php echo e(route('admin_message')); ?>">
                     <i data-feather='message-square'></i>
                     <span class="menu-title text-truncate" data-i18n="settings">Messages</span>
                 </a>
             </li>
+            <li class=" nav-item <?php echo $__env->yieldContent('Setting_status'); ?>">
+                <a class="d-flex align-items-center" href="<?php echo e(route('admin_setting')); ?>">
+                    <i data-feather='settings'></i>
+                    <span class="menu-title text-truncate" data-i18n="settings">Settings</span>
+                </a>
+            </li>
+
 
         </ul>
     </div>

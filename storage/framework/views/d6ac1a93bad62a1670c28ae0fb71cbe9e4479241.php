@@ -9,90 +9,7 @@
 <?php $__env->startSection('content'); ?>
 
     <!--slider section start-->
-    <div class="slider-container">
-        <!-- Slider Image -->
-        <div id="mainSlider" class="nivoSlider slider-image">
-            <img src="<?php echo e(asset('assets')); ?>/images/slider/1.jpg" alt="" title="#htmlcaption1"/>
-            <img src="<?php echo e(asset('assets')); ?>/images/slider/2.jpg" alt="" title="#htmlcaption2"/>
-            <img src="<?php echo e(asset('assets')); ?>/images/slider/3.jpg" alt="" title="#htmlcaption3"/>
-        </div>
-        <!-- Slider Caption 1 -->
-        <div id="htmlcaption1" class="nivo-html-caption slider-caption-1">
-            <div class="slider-text-table">
-                <div class="slider-text-tablecell">
-                    <div class="container-fluid">
-                        <div class="row">
-                            <div class="col-md-12 col-sm-12 col-xs-12">
-                                <div class="slide1-text">
-                                    <div class="middle-text">
-                                        <div class="title-1 wow rotateInDownRight" data-wow-duration="0.9s" data-wow-delay="0s">
-                                            <h1>welcome our beauty house</h1>
-                                        </div>
-                                        <div class="desc wow slideInRight" data-wow-duration="1.2s" data-wow-delay="0.2s">
-                                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque vel volutpat felis, eu condimentum<br> massa.lorem ipsum dolor sit amet,consectetur adipicing elit.</p>
-                                        </div>
-                                        <div class="explore-now wow bounceInUp" data-wow-duration="1.3s" data-wow-delay=".5s">
-                                            <a href="#">Explore now</a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div id="htmlcaption2" class="nivo-html-caption slider-caption-1">
-            <div class="slider-text-table">
-                <div class="slider-text-tablecell">
-                    <div class="container-fluid">
-                        <div class="row">
-                            <div class="col-md-12 col-sm-12 col-xs-12">
-                                <div class="slide1-text">
-                                    <div class="middle-text">
-                                        <div class="title-1 wow rotateInDownRight" data-wow-duration="0.9s" data-wow-delay="0s">
-                                            <h1>welcome our beauty house</h1>
-                                        </div>
-                                        <div class="desc wow slideInRight" data-wow-duration="1.2s" data-wow-delay="0.2s">
-                                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque vel volutpat felis, eu condimentum<br> massa.lorem ipsum dolor sit amet,consectetur adipicing elit.</p>
-                                        </div>
-                                        <div class="explore-now wow bounceInUp" data-wow-duration="1.3s" data-wow-delay=".5s">
-                                            <a href="#">Explore now</a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div id="htmlcaption3" class="nivo-html-caption slider-caption-1">
-            <div class="slider-text-table">
-                <div class="slider-text-tablecell">
-                    <div class="container-fluid">
-                        <div class="row">
-                            <div class="col-md-12 col-sm-12 col-xs-12">
-                                <div class="slide1-text">
-                                    <div class="middle-text">
-                                        <div class="title-1 wow rotateInDownRight" data-wow-duration="0.9s" data-wow-delay="0s">
-                                            <h1>welcome our beauty house</h1>
-                                        </div>
-                                        <div class="desc wow slideInRight" data-wow-duration="1.2s" data-wow-delay="0.2s">
-                                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque vel volutpat felis, eu condimentum<br> massa.lorem ipsum dolor sit amet,consectetur adipicing elit.</p>
-                                        </div>
-                                        <div class="explore-now wow bounceInUp" data-wow-duration="1.3s" data-wow-delay=".5s">
-                                            <a href="#">Explore now</a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
+    <?php echo $__env->make('home._slider', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
     <!--slider section end-->
 
     <!--welcome section start-->
@@ -747,7 +664,7 @@
     <!--Testimonial end-->
 
     <!--our blog start-->
-    <div class="our-blog pt-100">
+    <div class="our-blog pt-100" >
         <div class="container">
             <div class="row">
                 <div class="col-md-8 col-md-offset-2">
@@ -755,12 +672,12 @@
                         <h2>our Blog</h2>
                     </div>
                 </div>
-                <div class="error-area text-center ptb-100">
+                <div class="error-area text-center ptb-100" style="width: 50%">
                     <div class="container">
                         <div class="row">
                             <div class="col-md-12">
                                 <div class="error-content ">
-                                    <h2>Coming Soon!</h2>
+                                    <h2 style="font-size: 400%;">Coming Soon!</h2>
                                     <h4>We're coming soon</h4>
                                     <p>We are working very hard on this, <br>
                                         It will bring a lot of new features.<br>
