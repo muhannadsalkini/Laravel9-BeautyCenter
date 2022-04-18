@@ -57,54 +57,57 @@
                                                 <div class="accordion-item">
                                                     <h2 class="accordion-header" id="headingMarginOne">
                                                         <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#accordionMarginOne" aria-expanded="true" aria-controls="accordionMarginOne">
-                                                            Website
+                                                            General
                                                         </button>
                                                     </h2>
                                                     <div id="accordionMarginOne" class="accordion-collapse collapse" aria-labelledby="headingMarginOne" data-bs-parent="#accordionMargin">
                                                         <div class="accordion-body">
                                                             <div class="mb-1">
                                                                 <label class="form-label">Title</label>
-                                                                <input type="text" name="title"  value="{{ $data->title }}" class="form-control" placeholder="Title">
+                                                                <input type="text" name="title"  value="{{ $data->title }}" class=" @error('title') is-invalid @enderror form-control" placeholder="Title">
+                                                                @error('title')<div class="alert alert-danger">{{ $message }}</div>@enderror
                                                             </div>
                                                             <div class="mb-1">
                                                                 <label class="form-label">Keywords</label>
-                                                                <input type="text" name="keywords" value="{{ $data->keywords }}" class="form-control" placeholder="Keywords">
+                                                                <input type="text" name="keywords" value="{{ $data->keywords }}" class=" @error('keywords') is-invalid @enderror form-control" placeholder="Keywords">
+                                                                @error('keywords')<div class="alert alert-danger">{{ $message }}</div>@enderror
                                                             </div>
                                                             <div class="mb-1">
                                                                 <label class="d-block form-label">Description</label>
-                                                                <textarea name="description" class="form-control" id="validationBioBootstrap" rows="2">{{ $data->description }}</textarea>
+                                                                <textarea name="description" class=" @error('description') is-invalid @enderror form-control" id="validationBioBootstrap" rows="2">{{ $data->description }}</textarea>
+                                                                @error('description')<div class="alert alert-danger">{{ $message }}</div>@enderror
                                                             </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <!-- company -->
-                                                <div class="accordion-item">
-                                                    <h2 class="accordion-header" id="headingMarginTwo">
-                                                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#accordionMarginTwo" aria-expanded="false" aria-controls="accordionMarginTwo">
-                                                            Company Information
-                                                        </button>
-                                                    </h2>
-                                                    <div id="accordionMarginTwo" class="accordion-collapse collapse" aria-labelledby="headingMarginTwo" data-bs-parent="#accordionMargin">
-                                                        <div class="accordion-body">
                                                             <div class="mb-1">
                                                                 <label class="form-label">Company</label>
-                                                                <input type="text" name="company" value="{{ $data->company }}" class="form-control" placeholder="Company">
+                                                                <input type="text" name="company" value="{{ $data->company }}" class=" @error('company') is-invalid @enderror form-control" placeholder="Company">
+                                                                @error('company')<div class="alert alert-danger">{{ $message }}</div>@enderror
                                                             </div>
                                                             <div class="mb-1">
                                                                 <label class="form-label">Address</label>
-                                                                <input type="text" name="address" value="{{ $data->address }}" class="form-control" placeholder="Address">
+                                                                <input type="text" name="address" value="{{ $data->address }}" class=" @error('address') is-invalid @enderror form-control" placeholder="Address">
+                                                                @error('address')<div class="alert alert-danger">{{ $message }}</div>@enderror
                                                             </div>
                                                             <div class="mb-1">
                                                                 <label class="form-label">Phone</label>
-                                                                <input type="number" name="phone" value="{{ $data->phone }}" class="form-control" placeholder="Phone">
+                                                                <input type="number" name="phone" value="{{ $data->phone }}" class=" @error('phone') is-invalid @enderror form-control" placeholder="Phone">
+                                                                @error('phone')<div class="alert alert-danger">{{ $message }}</div>@enderror
                                                             </div>
                                                             <div class="mb-1">
                                                                 <label class="form-label">Fax</label>
-                                                                <input type="text" name="fax" value="{{ $data->fax }}" class="form-control" placeholder="Fax">
+                                                                <input type="text" name="fax" value="{{ $data->fax }}" class=" @error('fax') is-invalid @enderror form-control" placeholder="Fax">
+                                                                @error('fax')<div class="alert alert-danger">{{ $message }}</div>@enderror
                                                             </div>
                                                             <div class="mb-1">
                                                                 <label class="form-label">E-mail</label>
-                                                                <input type="text" name="email" value="{{ $data->email }}" class="form-control" placeholder="E-mail">
+                                                                <input type="text" name="email" value="{{ $data->email }}" class=" @error('email') is-invalid @enderror form-control" placeholder="E-mail">
+                                                                @error('email')<div class="alert alert-danger">{{ $message }}</div>@enderror
+                                                            </div>
+                                                            <div class="mb-1">
+                                                                <label class="form-label">Status</label>
+                                                                <select name="status" class="form-select">
+                                                                    <option @if ($data->status == "False") selected="selected" @endif> False</option>
+                                                                    <option @if ($data->status == "True") selected="selected" @endif>True</option>
+                                                                </select>
                                                             </div>
                                                         </div>
                                                     </div>
@@ -165,11 +168,11 @@
                                                         </div>
                                                     </div>
                                                 </div>
-                                                <!-- pages -->
+                                                <!-- about -->
                                                 <div class="accordion-item">
                                                     <h2 class="accordion-header" id="headingMarginFive">
                                                         <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#accordionMarginFive" aria-expanded="false" aria-controls="accordionMarginFive">
-                                                            Pages
+                                                            About Us
                                                         </button>
                                                     </h2>
                                                     <div id="accordionMarginFive" class="accordion-collapse collapse" aria-labelledby="headingMarginFive" data-bs-parent="#accordionMargin">
@@ -185,6 +188,18 @@
                                                                     });
                                                                 </script>
                                                             </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <!-- contact -->
+                                                <div class="accordion-item">
+                                                    <h2 class="accordion-header" id="headingMarginsix">
+                                                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#accordionMarginsix" aria-expanded="false" aria-controls="accordionMarginsix">
+                                                            Contact Us
+                                                        </button>
+                                                    </h2>
+                                                    <div id="accordionMarginsix" class="accordion-collapse collapse" aria-labelledby="headingMarginsix" data-bs-parent="#accordionMargin">
+                                                        <div class="accordion-body">
                                                             <div class="mb-1">
                                                                 <label class="d-block form-label">Contact</label>
                                                                 <textarea name="contact" id="contact">{{ $data->contact }}</textarea>
@@ -205,26 +220,6 @@
                                 </div>
                             </section>
                             <!-- Accordion with margin end -->
-
-
-
-
-
-
-
-
-
-
-
-
-
-                            <div class="mb-1">
-                                <label class="form-label">Status</label>
-                                <select name="status" class="form-select">
-                                    <option @if ($data->status == "False") selected="selected" @endif> False</option>
-                                    <option @if ($data->status == "True") selected="selected" @endif>True</option>
-                                </select>
-                            </div>
 
                             <button type="submit" class="btn btn-primary waves-effect waves-float waves-light">Save</button>
                         </form>

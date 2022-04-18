@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Category;
+use App\Models\Message;
 use App\Models\Setting;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -65,7 +66,8 @@ class HomeController extends Controller
     // Home pages
     public function about()
     {
-        return view('home.about');
+        $setting = HomeController::getsetting();
+        return view('home.about', ['setting'=>$setting]);
     }
 
     public function blog()
@@ -87,6 +89,26 @@ class HomeController extends Controller
     {
         $setting = HomeController::getsetting();
         return view('home.contact',['setting'=>$setting]);
+    }
+
+    public function sendmessage(Request $request)
+    {
+        $this->validate($request,[
+            'name'=>'required',
+            'email'=>'required',
+            'phone'=>'required',
+            'subject'=>'required',
+            'message'=>'required',
+        ]);
+
+        $data = new Message();
+        $data->name = $request->input('name');
+        $data->email = $request->input('email');
+        $data->phone = $request->input('phone');
+        $data->subject = $request->input('subject');
+        $data->message = $request->input('message');
+        $data->save();
+        return redirect('contact-us')->with('success', 'Successfully sent, Thank you.');
     }
 
     public function shop()

@@ -17,7 +17,7 @@
                         <p>We are working very hard on this, <br>
                             It will bring a lot of new features.<br>
                             Stay tuned!</p>
-                        <a class="go-home" href="/">Go to home</a>
+                        <a class="go-home" href="{{ route('home.index') }}">Go to home</a>
                     </div>
                 </div>
             </div>

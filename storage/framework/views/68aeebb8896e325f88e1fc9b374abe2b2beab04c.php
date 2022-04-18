@@ -55,54 +55,169 @@
                                                 <div class="accordion-item">
                                                     <h2 class="accordion-header" id="headingMarginOne">
                                                         <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#accordionMarginOne" aria-expanded="true" aria-controls="accordionMarginOne">
-                                                            Website
+                                                            General
                                                         </button>
                                                     </h2>
                                                     <div id="accordionMarginOne" class="accordion-collapse collapse" aria-labelledby="headingMarginOne" data-bs-parent="#accordionMargin">
                                                         <div class="accordion-body">
                                                             <div class="mb-1">
                                                                 <label class="form-label">Title</label>
-                                                                <input type="text" name="title"  value="<?php echo e($data->title); ?>" class="form-control" placeholder="Title">
+                                                                <input type="text" name="title"  value="<?php echo e($data->title); ?>" class=" <?php $__errorArgs = ['title'];
+$__bag = $errors->getBag($__errorArgs[1] ?? 'default');
+if ($__bag->has($__errorArgs[0])) :
+if (isset($message)) { $__messageOriginal = $message; }
+$message = $__bag->first($__errorArgs[0]); ?> is-invalid <?php unset($message);
+if (isset($__messageOriginal)) { $message = $__messageOriginal; }
+endif;
+unset($__errorArgs, $__bag); ?> form-control" placeholder="Title">
+                                                                <?php $__errorArgs = ['title'];
+$__bag = $errors->getBag($__errorArgs[1] ?? 'default');
+if ($__bag->has($__errorArgs[0])) :
+if (isset($message)) { $__messageOriginal = $message; }
+$message = $__bag->first($__errorArgs[0]); ?><div class="alert alert-danger"><?php echo e($message); ?></div><?php unset($message);
+if (isset($__messageOriginal)) { $message = $__messageOriginal; }
+endif;
+unset($__errorArgs, $__bag); ?>
                                                             </div>
                                                             <div class="mb-1">
                                                                 <label class="form-label">Keywords</label>
-                                                                <input type="text" name="keywords" value="<?php echo e($data->keywords); ?>" class="form-control" placeholder="Keywords">
+                                                                <input type="text" name="keywords" value="<?php echo e($data->keywords); ?>" class=" <?php $__errorArgs = ['keywords'];
+$__bag = $errors->getBag($__errorArgs[1] ?? 'default');
+if ($__bag->has($__errorArgs[0])) :
+if (isset($message)) { $__messageOriginal = $message; }
+$message = $__bag->first($__errorArgs[0]); ?> is-invalid <?php unset($message);
+if (isset($__messageOriginal)) { $message = $__messageOriginal; }
+endif;
+unset($__errorArgs, $__bag); ?> form-control" placeholder="Keywords">
+                                                                <?php $__errorArgs = ['keywords'];
+$__bag = $errors->getBag($__errorArgs[1] ?? 'default');
+if ($__bag->has($__errorArgs[0])) :
+if (isset($message)) { $__messageOriginal = $message; }
+$message = $__bag->first($__errorArgs[0]); ?><div class="alert alert-danger"><?php echo e($message); ?></div><?php unset($message);
+if (isset($__messageOriginal)) { $message = $__messageOriginal; }
+endif;
+unset($__errorArgs, $__bag); ?>
                                                             </div>
                                                             <div class="mb-1">
                                                                 <label class="d-block form-label">Description</label>
-                                                                <textarea name="description" class="form-control" id="validationBioBootstrap" rows="2"><?php echo e($data->description); ?></textarea>
+                                                                <textarea name="description" class=" <?php $__errorArgs = ['description'];
+$__bag = $errors->getBag($__errorArgs[1] ?? 'default');
+if ($__bag->has($__errorArgs[0])) :
+if (isset($message)) { $__messageOriginal = $message; }
+$message = $__bag->first($__errorArgs[0]); ?> is-invalid <?php unset($message);
+if (isset($__messageOriginal)) { $message = $__messageOriginal; }
+endif;
+unset($__errorArgs, $__bag); ?> form-control" id="validationBioBootstrap" rows="2"><?php echo e($data->description); ?></textarea>
+                                                                <?php $__errorArgs = ['description'];
+$__bag = $errors->getBag($__errorArgs[1] ?? 'default');
+if ($__bag->has($__errorArgs[0])) :
+if (isset($message)) { $__messageOriginal = $message; }
+$message = $__bag->first($__errorArgs[0]); ?><div class="alert alert-danger"><?php echo e($message); ?></div><?php unset($message);
+if (isset($__messageOriginal)) { $message = $__messageOriginal; }
+endif;
+unset($__errorArgs, $__bag); ?>
                                                             </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <!-- company -->
-                                                <div class="accordion-item">
-                                                    <h2 class="accordion-header" id="headingMarginTwo">
-                                                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#accordionMarginTwo" aria-expanded="false" aria-controls="accordionMarginTwo">
-                                                            Company Information
-                                                        </button>
-                                                    </h2>
-                                                    <div id="accordionMarginTwo" class="accordion-collapse collapse" aria-labelledby="headingMarginTwo" data-bs-parent="#accordionMargin">
-                                                        <div class="accordion-body">
                                                             <div class="mb-1">
                                                                 <label class="form-label">Company</label>
-                                                                <input type="text" name="company" value="<?php echo e($data->company); ?>" class="form-control" placeholder="Company">
+                                                                <input type="text" name="company" value="<?php echo e($data->company); ?>" class=" <?php $__errorArgs = ['company'];
+$__bag = $errors->getBag($__errorArgs[1] ?? 'default');
+if ($__bag->has($__errorArgs[0])) :
+if (isset($message)) { $__messageOriginal = $message; }
+$message = $__bag->first($__errorArgs[0]); ?> is-invalid <?php unset($message);
+if (isset($__messageOriginal)) { $message = $__messageOriginal; }
+endif;
+unset($__errorArgs, $__bag); ?> form-control" placeholder="Company">
+                                                                <?php $__errorArgs = ['company'];
+$__bag = $errors->getBag($__errorArgs[1] ?? 'default');
+if ($__bag->has($__errorArgs[0])) :
+if (isset($message)) { $__messageOriginal = $message; }
+$message = $__bag->first($__errorArgs[0]); ?><div class="alert alert-danger"><?php echo e($message); ?></div><?php unset($message);
+if (isset($__messageOriginal)) { $message = $__messageOriginal; }
+endif;
+unset($__errorArgs, $__bag); ?>
                                                             </div>
                                                             <div class="mb-1">
                                                                 <label class="form-label">Address</label>
-                                                                <input type="text" name="address" value="<?php echo e($data->address); ?>" class="form-control" placeholder="Address">
+                                                                <input type="text" name="address" value="<?php echo e($data->address); ?>" class=" <?php $__errorArgs = ['address'];
+$__bag = $errors->getBag($__errorArgs[1] ?? 'default');
+if ($__bag->has($__errorArgs[0])) :
+if (isset($message)) { $__messageOriginal = $message; }
+$message = $__bag->first($__errorArgs[0]); ?> is-invalid <?php unset($message);
+if (isset($__messageOriginal)) { $message = $__messageOriginal; }
+endif;
+unset($__errorArgs, $__bag); ?> form-control" placeholder="Address">
+                                                                <?php $__errorArgs = ['address'];
+$__bag = $errors->getBag($__errorArgs[1] ?? 'default');
+if ($__bag->has($__errorArgs[0])) :
+if (isset($message)) { $__messageOriginal = $message; }
+$message = $__bag->first($__errorArgs[0]); ?><div class="alert alert-danger"><?php echo e($message); ?></div><?php unset($message);
+if (isset($__messageOriginal)) { $message = $__messageOriginal; }
+endif;
+unset($__errorArgs, $__bag); ?>
                                                             </div>
                                                             <div class="mb-1">
                                                                 <label class="form-label">Phone</label>
-                                                                <input type="number" name="phone" value="<?php echo e($data->phone); ?>" class="form-control" placeholder="Phone">
+                                                                <input type="number" name="phone" value="<?php echo e($data->phone); ?>" class=" <?php $__errorArgs = ['phone'];
+$__bag = $errors->getBag($__errorArgs[1] ?? 'default');
+if ($__bag->has($__errorArgs[0])) :
+if (isset($message)) { $__messageOriginal = $message; }
+$message = $__bag->first($__errorArgs[0]); ?> is-invalid <?php unset($message);
+if (isset($__messageOriginal)) { $message = $__messageOriginal; }
+endif;
+unset($__errorArgs, $__bag); ?> form-control" placeholder="Phone">
+                                                                <?php $__errorArgs = ['phone'];
+$__bag = $errors->getBag($__errorArgs[1] ?? 'default');
+if ($__bag->has($__errorArgs[0])) :
+if (isset($message)) { $__messageOriginal = $message; }
+$message = $__bag->first($__errorArgs[0]); ?><div class="alert alert-danger"><?php echo e($message); ?></div><?php unset($message);
+if (isset($__messageOriginal)) { $message = $__messageOriginal; }
+endif;
+unset($__errorArgs, $__bag); ?>
                                                             </div>
                                                             <div class="mb-1">
                                                                 <label class="form-label">Fax</label>
-                                                                <input type="text" name="fax" value="<?php echo e($data->fax); ?>" class="form-control" placeholder="Fax">
+                                                                <input type="text" name="fax" value="<?php echo e($data->fax); ?>" class=" <?php $__errorArgs = ['fax'];
+$__bag = $errors->getBag($__errorArgs[1] ?? 'default');
+if ($__bag->has($__errorArgs[0])) :
+if (isset($message)) { $__messageOriginal = $message; }
+$message = $__bag->first($__errorArgs[0]); ?> is-invalid <?php unset($message);
+if (isset($__messageOriginal)) { $message = $__messageOriginal; }
+endif;
+unset($__errorArgs, $__bag); ?> form-control" placeholder="Fax">
+                                                                <?php $__errorArgs = ['fax'];
+$__bag = $errors->getBag($__errorArgs[1] ?? 'default');
+if ($__bag->has($__errorArgs[0])) :
+if (isset($message)) { $__messageOriginal = $message; }
+$message = $__bag->first($__errorArgs[0]); ?><div class="alert alert-danger"><?php echo e($message); ?></div><?php unset($message);
+if (isset($__messageOriginal)) { $message = $__messageOriginal; }
+endif;
+unset($__errorArgs, $__bag); ?>
                                                             </div>
                                                             <div class="mb-1">
                                                                 <label class="form-label">E-mail</label>
-                                                                <input type="text" name="email" value="<?php echo e($data->email); ?>" class="form-control" placeholder="E-mail">
+                                                                <input type="text" name="email" value="<?php echo e($data->email); ?>" class=" <?php $__errorArgs = ['email'];
+$__bag = $errors->getBag($__errorArgs[1] ?? 'default');
+if ($__bag->has($__errorArgs[0])) :
+if (isset($message)) { $__messageOriginal = $message; }
+$message = $__bag->first($__errorArgs[0]); ?> is-invalid <?php unset($message);
+if (isset($__messageOriginal)) { $message = $__messageOriginal; }
+endif;
+unset($__errorArgs, $__bag); ?> form-control" placeholder="E-mail">
+                                                                <?php $__errorArgs = ['email'];
+$__bag = $errors->getBag($__errorArgs[1] ?? 'default');
+if ($__bag->has($__errorArgs[0])) :
+if (isset($message)) { $__messageOriginal = $message; }
+$message = $__bag->first($__errorArgs[0]); ?><div class="alert alert-danger"><?php echo e($message); ?></div><?php unset($message);
+if (isset($__messageOriginal)) { $message = $__messageOriginal; }
+endif;
+unset($__errorArgs, $__bag); ?>
+                                                            </div>
+                                                            <div class="mb-1">
+                                                                <label class="form-label">Status</label>
+                                                                <select name="status" class="form-select">
+                                                                    <option <?php if($data->status == "False"): ?> selected="selected" <?php endif; ?>> False</option>
+                                                                    <option <?php if($data->status == "True"): ?> selected="selected" <?php endif; ?>>True</option>
+                                                                </select>
                                                             </div>
                                                         </div>
                                                     </div>
@@ -163,11 +278,11 @@
                                                         </div>
                                                     </div>
                                                 </div>
-                                                <!-- pages -->
+                                                <!-- about -->
                                                 <div class="accordion-item">
                                                     <h2 class="accordion-header" id="headingMarginFive">
                                                         <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#accordionMarginFive" aria-expanded="false" aria-controls="accordionMarginFive">
-                                                            Pages
+                                                            About Us
                                                         </button>
                                                     </h2>
                                                     <div id="accordionMarginFive" class="accordion-collapse collapse" aria-labelledby="headingMarginFive" data-bs-parent="#accordionMargin">
@@ -183,6 +298,18 @@
                                                                     });
                                                                 </script>
                                                             </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <!-- contact -->
+                                                <div class="accordion-item">
+                                                    <h2 class="accordion-header" id="headingMarginsix">
+                                                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#accordionMarginsix" aria-expanded="false" aria-controls="accordionMarginsix">
+                                                            Contact Us
+                                                        </button>
+                                                    </h2>
+                                                    <div id="accordionMarginsix" class="accordion-collapse collapse" aria-labelledby="headingMarginsix" data-bs-parent="#accordionMargin">
+                                                        <div class="accordion-body">
                                                             <div class="mb-1">
                                                                 <label class="d-block form-label">Contact</label>
                                                                 <textarea name="contact" id="contact"><?php echo e($data->contact); ?></textarea>
@@ -203,26 +330,6 @@
                                 </div>
                             </section>
                             <!-- Accordion with margin end -->
-
-
-
-
-
-
-
-
-
-
-
-
-
-                            <div class="mb-1">
-                                <label class="form-label">Status</label>
-                                <select name="status" class="form-select">
-                                    <option <?php if($data->status == "False"): ?> selected="selected" <?php endif; ?>> False</option>
-                                    <option <?php if($data->status == "True"): ?> selected="selected" <?php endif; ?>>True</option>
-                                </select>
-                            </div>
 
                             <button type="submit" class="btn btn-primary waves-effect waves-float waves-light">Save</button>
                         </form>

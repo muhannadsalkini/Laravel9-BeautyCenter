@@ -150,6 +150,7 @@
                                         </tr>
                                     <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
                                     </tbody>
+                                    <?php echo $__env->make('home.flash-message', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
                                 </table>
                                 <div class="d-flex justify-content-between mx-0 row">
                                     <div class="col-sm-12 col-md-6">

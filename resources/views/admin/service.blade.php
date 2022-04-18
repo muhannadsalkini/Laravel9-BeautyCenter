@@ -151,6 +151,7 @@
                                         </tr>
                                     @endforeach
                                     </tbody>
+                                    @include('home.flash-message')
                                 </table>
                                 <div class="d-flex justify-content-between mx-0 row">
                                     <div class="col-sm-12 col-md-6">

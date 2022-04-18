@@ -1,60 +1,11 @@
-<?php $__env->startSection('title', 'Contact Us'); ?>
-
-<?php $__env->startSection('keywords','Bakim, Guzellik'); ?>
+<?php $__env->startSection('title', $setting->title. ' | Contact Us' ); ?>
+<?php $__env->startSection('description',$setting->description); ?>
+<?php $__env->startSection('keywords',$setting->keywords); ?>
 
 <?php $__env->startSection('content'); ?>
-    <!--Breadcrumbs start-->
     <?php echo $__env->make('home._breadcrumbs', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
-    <!--Breadcrumbs end-->
-    <!-- map -->
-    <div id="contact-map" class="map-area">
-        <div id="googleMap" style="width:100%;height:500px;"></div>
-    </div>
-    <!--<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d12003.838962044536!2d32.655428727337785!3d41.2226
-    47808034!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x408354b21e5b6ab3%3A0xbb104da20a5891d2!2zMTAwLiBZxLFsLCA
-    3ODA1MCBLYXJhYsO8ayBNZXJrZXovS2FyYWLDvGs!5e0!3m2!1sen!2str!4v1647651420433!5m2!1sen!2str"
-            style="border:0;width:100%;height:500px";allowfullscreen="" loading="lazy"></iframe>-->
-    <!-- map end -->
-    <!--Contact start-->
-    <div class="contact-us">
-        <div class="container">
-            <div class="row">
-                <div class="contact-list fix">
-                    <div class="col-md-4 col-sm-4 col-xs-12">
-                        <div class="single-contact">
-                            <div class="contact-icon">
-                                <a href="#" style="padding-top: 11px;"><i class="zmdi zmdi-phone" ></i></a>
-                            </div>
-                            <div class="contact-desc">
-                                <?php if($setting->phone): ?><p style="padding-top: 15px"> <?php echo e($setting->phone); ?> </p><?php endif; ?>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-4 col-sm-4 col-xs-12">
-                        <div class="single-contact text-center">
-                            <div class="contact-icon">
-                                <a href="#" style="padding-top: 11px;"><i class="zmdi zmdi-dribbble"></i></a>
-                            </div>
-                            <div class="contact-desc">
-                                <?php if($setting->email): ?><p style="padding-top: 15px"> <?php echo e($setting->email); ?> </p><?php endif; ?>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-4 col-sm-4 col-xs-12">
-                        <div class="single-contact float-right">
-                            <div class="contact-icon">
-                                <a href="#" style="padding-top: 11px;"><i class="zmdi zmdi-pin"></i></a>
-                            </div>
-                            <div class="contact-desc">
-                                <?php if($setting->address): ?><p style="padding-top: 15px"> <?php echo e($setting->address); ?> </p><?php endif; ?>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!--Contact end-->
+    <?php echo $setting->contact; ?>
+
     <!--Contact form start-->
     <div class="contact-form ptb-100">
         <div class="container">
@@ -69,12 +20,126 @@
             <div class="row">
                 <div class="col-md-6 col-sm-6 col-xs-12">
                     <div class="contact-form">
-                        <p class="form-messege"></p>
-                        <form id="contact-form" action="http://preview.hasthemes.com/beautyhouse-preivew/beautyhouse/mail.php" method="post">
-                            <input name="name" type="text" placeholder="Name">
-                            <input name="email" type="text" placeholder="Email">
-                            <textarea name="message" placeholder="Message"></textarea>
-                            <button type="submit">Submit</button>
+                        <form action="<?php echo e(route('sendmessage')); ?>" method="post">
+                            <?php echo csrf_field(); ?>
+                            <div class="mb-1">
+                                <input name="name" type="text" class="<?php $__errorArgs = ['name'];
+$__bag = $errors->getBag($__errorArgs[1] ?? 'default');
+if ($__bag->has($__errorArgs[0])) :
+if (isset($message)) { $__messageOriginal = $message; }
+$message = $__bag->first($__errorArgs[0]); ?> is-invalid <?php unset($message);
+if (isset($__messageOriginal)) { $message = $__messageOriginal; }
+endif;
+unset($__errorArgs, $__bag); ?>" placeholder="Name & Surname">
+                                <?php $__errorArgs = ['name'];
+$__bag = $errors->getBag($__errorArgs[1] ?? 'default');
+if ($__bag->has($__errorArgs[0])) :
+if (isset($message)) { $__messageOriginal = $message; }
+$message = $__bag->first($__errorArgs[0]); ?><div class="alert alert-danger"><?php echo e($message); ?></div><?php unset($message);
+if (isset($__messageOriginal)) { $message = $__messageOriginal; }
+endif;
+unset($__errorArgs, $__bag); ?>
+                            </div>
+                            <div class="mb-1" style="padding-top: 1rem">
+                                <input name="phone" type="text" class="<?php $__errorArgs = ['phone'];
+$__bag = $errors->getBag($__errorArgs[1] ?? 'default');
+if ($__bag->has($__errorArgs[0])) :
+if (isset($message)) { $__messageOriginal = $message; }
+$message = $__bag->first($__errorArgs[0]); ?> is-invalid <?php unset($message);
+if (isset($__messageOriginal)) { $message = $__messageOriginal; }
+endif;
+unset($__errorArgs, $__bag); ?>" placeholder="Phone Number">
+                                <?php $__errorArgs = ['phone'];
+$__bag = $errors->getBag($__errorArgs[1] ?? 'default');
+if ($__bag->has($__errorArgs[0])) :
+if (isset($message)) { $__messageOriginal = $message; }
+$message = $__bag->first($__errorArgs[0]); ?><div class="alert alert-danger"><?php echo e($message); ?></div><?php unset($message);
+if (isset($__messageOriginal)) { $message = $__messageOriginal; }
+endif;
+unset($__errorArgs, $__bag); ?>
+                            </div>
+                            <div class="mb-1" style="padding-top: 1rem">
+                                <input name="email" type="email" class="<?php $__errorArgs = ['email'];
+$__bag = $errors->getBag($__errorArgs[1] ?? 'default');
+if ($__bag->has($__errorArgs[0])) :
+if (isset($message)) { $__messageOriginal = $message; }
+$message = $__bag->first($__errorArgs[0]); ?> is-invalid <?php unset($message);
+if (isset($__messageOriginal)) { $message = $__messageOriginal; }
+endif;
+unset($__errorArgs, $__bag); ?>" placeholder="Email">
+                                <?php $__errorArgs = ['email'];
+$__bag = $errors->getBag($__errorArgs[1] ?? 'default');
+if ($__bag->has($__errorArgs[0])) :
+if (isset($message)) { $__messageOriginal = $message; }
+$message = $__bag->first($__errorArgs[0]); ?><div class="alert alert-danger"><?php echo e($message); ?></div><?php unset($message);
+if (isset($__messageOriginal)) { $message = $__messageOriginal; }
+endif;
+unset($__errorArgs, $__bag); ?>
+                            </div>
+                            <div class="mb-1" style="padding-top: 1rem">
+                                <select name="subject" class="<?php $__errorArgs = ['subject'];
+$__bag = $errors->getBag($__errorArgs[1] ?? 'default');
+if ($__bag->has($__errorArgs[0])) :
+if (isset($message)) { $__messageOriginal = $message; }
+$message = $__bag->first($__errorArgs[0]); ?> is-invalid <?php unset($message);
+if (isset($__messageOriginal)) { $message = $__messageOriginal; }
+endif;
+unset($__errorArgs, $__bag); ?>">
+
+                                    <title>Subject</title>
+                                    <option value="saab">Service</option>
+                                    <option value="fiat">Fiat</option>
+                                    <option value="Other">Other</option>
+                                </select>
+                                <?php $__errorArgs = ['subject'];
+$__bag = $errors->getBag($__errorArgs[1] ?? 'default');
+if ($__bag->has($__errorArgs[0])) :
+if (isset($message)) { $__messageOriginal = $message; }
+$message = $__bag->first($__errorArgs[0]); ?><div class="alert alert-danger"><?php echo e($message); ?></div><?php unset($message);
+if (isset($__messageOriginal)) { $message = $__messageOriginal; }
+endif;
+unset($__errorArgs, $__bag); ?>
+                            </div>
+                            <div class="mb-1" style="padding-top: 1rem">
+                                <textarea name="message" type="text" class="<?php $__errorArgs = ['message'];
+$__bag = $errors->getBag($__errorArgs[1] ?? 'default');
+if ($__bag->has($__errorArgs[0])) :
+if (isset($message)) { $__messageOriginal = $message; }
+$message = $__bag->first($__errorArgs[0]); ?> is-invalid <?php unset($message);
+if (isset($__messageOriginal)) { $message = $__messageOriginal; }
+endif;
+unset($__errorArgs, $__bag); ?>" placeholder="Message" rows="4"></textarea>
+                                <?php $__errorArgs = ['message'];
+$__bag = $errors->getBag($__errorArgs[1] ?? 'default');
+if ($__bag->has($__errorArgs[0])) :
+if (isset($message)) { $__messageOriginal = $message; }
+$message = $__bag->first($__errorArgs[0]); ?><div class="alert alert-danger"><?php echo e($message); ?></div><?php unset($message);
+if (isset($__messageOriginal)) { $message = $__messageOriginal; }
+endif;
+unset($__errorArgs, $__bag); ?>
+                            </div>
+                            <button type="submit" style="    -webkit-text-size-adjust: 100%;
+    -webkit-tap-highlight-color: rgba(0,0,0,0);
+    box-sizing: border-box;
+    font: inherit;
+    margin: 0;
+    overflow: visible;
+    -webkit-appearance: button;
+    cursor: pointer;
+    line-height: inherit;
+    outline: medium none;
+    background: #6bc513 none repeat scroll 0 0;
+    border: medium none;
+    color: #fff;
+    font-family: Lato ,sans-serif;
+                            font-size: 16px;
+                            font-weight: 500;
+                            height: 45px;
+                            margin-top: 40px;
+                            text-transform: uppercase;
+                            transition-duration: 0.3s;
+                            width: 100%;">Add Category</button>
+                            <?php echo $__env->make('home.flash-message', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
                         </form>
                     </div>
                 </div>

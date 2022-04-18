@@ -754,63 +754,19 @@
                 <div class="col-md-8 col-md-offset-2">
                     <div class="section-title text-center">
                         <h2>our Blog</h2>
-                        <p>  Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim nostrud exercitation ullamco laboris nisi.</p>
                     </div>
                 </div>
-            </div>
-            <div class="row">
-                <div class="col-md-6 col-sm-12 col-xs-12">
-                    <div class="single-blog">
-                        <div class="single-blog-top fix">
-                            <div class="blog-img">
-                                <a href="#">
-                                    <img src="{{asset('assets')}}/images/blog/1.jpg" alt="">
-                                </a>
-                            </div>
-                            <div class="blog-desc">
-                                <h6><a href="#">Lorem Ipsum is simply dummy</a></h6>
-                                <p>Lorem ipsum dolor sit amet, consectetur eiusmodm adipisicing elit, sed do eiusmod tempor incididuntm ut labore et dolore magna aliqua. </p>
-                                <a class="read-more" href="#">Read more <i class="zmdi zmdi-long-arrow-right"></i></a>
-                            </div>
-                        </div>
-                        <div class="blog-bottom-action">
-                            <div class="blog-publish">
-                                <p><i class="zmdi zmdi-time"></i>Jun 25, 2017 </p>
-                            </div>
-                            <div class="blog-action-box">
-                                <ul>
-                                    <li><a href="#"><i class="zmdi zmdi-favorite-outline"></i>(550)</a></li>
-                                    <li><a href="#"><i class="zmdi zmdi-comments"></i>(200)</a></li>
-                                    <li><a href="#"><i class="zmdi zmdi-share"></i>(100)</a></li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-6 col-sm-12 col-xs-12">
-                    <div class="single-blog">
-                        <div class="single-blog-top fix">
-                            <div class="blog-img">
-                                <a href="#">
-                                    <img src="{{asset('assets')}}/images/blog/2.jpg" alt="">
-                                </a>
-                            </div>
-                            <div class="blog-desc">
-                                <h6><a href="#">Lorem Ipsum is simply dummy</a></h6>
-                                <p>Lorem ipsum dolor sit amet, consectetur eiusmodm adipisicing elit, sed do eiusmod tempor incididuntm ut labore et dolore magna aliqua. </p>
-                                <a class="read-more" href="#">Read more <i class="zmdi zmdi-long-arrow-right"></i></a>
-                            </div>
-                        </div>
-                        <div class="blog-bottom-action">
-                            <div class="blog-publish">
-                                <p><i class="zmdi zmdi-time"></i>Jun 25, 2017 </p>
-                            </div>
-                            <div class="blog-action-box">
-                                <ul>
-                                    <li><a href="#"><i class="zmdi zmdi-favorite-outline"></i>(550)</a></li>
-                                    <li><a href="#"><i class="zmdi zmdi-comments"></i>(200)</a></li>
-                                    <li><a href="#"><i class="zmdi zmdi-share"></i>(100)</a></li>
-                                </ul>
+                <div class="error-area text-center ptb-100">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div class="error-content ">
+                                    <h2>Coming Soon!</h2>
+                                    <h4>We're coming soon</h4>
+                                    <p>We are working very hard on this, <br>
+                                        It will bring a lot of new features.<br>
+                                        Stay tuned!</p>
+                                </div>
                             </div>
                         </div>
                     </div>

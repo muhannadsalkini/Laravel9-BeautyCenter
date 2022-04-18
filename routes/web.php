@@ -22,6 +22,7 @@ Route::get('/blog', [HomeController::class, 'comingsoon']);
 Route::get('/cart', [HomeController::class, 'cart']);
 Route::get('/checkout', [HomeController::class, 'checkout']);
 Route::get('/contact-us', [HomeController::class, 'contact']);
+Route::post('/sendmessage', [HomeController::class, 'sendmessage'])->name('sendmessage');
 Route::get('/shop', [HomeController::class, 'shop']);
 
 
@@ -62,6 +63,13 @@ Route::middleware('auth')->prefix('admin')->group(function (){
     Route::get('setting', [App\Http\Controllers\Admin\SettingController::class, 'index'])->name('admin_setting');
     Route::post('setting/update', [App\Http\Controllers\Admin\SettingController::class, 'update'])->name('admin_setting_update');
 
+    // Messages
+    route::prefix('message')->group(function (){
+        Route::get('/', [App\Http\Controllers\Admin\MessageController::class, 'index'])->name('admin_message');
+        Route::get('/edit/{id}', [App\Http\Controllers\Admin\MessageController::class, 'edit'])->name('admin_message_edit');
+        Route::post('/update/{id}', [App\Http\Controllers\Admin\MessageController::class, 'update'])->name('admin_message_update');
+        Route::get('/delete/{id}', [App\Http\Controllers\Admin\MessageController::class, 'destroy'])->name('admin_message_delete');
+    });
 });
 
 Route::middleware('auth')->prefix('myaccount')->namespace('myaccount')->group(function (){
@@ -81,3 +89,5 @@ Route::get('/logout', [HomeController::class, 'logout'])->name('admin_logout');
 Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
     return view('dashboard');
 })->name('dashboard');
+
+
