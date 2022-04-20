@@ -80,7 +80,7 @@ $setting = \App\Http\Controllers\HomeController::getsetting();
                                         <!-- Categories -->
                                         @include('home._category')
                                         <!-- BLOG -->
-                                        <li><a href="/blog">blog</a></li>
+                                        <li><a href="{{ route('blog') }}">blog</a></li>
                                         <!-- CONTACT US -->
                                         <li><a href="/contact-us">contact</a></li>
 

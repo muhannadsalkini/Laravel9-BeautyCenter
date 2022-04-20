@@ -80,7 +80,7 @@ $setting = \App\Http\Controllers\HomeController::getsetting();
                                         <!-- Categories -->
                                         <?php echo $__env->make('home._category', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
                                         <!-- BLOG -->
-                                        <li><a href="/blog">blog</a></li>
+                                        <li><a href="<?php echo e(route('blog')); ?>">blog</a></li>
                                         <!-- CONTACT US -->
                                         <li><a href="/contact-us">contact</a></li>
 

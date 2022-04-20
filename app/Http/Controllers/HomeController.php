@@ -25,7 +25,8 @@ class HomeController extends Controller
     public function index()
     {
         $setting = HomeController::getsetting();
-        $slider = Service::with('category')->select('title','image','price','category_id', 'description')->limit(4)->get();
+        $slider = Service::with('category')->limit(4)->get();
+        $daily = Service::with('category')->limit(3)->inRandomOrder()->get();
         $category = Category::get();
         //print_r($slider);
         //exit();
@@ -33,6 +34,7 @@ class HomeController extends Controller
             'setting'=>$setting,
             'slider'=>$slider,
             'category'=>$category,
+            'daily'=>$daily,
         ];
         return view('home.index', $data);
     }
@@ -99,7 +101,8 @@ class HomeController extends Controller
 
     public function blog()
     {
-        return view('home.blog');
+        $setting = HomeController::getsetting();
+        return view('home._coming_soon',['setting'=>$setting]);
     }
 
     public function cart()

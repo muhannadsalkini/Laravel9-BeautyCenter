@@ -239,7 +239,7 @@
                                                 </div>
                                                 <ul class="product-action">
                                                     <li><a href="#"><i class="zmdi zmdi-refresh"></i></a></li>
-                                                    <li><a href="#" class="add-to-cart">Book now</a></li>
+                                                    <li><a href="<?php echo e(route('service',['id'=>$rs->id])); ?>" class="add-to-cart">Book now</a></li>
                                                     <li><a href="#"><i class="zmdi zmdi-favorite-outline"></i></a>
                                                     </li>
                                                 </ul>

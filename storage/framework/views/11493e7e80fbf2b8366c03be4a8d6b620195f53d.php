@@ -1,3 +1,4 @@
+<?php ($setting = App\Http\Controllers\HomeController::getsetting()); ?>
 <html>
 <head>
     <meta charset="utf-8">

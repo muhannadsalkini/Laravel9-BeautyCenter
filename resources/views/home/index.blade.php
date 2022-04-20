@@ -482,48 +482,26 @@
             <div class="row">
                 <div class="col-md-8 col-md-offset-2">
                     <div class="section-title text-center">
-                        <h2>our Features</h2>
+                        <h2>Deals Of The Day</h2>
                         <p>  Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim nostrud exercitation ullamco laboris nisi.</p>
                     </div>
                 </div>
             </div>
             <div class="row">
+                @foreach($daily as $rs)
                 <div class="col-md-4 col-sm-6 col-xs-12">
                     <div class="single-feature text-center">
                         <div class="feature-img">
-                            <img src="{{asset('assets')}}/images/feature/1.png" alt="">
+                            <img src="{{ Storage::url($rs->image)}}" alt="">
                         </div>
                         <div class="feature-desc">
-                            <h3><a href="#">Face Treatment</a></h3>
-                            <p>$100</p>
-                            <a href="#">Book now</a>
+                            <h3><a href="#">{{ $rs->title }}</a></h3>
+                            <p>${{$rs->price}}</p>
+                            <a href="{{route('service',['id'=>$rs->id])}}">Book now</a>
                         </div>
                     </div>
                 </div>
-                <div class="col-md-4 col-sm-6 col-xs-12">
-                    <div class="single-feature text-center">
-                        <div class="feature-img">
-                            <img src="{{asset('assets')}}/images/feature/2.png" alt="">
-                        </div>
-                        <div class="feature-desc">
-                            <h3><a href="#">Body message</a></h3>
-                            <p>$300</p>
-                            <a href="#">Book now</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-4 hidden-sm col-xs-12">
-                    <div class="single-feature text-center">
-                        <div class="feature-img">
-                            <img src="{{asset('assets')}}/images/feature/3.png" alt="">
-                        </div>
-                        <div class="feature-desc">
-                            <h3><a href="#">Nail Treatment</a></h3>
-                            <p>$200</p>
-                            <a href="#">Book now</a>
-                        </div>
-                    </div>
-                </div>
+                @endforeach
             </div>
         </div>
     </div>
