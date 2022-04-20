@@ -8,6 +8,7 @@ use App\Models\Service;
 use App\Models\Setting;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\DB;
 
 class HomeController extends Controller
 {
@@ -30,20 +31,30 @@ class HomeController extends Controller
         $category = Category::get();
         //print_r($slider);
         //exit();
-        $data = [
+        $attributes = [
             'setting'=>$setting,
             'slider'=>$slider,
             'category'=>$category,
             'daily'=>$daily,
         ];
-        return view('home.index', $data);
+        return view('home.index', $attributes);
     }
 
     public function service($id)
     {
+        $setting = HomeController::getsetting();
         $data = Service::find($id);
-        print_r($data);
-        exit();
+        $images = DB::table('images')->where('service_id',$id)->get();
+        $services = DB::table('services')->where('category_id', $data->category_id)->get();
+        //print_r($data);
+        //exit();
+        $attributes = [
+            'data'=>$data,
+            'setting'=>$setting,
+            'images'=>$images,
+            'services'=>$services
+        ];
+        return view('home.service_detail', $attributes);
     }
 
     public function categoryservice($id)
@@ -139,11 +150,6 @@ class HomeController extends Controller
         $data->message = $request->input('message');
         $data->save();
         return redirect('contact-us')->with('success', 'Successfully sent, Thank you.');
-    }
-
-    public function shop()
-    {
-        return view('home.shop');
     }
 
     public function comingsoon()

@@ -1,10 +1,9 @@
 @extends('layouts.home')
 
 @section('title', $setting->title. ' | Services')
-@section('description')
-    {{ $setting->description }}
-@endsection
+@section('description', $setting->description)
 @section('keywords',$setting->keywords)
+@section('breadcrumbs', 'Services')
 
 
 @section('content')
@@ -194,9 +193,9 @@
                                                 <img src="{{ Storage::url($rs->image)}}" alt="">
                                             </div>
                                             <div class="feature-desc">
-                                                <h3><a href="#">{{ $rs->title }}</a></h3>
+                                                <h3><a href="{{route('service',['id'=>$rs->id])}}">{{ $rs->title }}</a></h3>
                                                 <p>$ {{ $rs->price }}</p>
-                                                <a href="#">Book now</a>
+                                                <a href="{{route('service',['id'=>$rs->id])}}">Book now</a>
                                             </div>
                                         </div>
                                     </div>
@@ -209,9 +208,9 @@
                                             <div class="pagination-inner">
                                                 <ul>
                                                     <li><a href="#"><i class="zmdi zmdi-caret-left"></i></a></li>
-                                                    <li><a href="#">1</a></li>
+                                                    <li class="active"><a href="#">1</a></li>
                                                     <li><a href="#">2</a></li>
-                                                    <li class="active">3</li>
+                                                    <li>3</li>
                                                     <li><a href="#">4</a></li>
                                                     <li><a href="#"><i class="zmdi zmdi-caret-right"></i></a></li>
                                                 </ul>
@@ -239,7 +238,6 @@
                                                     <p>{{ $rs->description }}</p>
                                                 </div>
                                                 <ul class="product-action">
-                                                    <li><a href="#"><i class="zmdi zmdi-refresh"></i></a></li>
                                                     <li><a href="{{route('service',['id'=>$rs->id])}}" class="add-to-cart">Book now</a></li>
                                                     <li><a href="#"><i class="zmdi zmdi-favorite-outline"></i></a>
                                                     </li>
@@ -256,9 +254,9 @@
                                             <div class="pagination-inner">
                                                 <ul>
                                                     <li><a href="#"><i class="zmdi zmdi-caret-left"></i></a></li>
-                                                    <li><a href="#">1</a></li>
+                                                    <li class="active"><a href="#">1</a></li>
                                                     <li><a href="#">2</a></li>
-                                                    <li class="active">3</li>
+                                                    <li>3</li>
                                                     <li><a href="#">4</a></li>
                                                     <li><a href="#"><i class="zmdi zmdi-caret-right"></i></a></li>
                                                 </ul>

@@ -1,9 +1,7 @@
 <?php $__env->startSection('title', $setting->title. ' | Services'); ?>
-<?php $__env->startSection('description'); ?>
-    <?php echo e($setting->description); ?>
-
-<?php $__env->stopSection(); ?>
+<?php $__env->startSection('description', $setting->description); ?>
 <?php $__env->startSection('keywords',$setting->keywords); ?>
+<?php $__env->startSection('breadcrumbs', 'Services'); ?>
 
 
 <?php $__env->startSection('content'); ?>
@@ -193,9 +191,9 @@
                                                 <img src="<?php echo e(Storage::url($rs->image)); ?>" alt="">
                                             </div>
                                             <div class="feature-desc">
-                                                <h3><a href="#"><?php echo e($rs->title); ?></a></h3>
+                                                <h3><a href="<?php echo e(route('service',['id'=>$rs->id])); ?>"><?php echo e($rs->title); ?></a></h3>
                                                 <p>$ <?php echo e($rs->price); ?></p>
-                                                <a href="#">Book now</a>
+                                                <a href="<?php echo e(route('service',['id'=>$rs->id])); ?>">Book now</a>
                                             </div>
                                         </div>
                                     </div>
@@ -208,9 +206,9 @@
                                             <div class="pagination-inner">
                                                 <ul>
                                                     <li><a href="#"><i class="zmdi zmdi-caret-left"></i></a></li>
-                                                    <li><a href="#">1</a></li>
+                                                    <li class="active"><a href="#">1</a></li>
                                                     <li><a href="#">2</a></li>
-                                                    <li class="active">3</li>
+                                                    <li>3</li>
                                                     <li><a href="#">4</a></li>
                                                     <li><a href="#"><i class="zmdi zmdi-caret-right"></i></a></li>
                                                 </ul>
@@ -238,7 +236,6 @@
                                                     <p><?php echo e($rs->description); ?></p>
                                                 </div>
                                                 <ul class="product-action">
-                                                    <li><a href="#"><i class="zmdi zmdi-refresh"></i></a></li>
                                                     <li><a href="<?php echo e(route('service',['id'=>$rs->id])); ?>" class="add-to-cart">Book now</a></li>
                                                     <li><a href="#"><i class="zmdi zmdi-favorite-outline"></i></a>
                                                     </li>
@@ -255,9 +252,9 @@
                                             <div class="pagination-inner">
                                                 <ul>
                                                     <li><a href="#"><i class="zmdi zmdi-caret-left"></i></a></li>
-                                                    <li><a href="#">1</a></li>
+                                                    <li class="active"><a href="#">1</a></li>
                                                     <li><a href="#">2</a></li>
-                                                    <li class="active">3</li>
+                                                    <li>3</li>
                                                     <li><a href="#">4</a></li>
                                                     <li><a href="#"><i class="zmdi zmdi-caret-right"></i></a></li>
                                                 </ul>

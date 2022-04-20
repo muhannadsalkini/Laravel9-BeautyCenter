@@ -1,5 +1,6 @@
 <?php
     $setting = \App\Http\Controllers\HomeController::getsetting();
+    $datalist = \App\Models\Category::limit(6)->get();
 ?>
 
 <!--footer start-->
@@ -57,15 +58,13 @@
                 <div class="col-md-3 col-sm-6 col-xs-12">
                     <div class="single-footer widget">
                         <div class="footer-title">
-                            <h3>Flicker widget</h3>
+                            <h3>Categories</h3>
                         </div>
                         <ul>
-                            <li><a href="#"><img src="<?php echo e(asset('assets')); ?>/images/widget/1.jpg" alt=""></a></li>
-                            <li><a href="#"><img src="<?php echo e(asset('assets')); ?>/images/widget/2.jpg" alt=""></a></li>
-                            <li><a href="#"><img src="<?php echo e(asset('assets')); ?>/images/widget/3.jpg" alt=""></a></li>
-                            <li><a href="#"><img src="<?php echo e(asset('assets')); ?>/images/widget/4.jpg" alt=""></a></li>
-                            <li><a href="#"><img src="<?php echo e(asset('assets')); ?>/images/widget/5.jpg" alt=""></a></li>
-                            <li><a href="#"><img src="<?php echo e(asset('assets')); ?>/images/widget/6.jpg" alt=""></a></li>
+                            <?php $__currentLoopData = $datalist; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $data): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+                            <?php if($data->image): ?><li><a href="<?php echo e(route('categoryservice',['id'=>$data->id] )); ?>"><img src="<?php echo e(Storage::url($data->image)); ?>" alt=""></a><p style="height: 5px; font-size: xx-small;"><?php echo e($data->title); ?></p></li>
+                                <?php endif; ?>
+                            <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
                         </ul>
                     </div>
                 </div>

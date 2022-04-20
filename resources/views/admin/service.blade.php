@@ -83,6 +83,7 @@
                                         <th>Category</th>
                                         <th>Title</th>
                                         <th>Price</th>
+                                        <th>Days</th>
                                         <th>Image</th>
                                         <th>Status</th>
                                         <th>Actions</th>
@@ -96,6 +97,7 @@
                                             <td>@if($rs->category){{ \App\Http\Controllers\Admin\CategoryController::getParentTree($rs->category, $rs->category->title) }}
                                                 @else NO CATEGORY! @endif</td>
                                             <td>{{ $rs->title }}</td>
+                                            <td>{{ $rs->price }}</td>
                                             <td>{{ $rs->price }}</td>
                                             <td>
                                                 <div class="avatar-group">

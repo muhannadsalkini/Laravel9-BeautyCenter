@@ -1,8 +1,9 @@
 @extends('layouts.home')
 
-@section('title', 'About Us | ' .$setting->title)
-@section('description',$setting->description)
+@section('title', $setting->title. ' | About Us' )
+@section('description', $setting->description)
 @section('keywords',$setting->keywords)
+@section('breadcrumbs', 'About Us')
 
 
 @section('content')

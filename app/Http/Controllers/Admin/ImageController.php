@@ -41,6 +41,10 @@ class ImageController extends Controller
      */
     public function store(Request $request, $service_id)
     {
+        $this->validate($request,[
+            'title'=>'required|min:2|max:149',
+            'image'=>'required',
+        ]);
         $data = new Image();
         $data->service_id = $service_id;
         $data->title = $request->input('title');

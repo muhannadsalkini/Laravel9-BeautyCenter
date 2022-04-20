@@ -1,9 +1,10 @@
+@php($setting = \App\Http\Controllers\HomeController::getsetting())
 @extends('layouts.home')
 
-@section('title', 'Blog')
-
-@section('keywords','Bakim, Guzellik')
-
+@section('title', $setting->title. ' | Blog' )
+@section('description', $setting->description)
+@section('keywords',$setting->keywords)
+@section('breadcrumbs', 'Blog')
 
 @section('content')
     <!--Breadcrumbs start-->

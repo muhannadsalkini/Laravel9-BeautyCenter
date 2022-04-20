@@ -1,8 +1,12 @@
-<?php $__env->startSection('title', 'User Profile'); ?>
+<?php ($setting = App\Http\Controllers\HomeController::getsetting()); ?>
 
+
+<?php $__env->startSection('title', $setting->title. ' | User Profile'); ?>
+<?php $__env->startSection('breadcrumbs', 'User Profile'); ?>
 
 <?php $__env->startSection('content'); ?>
     <?php echo $__env->make('home._breadcrumbs', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
+
     <div class="shop-page ptb-100">
         <div class="container" >
             <div class="row">

@@ -4,15 +4,15 @@
         <div class="row">
             <div class="col-md-12">
                 <div class="breadcrumbs-title">
-                    <h2><?php echo $__env->yieldContent('title'); ?></h2>
+                    <h2><?php echo $__env->yieldContent('breadcrumbs'); ?></h2>
                 </div>
             </div>
         </div>
     </div>
     <div class="breadcrumbs-menu">
         <ul>
-            <li><a href="/">HOME <span>//</span></a></li>
-            <li><?php echo $__env->yieldContent('title'); ?></li>
+            <li><a href="<?php echo e(route('home')); ?>">HOME <span>//</span></a></li>
+            <li><?php echo $__env->yieldContent('breadcrumbs'); ?></li>
         </ul>
     </div>
 </div>

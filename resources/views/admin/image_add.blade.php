@@ -55,12 +55,14 @@
                     @csrf
                     <div class="mb-1">
                         <label class="form-label">Title</label>
-                        <input type="text" name="title" class="form-control" placeholder="Title">
+                        <input type="text" name="title" class="@error('title') is-invalid @enderror form-control" placeholder="Title">
+                        @error('title')<div class="alert alert-danger">{{ $message }}</div>@enderror
                     </div>
                     <div class="mb-1">
                         <div class=" col-md-12 mb-sm-0">
                             <label for="formFile" class="form-label">Image</label>
-                            <input class="form-control" type="file" id="formFile" name="image">
+                            <input class="@error('image') is-invalid @enderror form-control" type="file" id="formFile" name="image">
+                            @error('image')<div class="alert alert-danger">{{ $message }}</div>@enderror
                         </div>
                     </div>
                     <button type="submit" class="btn btn-primary waves-effect waves-float waves-light">Add image</button>

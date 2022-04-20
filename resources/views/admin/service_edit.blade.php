@@ -6,11 +6,14 @@
 @section('vendor_css')
     <!-- BEGIN: Vendor CSS -->
     <link rel="stylesheet" type="text/css" href="{{asset('assets')}}/admin/app-assets/vendors/css/vendors.min.css">
+    <link rel="stylesheet" type="text/css" href="{{asset('assets')}}/app-assets/vendors/css/forms/select/select2.min.css">
     <link rel="stylesheet" type="text/css" href="{{asset('assets')}}/admin/app-assets/vendors/css/tables/datatable/dataTables.bootstrap5.min.css">
     <link rel="stylesheet" type="text/css" href="{{asset('assets')}}/admin/app-assets/vendors/css/tables/datatable/responsive.bootstrap4.min.css">
     <link rel="stylesheet" type="text/css" href="{{asset('assets')}}/admin/app-assets/vendors/css/tables/datatable/buttons.bootstrap5.min.css">
     <link rel="stylesheet" type="text/css" href="{{asset('assets')}}/admin/app-assets/vendors/css/tables/datatable/rowGroup.bootstrap4.min.css">
     <link rel="stylesheet" type="text/css" href="{{asset('assets')}}/admin/app-assets/vendors/css/pickers/flatpickr/flatpickr.min.css">
+
+
     <!-- END: Vendor CSS -->
 @endsection
 
@@ -24,6 +27,7 @@
 @section('page_css')
     <!-- BEGIN: Page CSS -->
     <link rel="stylesheet" type="text/css" href="{{asset('assets')}}/admin/app-assets/css/core/menu/menu-types/vertical-menu.min.css">
+
     <!-- END: Page CSS -->
 @endsection
 
@@ -76,6 +80,19 @@
                                 <label class="form-label">Price</label>
                                 <input type="number" name="price" value="{{ $data->price }}" class="form-control" placeholder="Price">
                             </div>
+                            <!-- Multiple -->
+                            <div class="col-md-6 mb-1">
+                                <label class="form-label" for="select2-multiple">Days</label>
+                                <select name="days" id="days" multiple>
+                                    <option value="Sunday">Sunday</option>
+                                    <option value="Monday">Monday</option>
+                                    <option value="Tuesday">Tuesday</option>
+                                    <option value="Wednesday">Wednesday</option>
+                                    <option value="Thursday">Thursday</option>
+                                    <option value="Friday">Friday</option>
+                                    <option value="Saturday ">Saturday</option>
+                                </select>
+                            </div>
                             <div class="mb-1">
                                 <label class="form-label">Tax</label>
                                 <input type="number" name="tax" value="{{ $data->tax }}" class="form-control" placeholder="Tax">
@@ -110,9 +127,14 @@
 
 @endsection
 
+
+@section('page_vendor_js')
+    <script src="{{asset('assets')}}/admin/app-assets/vendors/js/forms/select/select2.full.min.js"></script>
+@endsection
 @section('page_js')
+
     <!-- BEGIN: Page JS-->
-    <script src="{{asset('assets')}}/admin/app-assets/js/scripts/tables/table-datatables-basic.min.js"></script>
+    <script src="{{asset('assets')}}/admin/app-assets/js/scripts/forms/form-select2.min.js"></script>
     <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.11.5/js/jquery.dataTables.js"></script>
     <!-- END: Page JS-->
 @endsection

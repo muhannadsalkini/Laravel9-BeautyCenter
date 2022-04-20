@@ -1,10 +1,12 @@
+@php($setting = App\Http\Controllers\HomeController::getsetting())
 @extends('layouts.home')
 
-@section('title', 'User Profile')
-
+@section('title', $setting->title. ' | User Profile')
+@section('breadcrumbs', 'User Profile')
 
 @section('content')
     @include('home._breadcrumbs')
+
     <div class="shop-page ptb-100">
         <div class="container" >
             <div class="row">

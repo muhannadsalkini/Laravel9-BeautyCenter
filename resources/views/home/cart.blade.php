@@ -1,9 +1,10 @@
+@php($setting = \App\Http\Controllers\HomeController::getsetting())
 @extends('layouts.home')
 
-@section('title', 'Cart')
-
-@section('keywords','Bakim, Guzellik')
-
+@section('title', $setting->title. ' | Cart' )
+@section('description', $setting->description)
+@section('keywords',$setting->keywords)
+@section('breadcrumbs', 'About Us')
 
 @section('content')
     <!--Breadcrumbs start-->
