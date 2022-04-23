@@ -162,10 +162,18 @@ $setting = \App\Http\Controllers\HomeController::getsetting();
                                 </div>
                                 <!--mini cart end-->
 
-                                <div class="search">
-                                    <a href="#"><i class="zmdi zmdi-search"></i></a>
+                                <div class="">
+                                    <!--<a href="#"><i class="zmdi zmdi-search"></i></a>-->
+                                    <form action="{{route('getservice')}}" method="post">
+                                        @csrf
+                                        @livewire('search')
+                                        <button type="submit" class="search-input"><i class="zmdi zmdi-search"></i> </button>
+                                    </form>
+                                    @livewireScripts
                                 </div>
+
                             </div>
+
                             <div class="search-box">
                                 <div class="search-form">
                                     <form action="#" id="search-form">

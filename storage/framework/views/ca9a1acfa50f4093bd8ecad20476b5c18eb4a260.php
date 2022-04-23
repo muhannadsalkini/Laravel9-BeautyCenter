@@ -162,10 +162,33 @@ $setting = \App\Http\Controllers\HomeController::getsetting();
                                 </div>
                                 <!--mini cart end-->
 
-                                <div class="search">
-                                    <a href="#"><i class="zmdi zmdi-search"></i></a>
+                                <div class="">
+                                    <!--<a href="#"><i class="zmdi zmdi-search"></i></a>-->
+                                    <form action="<?php echo e(route('getservice')); ?>" method="post">
+                                        <?php echo csrf_field(); ?>
+                                        <?php
+if (! isset($_instance)) {
+    $html = \Livewire\Livewire::mount('search')->html();
+} elseif ($_instance->childHasBeenRendered('G5A0O4F')) {
+    $componentId = $_instance->getRenderedChildComponentId('G5A0O4F');
+    $componentTag = $_instance->getRenderedChildComponentTagName('G5A0O4F');
+    $html = \Livewire\Livewire::dummyMount($componentId, $componentTag);
+    $_instance->preserveRenderedChild('G5A0O4F');
+} else {
+    $response = \Livewire\Livewire::mount('search');
+    $html = $response->html();
+    $_instance->logRenderedChild('G5A0O4F', $response->id(), \Livewire\Livewire::getRootElementTagName($html));
+}
+echo $html;
+?>
+                                        <button type="submit" class="search-input"><i class="zmdi zmdi-search"></i> </button>
+                                    </form>
+                                    <?php echo \Livewire\Livewire::scripts(); ?>
+
                                 </div>
+
                             </div>
+
                             <div class="search-box">
                                 <div class="search-form">
                                     <form action="#" id="search-form">

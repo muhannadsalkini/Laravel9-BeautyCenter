@@ -1,13 +1,13 @@
-@extends('layouts.home')
+<x-app-layout>
+    <x-slot name="header">
+        <h2 class="font-semibold text-xl text-gray-800 leading-tight">
+            {{ __('API Tokens') }}
+        </h2>
+    </x-slot>
 
-@section('title', 'Page Title')
-
-@section('sidebar')
-    @parent
-
-    <p>This is appended to the master sidebar.</p>
-@endsection
-
-@section('content')
-    <p>This is my body content.</p>
-@endsection
+    <div>
+        <div class="max-w-7xl mx-auto py-10 sm:px-6 lg:px-8">
+            @livewire('api.api-token-manager')
+        </div>
+    </div>
+</x-app-layout>

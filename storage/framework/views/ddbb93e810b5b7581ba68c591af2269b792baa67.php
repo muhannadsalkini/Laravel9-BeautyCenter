@@ -65,8 +65,7 @@
                             </div>
                         </div>
                         <ul class="product-action">
-                            <li><a href="#"><i class="zmdi zmdi-refresh"></i></a></li>
-                            <li><a href="cart.html" class="add-to-cart">add to cart</a></li>
+                            <li><a href="#" class="add-to-cart">add to cart</a></li>
                             <li><a href="#"><i class="zmdi zmdi-favorite-outline"></i></a></li>
                         </ul>
                         <div class="share mt-30">
@@ -101,6 +100,7 @@
                                 </div>
                                 <div role="tabpanel" class="tab-pane" id="review">
                                     <div class="review-wrapper fix">
+
                                         <div class="sin-review">
                                             <div class="review-image">
                                                 <img src="images/product/review/1.jpg" alt="" />
@@ -124,29 +124,7 @@
                                                 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer accumsan egestas elese ifend. Phasellus a felis at estei to bibendum feugiat ut eget eni Praesent et messages in con sectetur posuere dolor non.</p>
                                             </div>
                                         </div>
-                                        <div class="sin-review">
-                                            <div class="review-image">
-                                                <img src="images/product/review/1.jpg" alt="" />
-                                            </div>
-                                            <div class="review-details fix">
-                                                <div class="review-author float-left">
-                                                    <h3>Gerald Barnes</h3>
-                                                    <div class="review-star float-left">
-                                                        <i class="zmdi zmdi-star"></i>
-                                                        <i class="zmdi zmdi-star"></i>
-                                                        <i class="zmdi zmdi-star"></i>
-                                                        <i class="zmdi zmdi-star"></i>
-                                                        <i class="zmdi zmdi-star"></i>
-                                                    </div>
-                                                    <span>27 Jun 2016 at 12:24pm</span>
-                                                </div>
-                                                <div class="replay-delect float-right">
-                                                    <a href="#"><i class="zmdi zmdi-mail-reply"></i></a>
-                                                    <a href="#"><i class="zmdi zmdi-close"></i></a>
-                                                </div>
-                                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer accumsan egestas elese ifend. Phasellus a felis at estei to bibendum feugiat ut eget eni Praesent et messages in con sectetur posuere dolor non.</p>
-                                            </div>
-                                        </div>
+
                                     </div>
                                     <div class="review-form-wrapper fix">
                                         <h3>write a review</h3>

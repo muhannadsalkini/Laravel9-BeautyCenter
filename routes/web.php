@@ -26,6 +26,8 @@ Route::post('/sendmessage', [HomeController::class, 'sendmessage'])->name('sendm
 Route::get('/service/{id}', [HomeController::class, 'service'])->name('service');
 Route::get('/services/{id}', [HomeController::class, 'categoryservice'])->name('categoryservice');
 Route::get('/addtocart/{id}',[HomeController::class, 'index'])->whereNumber('id')->name('addtocart');
+Route::get('/servicelist/{search}', [HomeController::class, 'servicelist'])->name('servicelist');
+Route::post('/getservice', [HomeController::class, 'getservice'])->name('getservice');
 
 
 

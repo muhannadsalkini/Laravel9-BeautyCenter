@@ -23,23 +23,6 @@ class HomeController extends Controller
         return Setting::first();
     }
 
-    public function index()
-    {
-        $setting = HomeController::getsetting();
-        $slider = Service::with('category')->limit(4)->get();
-        $daily = Service::with('category')->limit(3)->inRandomOrder()->get();
-        $category = Category::get();
-        //print_r($slider);
-        //exit();
-        $attributes = [
-            'setting'=>$setting,
-            'slider'=>$slider,
-            'category'=>$category,
-            'daily'=>$daily,
-        ];
-        return view('home.index', $attributes);
-    }
-
     public function service($id)
     {
         $setting = HomeController::getsetting();
@@ -55,6 +38,45 @@ class HomeController extends Controller
             'services'=>$services
         ];
         return view('home.service_detail', $attributes);
+    }
+
+    public function getservice(Request $request)
+    {
+        $search=$request->input('search');
+
+        $count = Service::where('title', 'like', '%'.$search.'%')->get()->count();
+        if ($count==1)
+        {
+            $data = Service::where('title', 'like', '%'.$search.'%')->first();
+            return redirect()->route('service',['id'=>$data->id]);
+        }
+        else
+        {
+            return redirect()->route('servicelist',['search'=>$search]);
+        }
+    }
+
+    public function servicelist($search)
+    {
+        $datalist = Service::where('title' , 'like', '%'.$search.'%')->get();
+        return view('home.search_services',['search'=>$search,'datalist'=>$datalist]);
+    }
+
+    public function index()
+    {
+        $setting = HomeController::getsetting();
+        $slider = Service::with('category')->limit(4)->get();
+        $daily = Service::with('category')->limit(3)->inRandomOrder()->get();
+        $category = Category::get();
+        //print_r($slider);
+        //exit();
+        $attributes = [
+            'setting'=>$setting,
+            'slider'=>$slider,
+            'category'=>$category,
+            'daily'=>$daily,
+        ];
+        return view('home.index', $attributes);
     }
 
     public function categoryservice($id)
