@@ -21,9 +21,9 @@
                                 <!--Accordion item 1-->
                                 <h6 class="open" data-collapse-summary="" aria-expanded="true"><a href="#"><a href="#">User Panel</a></a></h6>
                                 <ul aria-hidden="false" style="display: block;">
-                                    <li><a href="{{ route('myprofile') }}">Profile</a></li>
+                                    <li><a style="color: #6bc513" href="{{ route('myprofile') }}">Profile</a></li>
                                     <li><a href="#">Orders</a></li>
-                                    <li><a href="#">Reviews</a></li>
+                                    <li><a href="{{ route('myreviews') }}">Reviews</a></li>
                                     <li><a href="#">Shopcart</a></li>
                                     <li><a href="#">Messages</a></li>
                                     <li><a href="{{ route('logout') }}">Logout</a></li>

@@ -3,7 +3,6 @@
 @section('title', $setting->title. ' | Service Detail')
 @section('description', $setting->description)
 @section('keywords',$setting->keywords)
-@section('breadcrumbs', 'Service Detail')
 
 
 @section('content')
@@ -34,14 +33,18 @@
                 <div class="col-lg-7 col-md-7 col-sm-12 col-xs-12">
                     <div class="product-detail single-product-info">
                         <h3>{{$data->title}}</h3>
+                        @php
+                            $avgrev = \App\Http\Controllers\HomeController::avrgreview($data->id);
+                            $countreviews = \App\Http\Controllers\HomeController::countreviews($data->id);
+                        @endphp
                         <div class="rating-review">
                             <div class="single-rating-review">
-                                <i class="zmdi zmdi-star"></i>
-                                <i class="zmdi zmdi-star"></i>
-                                <i class="zmdi zmdi-star"></i>
-                                <i class="zmdi zmdi-star"></i>
-                                <i class="zmdi zmdi-star-outline"></i>
-                                <p>(4 Reviews)</p>
+                                <i class=" @if($avgrev<1) zmdi zmdi-star-outline @else zmdi zmdi-star @endif"></i>
+                                <i class=" @if($avgrev<2) zmdi zmdi-star-outline @else zmdi zmdi-star @endif"></i>
+                                <i class=" @if($avgrev<3) zmdi zmdi-star-outline @else zmdi zmdi-star @endif"></i>
+                                <i class=" @if($avgrev<4) zmdi zmdi-star-outline @else zmdi zmdi-star @endif"></i>
+                                <i class=" @if($avgrev<5) zmdi zmdi-star-outline @else zmdi zmdi-star @endif"></i>
+                                <p>({{ $countreviews }})</p>
                             </div>
                         </div>
                         <h4>$ {{$data->price}}</h4>
@@ -67,7 +70,8 @@
                             </div>
                         </div>
                         <ul class="product-action">
-                            <li><a href="#" class="add-to-cart">add to cart</a></li>
+                            <li><a href="#"><i class="zmdi zmdi-refresh"></i></a></li>
+                            <li><a href="cart.html" class="add-to-cart">add to cart</a></li>
                             <li><a href="#"><i class="zmdi zmdi-favorite-outline"></i></a></li>
                         </ul>
                         <div class="share mt-30">
@@ -88,7 +92,7 @@
                                 <ul class="clearfix" role="tablist">
                                     <li role="presentation" class="active"><a href="#description" aria-controls="description" role="tab" data-toggle="tab">Description</a></li>
                                     <li role="presentation"><a href="#specification" aria-controls="specification" role="tab" data-toggle="tab">information</a></li>
-                                    <li role="presentation"><a href="#review" aria-controls="review" role="tab" data-toggle="tab">Reviews</a></li>
+                                    <li role="presentation"><a href="#review" aria-controls="review" role="tab" data-toggle="tab">Reviews({{ $countreviews }})</a></li>
                                 </ul>
                             </div>
                             <div class="tab-content">
@@ -101,80 +105,32 @@
                                 </div>
                                 <div role="tabpanel" class="tab-pane" id="review">
                                     <div class="review-wrapper fix">
-
+                                        @foreach($reviews as $rs)
                                         <div class="sin-review">
-                                            <div class="review-image">
-                                                <img src="images/product/review/1.jpg" alt="" />
-                                            </div>
                                             <div class="review-details fix">
                                                 <div class="review-author float-left">
-                                                    <h3>Gerald Barnes</h3>
+                                                    <h3>{{substr($rs->user->name,0,4) }}****</h3>
                                                     <div class="review-star float-left">
-                                                        <i class="zmdi zmdi-star"></i>
-                                                        <i class="zmdi zmdi-star"></i>
-                                                        <i class="zmdi zmdi-star"></i>
-                                                        <i class="zmdi zmdi-star"></i>
-                                                        <i class="zmdi zmdi-star"></i>
+                                                        <i class=" @if($rs->rate<1) zmdi zmdi-star-outline @else zmdi zmdi-star @endif"></i>
+                                                        <i class=" @if($rs->rate<2) zmdi zmdi-star-outline @else zmdi zmdi-star @endif"></i>
+                                                        <i class=" @if($rs->rate<3) zmdi zmdi-star-outline @else zmdi zmdi-star @endif"></i>
+                                                        <i class=" @if($rs->rate<4) zmdi zmdi-star-outline @else zmdi zmdi-star @endif"></i>
+                                                        <i class=" @if($rs->rate<5) zmdi zmdi-star-outline @else zmdi zmdi-star @endif"></i>
                                                     </div>
-                                                    <span>27 Jun 2016 at 12:24pm</span>
+                                                    <span>{{ $rs->created_at }}</span>
                                                 </div>
-                                                <div class="replay-delect float-right">
-                                                    <a href="#"><i class="zmdi zmdi-mail-reply"></i></a>
-                                                    <a href="#"><i class="zmdi zmdi-close"></i></a>
+                                                <div>
+                                                    <h6><strong>{{ $rs->subject }}</strong></h6>
+                                                    <p>{{ $rs->review }}</p>
                                                 </div>
-                                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer accumsan egestas elese ifend. Phasellus a felis at estei to bibendum feugiat ut eget eni Praesent et messages in con sectetur posuere dolor non.</p>
+
                                             </div>
                                         </div>
-
+                                        @endforeach
                                     </div>
                                     <div class="review-form-wrapper fix">
                                         <h3>write a review</h3>
-                                        <div class="review-form">
-                                            <form action="#">
-                                                <div class="star-box fix">
-                                                    <h4>your Rating</h4>
-                                                    <div class="star star-1">
-                                                        <i class="zmdi zmdi-star-outline"></i>
-                                                    </div>
-                                                    <div class="star star-2">
-                                                        <i class="zmdi zmdi-star-outline"></i>
-                                                        <i class="zmdi zmdi-star-outline"></i>
-                                                    </div>
-                                                    <div class="star star-3">
-                                                        <i class="zmdi zmdi-star-outline"></i>
-                                                        <i class="zmdi zmdi-star-outline"></i>
-                                                        <i class="zmdi zmdi-star-outline"></i>
-                                                    </div>
-                                                    <div class="star star-4">
-                                                        <i class="zmdi zmdi-star-outline"></i>
-                                                        <i class="zmdi zmdi-star-outline"></i>
-                                                        <i class="zmdi zmdi-star-outline"></i>
-                                                        <i class="zmdi zmdi-star-outline"></i>
-                                                    </div>
-                                                    <div class="star star-5">
-                                                        <i class="zmdi zmdi-star-outline"></i>
-                                                        <i class="zmdi zmdi-star-outline"></i>
-                                                        <i class="zmdi zmdi-star-outline"></i>
-                                                        <i class="zmdi zmdi-star-outline"></i>
-                                                        <i class="zmdi zmdi-star-outline"></i>
-                                                    </div>
-                                                </div>
-                                                <div class="input-box-2 fix">
-                                                    <div class="input-box float-left">
-                                                        <input id="name" placeholder="Type your name" type="text">
-                                                    </div>
-                                                    <div class="input-box float-left">
-                                                        <input placeholder="Type your email" type="text">
-                                                    </div>
-                                                </div>
-                                                <div class="input-box review-box fix">
-                                                    <textarea placeholder="Write your review"></textarea>
-                                                </div>
-                                                <div class="input-box submit-box fix">
-                                                    <input value="submit review" type="submit">
-                                                </div>
-                                            </form>
-                                        </div>
+                                        @livewire('review', ['id'=>$data->id])
                                     </div>
                                 </div>
                             </div>

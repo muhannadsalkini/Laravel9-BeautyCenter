@@ -2,16 +2,29 @@
 
 namespace App\Http\Controllers;
 
+
 use App\Models\Category;
 use App\Models\Message;
 use App\Models\Service;
 use App\Models\Setting;
+use App\Models\Review;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
 
 class HomeController extends Controller
 {
+    // reviwes
+
+    public static function countreviews($id)
+    {
+        return Review::where('service_id',$id)->count();
+    }
+    public static function avrgreview($id)
+    {
+        return Review::where('service_id',$id)->average('rate');
+    }
+
     // Category list
     public static function categorylist()
     {
@@ -27,6 +40,7 @@ class HomeController extends Controller
     {
         $setting = HomeController::getsetting();
         $data = Service::find($id);
+        $reviews = Review::where('service_id',$id)->get();
         $images = DB::table('images')->where('service_id',$id)->get();
         $services = DB::table('services')->where('category_id', $data->category_id)->get();
         //print_r($data);
@@ -35,7 +49,8 @@ class HomeController extends Controller
             'data'=>$data,
             'setting'=>$setting,
             'images'=>$images,
-            'services'=>$services
+            'services'=>$services,
+            'reviews'=>$reviews
         ];
         return view('home.service_detail', $attributes);
     }

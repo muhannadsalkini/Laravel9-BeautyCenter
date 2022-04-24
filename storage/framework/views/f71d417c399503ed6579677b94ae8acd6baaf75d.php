@@ -21,9 +21,9 @@
                                 <!--Accordion item 1-->
                                 <h6 class="open" data-collapse-summary="" aria-expanded="true"><a href="#"><a href="#">User Panel</a></a></h6>
                                 <ul aria-hidden="false" style="display: block;">
-                                    <li><a href="<?php echo e(route('myprofile')); ?>">Profile</a></li>
+                                    <li><a style="color: #6bc513" href="<?php echo e(route('myprofile')); ?>">Profile</a></li>
                                     <li><a href="#">Orders</a></li>
-                                    <li><a href="#">Reviews</a></li>
+                                    <li><a href="<?php echo e(route('myreviews')); ?>">Reviews</a></li>
                                     <li><a href="#">Shopcart</a></li>
                                     <li><a href="#">Messages</a></li>
                                     <li><a href="<?php echo e(route('logout')); ?>">Logout</a></li>
@@ -41,7 +41,7 @@
                     </div>
                 </div>
                 <div class="col-md-10" >
-                    <?php echo $__env->make('profile.show', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
+                    <?php echo $__env->make(\Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']), \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
                 </div>
                 <!--shop sidebar end-->
             </div>

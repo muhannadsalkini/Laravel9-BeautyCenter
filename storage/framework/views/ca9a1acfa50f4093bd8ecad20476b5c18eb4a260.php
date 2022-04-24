@@ -114,6 +114,14 @@ $setting = \App\Http\Controllers\HomeController::getsetting();
                                         </div>
                                         <div class="mini-cart-product fix">
                                             <div class="content fix">
+                                                <a href="<?php echo e(route('myreviews')); ?>" class="title">
+                                                    <svg xmlns="http://www.w3.org/2000/svg" style="padding-right: 5px" width="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-align-justify">
+                                                        <line x1="21" y1="10" x2="3" y2="10"></line><line x1="21" y1="6" x2="3" y2="6"></line><line x1="21" y1="14" x2="3" y2="14"></line><line x1="21" y1="18" x2="3" y2="18"></line>
+                                                    </svg> Reviews</a>
+                                            </div>
+                                        </div>
+                                        <div class="mini-cart-product fix">
+                                            <div class="content fix">
                                                 <a href="#" class="title"><i class="zmdi zmdi-settings" style="padding-right: 5px"></i> Settings</a>
                                             </div>
                                         </div>
@@ -169,15 +177,15 @@ $setting = \App\Http\Controllers\HomeController::getsetting();
                                         <?php
 if (! isset($_instance)) {
     $html = \Livewire\Livewire::mount('search')->html();
-} elseif ($_instance->childHasBeenRendered('G5A0O4F')) {
-    $componentId = $_instance->getRenderedChildComponentId('G5A0O4F');
-    $componentTag = $_instance->getRenderedChildComponentTagName('G5A0O4F');
+} elseif ($_instance->childHasBeenRendered('jH1gSmp')) {
+    $componentId = $_instance->getRenderedChildComponentId('jH1gSmp');
+    $componentTag = $_instance->getRenderedChildComponentTagName('jH1gSmp');
     $html = \Livewire\Livewire::dummyMount($componentId, $componentTag);
-    $_instance->preserveRenderedChild('G5A0O4F');
+    $_instance->preserveRenderedChild('jH1gSmp');
 } else {
     $response = \Livewire\Livewire::mount('search');
     $html = $response->html();
-    $_instance->logRenderedChild('G5A0O4F', $response->id(), \Livewire\Livewire::getRootElementTagName($html));
+    $_instance->logRenderedChild('jH1gSmp', $response->id(), \Livewire\Livewire::getRootElementTagName($html));
 }
 echo $html;
 ?>

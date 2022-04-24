@@ -1,7 +1,6 @@
 <?php $__env->startSection('title', $setting->title. ' | Service Detail'); ?>
 <?php $__env->startSection('description', $setting->description); ?>
 <?php $__env->startSection('keywords',$setting->keywords); ?>
-<?php $__env->startSection('breadcrumbs', 'Service Detail'); ?>
 
 
 <?php $__env->startSection('content'); ?>
@@ -32,14 +31,18 @@
                 <div class="col-lg-7 col-md-7 col-sm-12 col-xs-12">
                     <div class="product-detail single-product-info">
                         <h3><?php echo e($data->title); ?></h3>
+                        <?php
+                            $avgrev = \App\Http\Controllers\HomeController::avrgreview($data->id);
+                            $countreviews = \App\Http\Controllers\HomeController::countreviews($data->id);
+                        ?>
                         <div class="rating-review">
                             <div class="single-rating-review">
-                                <i class="zmdi zmdi-star"></i>
-                                <i class="zmdi zmdi-star"></i>
-                                <i class="zmdi zmdi-star"></i>
-                                <i class="zmdi zmdi-star"></i>
-                                <i class="zmdi zmdi-star-outline"></i>
-                                <p>(4 Reviews)</p>
+                                <i class=" <?php if($avgrev<1): ?> zmdi zmdi-star-outline <?php else: ?> zmdi zmdi-star <?php endif; ?>"></i>
+                                <i class=" <?php if($avgrev<2): ?> zmdi zmdi-star-outline <?php else: ?> zmdi zmdi-star <?php endif; ?>"></i>
+                                <i class=" <?php if($avgrev<3): ?> zmdi zmdi-star-outline <?php else: ?> zmdi zmdi-star <?php endif; ?>"></i>
+                                <i class=" <?php if($avgrev<4): ?> zmdi zmdi-star-outline <?php else: ?> zmdi zmdi-star <?php endif; ?>"></i>
+                                <i class=" <?php if($avgrev<5): ?> zmdi zmdi-star-outline <?php else: ?> zmdi zmdi-star <?php endif; ?>"></i>
+                                <p>(<?php echo e($countreviews); ?>)</p>
                             </div>
                         </div>
                         <h4>$ <?php echo e($data->price); ?></h4>
@@ -65,7 +68,8 @@
                             </div>
                         </div>
                         <ul class="product-action">
-                            <li><a href="#" class="add-to-cart">add to cart</a></li>
+                            <li><a href="#"><i class="zmdi zmdi-refresh"></i></a></li>
+                            <li><a href="cart.html" class="add-to-cart">add to cart</a></li>
                             <li><a href="#"><i class="zmdi zmdi-favorite-outline"></i></a></li>
                         </ul>
                         <div class="share mt-30">
@@ -86,7 +90,7 @@
                                 <ul class="clearfix" role="tablist">
                                     <li role="presentation" class="active"><a href="#description" aria-controls="description" role="tab" data-toggle="tab">Description</a></li>
                                     <li role="presentation"><a href="#specification" aria-controls="specification" role="tab" data-toggle="tab">information</a></li>
-                                    <li role="presentation"><a href="#review" aria-controls="review" role="tab" data-toggle="tab">Reviews</a></li>
+                                    <li role="presentation"><a href="#review" aria-controls="review" role="tab" data-toggle="tab">Reviews(<?php echo e($countreviews); ?>)</a></li>
                                 </ul>
                             </div>
                             <div class="tab-content">
@@ -100,80 +104,46 @@
                                 </div>
                                 <div role="tabpanel" class="tab-pane" id="review">
                                     <div class="review-wrapper fix">
-
+                                        <?php $__currentLoopData = $reviews; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $rs): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
                                         <div class="sin-review">
-                                            <div class="review-image">
-                                                <img src="images/product/review/1.jpg" alt="" />
-                                            </div>
                                             <div class="review-details fix">
                                                 <div class="review-author float-left">
-                                                    <h3>Gerald Barnes</h3>
+                                                    <h3><?php echo e(substr($rs->user->name,0,4)); ?>****</h3>
                                                     <div class="review-star float-left">
-                                                        <i class="zmdi zmdi-star"></i>
-                                                        <i class="zmdi zmdi-star"></i>
-                                                        <i class="zmdi zmdi-star"></i>
-                                                        <i class="zmdi zmdi-star"></i>
-                                                        <i class="zmdi zmdi-star"></i>
+                                                        <i class=" <?php if($rs->rate<1): ?> zmdi zmdi-star-outline <?php else: ?> zmdi zmdi-star <?php endif; ?>"></i>
+                                                        <i class=" <?php if($rs->rate<2): ?> zmdi zmdi-star-outline <?php else: ?> zmdi zmdi-star <?php endif; ?>"></i>
+                                                        <i class=" <?php if($rs->rate<3): ?> zmdi zmdi-star-outline <?php else: ?> zmdi zmdi-star <?php endif; ?>"></i>
+                                                        <i class=" <?php if($rs->rate<4): ?> zmdi zmdi-star-outline <?php else: ?> zmdi zmdi-star <?php endif; ?>"></i>
+                                                        <i class=" <?php if($rs->rate<5): ?> zmdi zmdi-star-outline <?php else: ?> zmdi zmdi-star <?php endif; ?>"></i>
                                                     </div>
-                                                    <span>27 Jun 2016 at 12:24pm</span>
+                                                    <span><?php echo e($rs->created_at); ?></span>
                                                 </div>
-                                                <div class="replay-delect float-right">
-                                                    <a href="#"><i class="zmdi zmdi-mail-reply"></i></a>
-                                                    <a href="#"><i class="zmdi zmdi-close"></i></a>
+                                                <div>
+                                                    <h6><strong><?php echo e($rs->subject); ?></strong></h6>
+                                                    <p><?php echo e($rs->review); ?></p>
                                                 </div>
-                                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer accumsan egestas elese ifend. Phasellus a felis at estei to bibendum feugiat ut eget eni Praesent et messages in con sectetur posuere dolor non.</p>
+
                                             </div>
                                         </div>
-
+                                        <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
                                     </div>
                                     <div class="review-form-wrapper fix">
                                         <h3>write a review</h3>
-                                        <div class="review-form">
-                                            <form action="#">
-                                                <div class="star-box fix">
-                                                    <h4>your Rating</h4>
-                                                    <div class="star star-1">
-                                                        <i class="zmdi zmdi-star-outline"></i>
-                                                    </div>
-                                                    <div class="star star-2">
-                                                        <i class="zmdi zmdi-star-outline"></i>
-                                                        <i class="zmdi zmdi-star-outline"></i>
-                                                    </div>
-                                                    <div class="star star-3">
-                                                        <i class="zmdi zmdi-star-outline"></i>
-                                                        <i class="zmdi zmdi-star-outline"></i>
-                                                        <i class="zmdi zmdi-star-outline"></i>
-                                                    </div>
-                                                    <div class="star star-4">
-                                                        <i class="zmdi zmdi-star-outline"></i>
-                                                        <i class="zmdi zmdi-star-outline"></i>
-                                                        <i class="zmdi zmdi-star-outline"></i>
-                                                        <i class="zmdi zmdi-star-outline"></i>
-                                                    </div>
-                                                    <div class="star star-5">
-                                                        <i class="zmdi zmdi-star-outline"></i>
-                                                        <i class="zmdi zmdi-star-outline"></i>
-                                                        <i class="zmdi zmdi-star-outline"></i>
-                                                        <i class="zmdi zmdi-star-outline"></i>
-                                                        <i class="zmdi zmdi-star-outline"></i>
-                                                    </div>
-                                                </div>
-                                                <div class="input-box-2 fix">
-                                                    <div class="input-box float-left">
-                                                        <input id="name" placeholder="Type your name" type="text">
-                                                    </div>
-                                                    <div class="input-box float-left">
-                                                        <input placeholder="Type your email" type="text">
-                                                    </div>
-                                                </div>
-                                                <div class="input-box review-box fix">
-                                                    <textarea placeholder="Write your review"></textarea>
-                                                </div>
-                                                <div class="input-box submit-box fix">
-                                                    <input value="submit review" type="submit">
-                                                </div>
-                                            </form>
-                                        </div>
+                                        <?php
+if (! isset($_instance)) {
+    $html = \Livewire\Livewire::mount('review', ['id'=>$data->id])->html();
+} elseif ($_instance->childHasBeenRendered('phl60UH')) {
+    $componentId = $_instance->getRenderedChildComponentId('phl60UH');
+    $componentTag = $_instance->getRenderedChildComponentTagName('phl60UH');
+    $html = \Livewire\Livewire::dummyMount($componentId, $componentTag);
+    $_instance->preserveRenderedChild('phl60UH');
+} else {
+    $response = \Livewire\Livewire::mount('review', ['id'=>$data->id]);
+    $html = $response->html();
+    $_instance->logRenderedChild('phl60UH', $response->id(), \Livewire\Livewire::getRootElementTagName($html));
+}
+echo $html;
+?>
                                     </div>
                                 </div>
                             </div>
