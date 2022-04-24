@@ -1,4 +1,4 @@
-<?php $__env->startSection('title', 'Category Edit'); ?>
+<?php $__env->startSection('title', 'Settings'); ?>
 <?php $__env->startSection('Setting_status', 'active'); ?>
 
 <?php $__env->startSection('vendor_css'); ?>

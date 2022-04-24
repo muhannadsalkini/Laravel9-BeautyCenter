@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Admin\FaqController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
@@ -22,6 +23,7 @@ Route::get('/cart', [HomeController::class, 'cart']);
 Route::get('/checkout', [HomeController::class, 'checkout']);
 Route::get('/contact-us', [HomeController::class, 'contact'])->name('contact-us');
 Route::get('/about-us', [HomeController::class, 'about'])->name('about-us');
+Route::get('/faq', [HomeController::class, 'faq'])->name('faq');
 Route::post('/sendmessage', [HomeController::class, 'sendmessage'])->name('sendmessage');
 Route::get('/service/{id}', [HomeController::class, 'service'])->name('service');
 Route::get('/services/{id}', [HomeController::class, 'categoryservice'])->name('categoryservice');
@@ -77,6 +79,17 @@ Route::middleware('auth')->prefix('admin')->group(function (){
         Route::post('/update/{id}', [App\Http\Controllers\Admin\ReviewController::class, 'update'])->name('admin_review_update');
         Route::get('/delete/{id}', [App\Http\Controllers\Admin\ReviewController::class, 'destroy'])->name('admin_review_delete');
         Route::get('/show/{id}', [App\Http\Controllers\Admin\ReviewController::class, 'show'])->name('admin_review_show');
+    });
+
+    // Faq
+    route::prefix('faq')->group(function (){
+        Route::get('/', [FaqController::class, 'index'])->name('admin_faq');
+        Route::get('/create', [FaqController::class, 'create'])->name('admin_faq_add');
+        Route::post('/store', [FaqController::class, 'store'])->name('admin_faq_store');
+        Route::get('/show/{id}', [FaqController::class, 'show'])->name('admin_faq_show');
+        Route::get('/edit/{id}', [FaqController::class, 'edit'])->name('admin_faq_edit');
+        Route::post('/update/{id}', [FaqController::class, 'update'])->name('admin_faq_update');
+        Route::get('/delete/{id}', [FaqController::class, 'destroy'])->name('admin_faq_delete');
     });
 
     // Settings

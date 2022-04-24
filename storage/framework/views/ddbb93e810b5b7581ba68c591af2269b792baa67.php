@@ -13,9 +13,7 @@
                 <div class="col-lg-5 col-md-5 col-sm-12 col-xs-12">
                     <div class="zoomWrapper clearfix">
                         <div id="img-1" class="zoomWrapper single-zoom">
-                            <a href="#">
-                                <img id="zoom1" src="<?php echo e(Storage::url($data->image)); ?>" data-zoom-image="<?php echo e(Storage::url($data->image)); ?>" alt="big-1">
-                            </a>
+                            <img id="zoom1" src="<?php echo e(Storage::url($data->image)); ?>" data-zoom-image="<?php echo e(Storage::url($data->image)); ?>" alt="big-1">
                         </div>
                         <div class="product-thumb">
                             <ul class="details-slider" id="gallery_01">
@@ -46,20 +44,22 @@
                             </div>
                         </div>
                         <h4>$ <?php echo e($data->price); ?></h4>
-                        <h5>AVAILABILITY: <span>IN STOCK</span></h5>
                         <h5 class="overview">OVERVIEW:</h5>
                         <p><?php echo e($data->description); ?></p>
 
 
                         <div class="categories-size mt-20">
                             <p class="size">Day:</p>
-                            <a href="#">50gm </a>
-                            <a href="#">100gm </a>
-                            <a href="#">150gm </a>
-                            <a href="#" class="hidden-xs">200gm </a>
+                            <a href="#">Mon</a>
+                            <a href="#">Tue.</a>
+                            <a href="#">Wed.</a>
+                            <a href="#">Thu.</a>
+                            <a href="#">Fri.</a>
+                            <a href="#">Sat.</a>
+                            <a href="#">Sun.</a>
                         </div>
                         <div class="shop-buttons">
-                            <p>Quantity:</p>
+                            <p>Hour:</p>
                             <div id="quantity-wanted-p">
                                 <input type="number" value="0" class="cart-plus-minus-box">
                                 <div class="dec qtybutton">-</div>
@@ -105,26 +105,28 @@
                                 <div role="tabpanel" class="tab-pane" id="review">
                                     <div class="review-wrapper fix">
                                         <?php $__currentLoopData = $reviews; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $rs): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
-                                        <div class="sin-review">
-                                            <div class="review-details fix">
-                                                <div class="review-author float-left">
-                                                    <h3><?php echo e(substr($rs->user->name,0,4)); ?>****</h3>
-                                                    <div class="review-star float-left">
-                                                        <i class=" <?php if($rs->rate<1): ?> zmdi zmdi-star-outline <?php else: ?> zmdi zmdi-star <?php endif; ?>"></i>
-                                                        <i class=" <?php if($rs->rate<2): ?> zmdi zmdi-star-outline <?php else: ?> zmdi zmdi-star <?php endif; ?>"></i>
-                                                        <i class=" <?php if($rs->rate<3): ?> zmdi zmdi-star-outline <?php else: ?> zmdi zmdi-star <?php endif; ?>"></i>
-                                                        <i class=" <?php if($rs->rate<4): ?> zmdi zmdi-star-outline <?php else: ?> zmdi zmdi-star <?php endif; ?>"></i>
-                                                        <i class=" <?php if($rs->rate<5): ?> zmdi zmdi-star-outline <?php else: ?> zmdi zmdi-star <?php endif; ?>"></i>
-                                                    </div>
-                                                    <span><?php echo e($rs->created_at); ?></span>
-                                                </div>
-                                                <div>
-                                                    <h6><strong><?php echo e($rs->subject); ?></strong></h6>
-                                                    <p><?php echo e($rs->review); ?></p>
-                                                </div>
+                                            <?php if($rs->status == 'True'): ?>
+                                                <div class="sin-review">
+                                                    <div class="review-details fix">
+                                                        <div class="review-author float-left">
+                                                            <h3><?php echo e(substr($rs->user->name,0,4)); ?>****</h3>
+                                                            <div class="review-star float-left">
+                                                                <i class=" <?php if($rs->rate<1): ?> zmdi zmdi-star-outline <?php else: ?> zmdi zmdi-star <?php endif; ?>"></i>
+                                                                <i class=" <?php if($rs->rate<2): ?> zmdi zmdi-star-outline <?php else: ?> zmdi zmdi-star <?php endif; ?>"></i>
+                                                                <i class=" <?php if($rs->rate<3): ?> zmdi zmdi-star-outline <?php else: ?> zmdi zmdi-star <?php endif; ?>"></i>
+                                                                <i class=" <?php if($rs->rate<4): ?> zmdi zmdi-star-outline <?php else: ?> zmdi zmdi-star <?php endif; ?>"></i>
+                                                                <i class=" <?php if($rs->rate<5): ?> zmdi zmdi-star-outline <?php else: ?> zmdi zmdi-star <?php endif; ?>"></i>
+                                                            </div>
+                                                            <span><?php echo e($rs->created_at); ?></span>
+                                                        </div>
+                                                        <div>
+                                                            <h6><strong><?php echo e($rs->subject); ?></strong></h6>
+                                                            <p><?php echo e($rs->review); ?></p>
+                                                        </div>
 
-                                            </div>
-                                        </div>
+                                                    </div>
+                                                </div>
+                                            <?php endif; ?>
                                         <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
                                     </div>
                                     <div class="review-form-wrapper fix">
@@ -132,15 +134,15 @@
                                         <?php
 if (! isset($_instance)) {
     $html = \Livewire\Livewire::mount('review', ['id'=>$data->id])->html();
-} elseif ($_instance->childHasBeenRendered('phl60UH')) {
-    $componentId = $_instance->getRenderedChildComponentId('phl60UH');
-    $componentTag = $_instance->getRenderedChildComponentTagName('phl60UH');
+} elseif ($_instance->childHasBeenRendered('mLFbwFG')) {
+    $componentId = $_instance->getRenderedChildComponentId('mLFbwFG');
+    $componentTag = $_instance->getRenderedChildComponentTagName('mLFbwFG');
     $html = \Livewire\Livewire::dummyMount($componentId, $componentTag);
-    $_instance->preserveRenderedChild('phl60UH');
+    $_instance->preserveRenderedChild('mLFbwFG');
 } else {
     $response = \Livewire\Livewire::mount('review', ['id'=>$data->id]);
     $html = $response->html();
-    $_instance->logRenderedChild('phl60UH', $response->id(), \Livewire\Livewire::getRootElementTagName($html));
+    $_instance->logRenderedChild('mLFbwFG', $response->id(), \Livewire\Livewire::getRootElementTagName($html));
 }
 echo $html;
 ?>

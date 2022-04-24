@@ -1,4 +1,4 @@
-<?php $__env->startSection('title', 'Admin Panel Message List'); ?>
+<?php $__env->startSection('title', 'Admin Panel Reviews'); ?>
 <?php $__env->startSection('Reviews_status', 'active'); ?>
 
 <?php $__env->startSection('vendor_css'); ?>

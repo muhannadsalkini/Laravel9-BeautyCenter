@@ -123,7 +123,7 @@ class ServiceController extends Controller
         $data->status = $request->input('status');
 
         $data->save();
-        return redirect()->route('admin_service')->with('success', 'Service Edited');
+        return redirect()->route('admin_service')->with('success', 'Service Saved');
     }
 
     /**

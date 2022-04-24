@@ -1,6 +1,6 @@
 @extends('layouts.admin')
 
-@section('title', 'Admin Panel Category')
+@section('title', 'Admin Panel Categories')
 @section('Categories_status', 'active')
 
 @section('vendor_css')

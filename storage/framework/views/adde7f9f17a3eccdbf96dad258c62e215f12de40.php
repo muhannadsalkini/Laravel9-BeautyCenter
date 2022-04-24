@@ -61,11 +61,19 @@
                             <?php $__currentLoopData = $datalist; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $rs): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
                                 <tr>
                                     <th><?php echo e($rs->id); ?></th>
-                                    <td><a href="<?php if($rs->service_id): ?><?php echo e(route('service', ['id'=>$rs->service_id])); ?><?php endif; ?>" target="_blank"><?php echo e($rs->service->title); ?></a> </td>
+                                    <td> <?php if($rs->service_id): ?> <a href="<?php echo e(route('service', ['id'=>$rs->service_id])); ?>" target="_blank"><?php echo e($rs->service->title); ?></a> <?php else: ?> NO SERVICE! <?php endif; ?></td>
                                     <td><?php echo e($rs->subject); ?></td>
                                     <td><?php echo e($rs->review); ?></td>
                                     <td><?php echo e($rs->rate); ?></td>
-                                    <td><?php echo e($rs->status); ?></td>
+                                    <td>
+                                        <?php if($rs->status == 'True'): ?>
+                                            <i style="color: #6bc513">Published</i>
+                                        <?php elseif($rs->status == 'False'): ?>
+                                            <i style="color: #FF9F43">Rejected</i>
+                                        <?php else: ?>
+                                            <i style="color: #00CFE8">Under Review</i>
+                                        <?php endif; ?>
+                                    </td>
                                     <td><?php echo e($rs->created_at); ?></td>
                                     <td><a href="<?php echo e(route('destroyreview', ['id'=>$rs->id])); ?>" onclick="return confirm('Delete! are you sure?')">Delete</a></td>
                                 </tr>

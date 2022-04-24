@@ -79,6 +79,12 @@
                     <span class="menu-title text-truncate" data-i18n="settings">Reviews</span>
                 </a>
             </li>
+            <li class=" nav-item @yield('Faq_status')">
+                <a class="d-flex align-items-center" href="{{route('admin_faq')}}">
+                    <i data-feather='check'></i>
+                    <span class="menu-title text-truncate" data-i18n="settings">Faq</span>
+                </a>
+            </li>
             <li class=" nav-item @yield('Setting_status')">
                 <a class="d-flex align-items-center" href="{{route('admin_setting')}}">
                     <i data-feather='settings'></i>

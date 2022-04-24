@@ -65,7 +65,15 @@
                                     <td>{{ $rs->subject }}</td>
                                     <td>{{ $rs->review }}</td>
                                     <td>{{ $rs->rate }}</td>
-                                    <td>{{ $rs->status }}</td>
+                                    <td>
+                                        @if ($rs->status == 'True')
+                                            <i style="color: #6bc513">Published</i>
+                                        @elseif($rs->status == 'False')
+                                            <i style="color: #FF9F43">Rejected</i>
+                                        @else
+                                            <i style="color: #00CFE8">Under Review</i>
+                                        @endif
+                                    </td>
                                     <td>{{ $rs->created_at }}</td>
                                     <td><a href="{{route('destroyreview', ['id'=>$rs->id])}}" onclick="return confirm('Delete! are you sure?')">Delete</a></td>
                                 </tr>

@@ -1,4 +1,4 @@
-<?php $__env->startSection('title', 'Admin Panel Message List'); ?>
+<?php $__env->startSection('title', 'Admin Panel Messages'); ?>
 <?php $__env->startSection('Messages_status', 'active'); ?>
 
 <?php $__env->startSection('vendor_css'); ?>

@@ -50,39 +50,10 @@ $setting = \App\Http\Controllers\HomeController::getsetting();
                                     <ul>
                                         <li><a href="{{route('home')}}">Home</a></li>
                                         <li><a href="{{route('about-us')}}">about</a></li>
-                                        <!--<li class="mega-parent item-2"><a href="/shop">serivces</a>
-                                            <ul class="mgea-menu">
-                                                <li class="mega-sub"><a href="/shop">SHOP</a>
-                                                    <ul class="mega-sub-item">
-                                                        <li><a href="/shop">our products</a></li>
-                                                        <li><a href="/shop">top sales</a></li>
-                                                        <li><a href="wishlist.html">wishlist</a></li>
-                                                        <li><a href="product-details.html">product Details</a></li>
-                                                        <li><a href="/cart">cart</a></li>
-                                                    </ul>
-                                                </li>
-                                                <li class="mega-sub"><a href="#">reservations</a>
-                                                    <ul class="mega-sub-item">
-                                                        <li><a href="/checkout">lunch</a></li>
-                                                        <li><a href="gallery-2.html">skin care</a></li>
-                                                        <li><a href="gallery.html">hair cut</a></li>
-                                                        <li><a href="elements-feature.html">nail care</a></li>
-                                                        <li><a href="elements-fun-fact.html">beauty spa</a></li>
-                                                    </ul>
-                                                </li>
-                                                <li class="mega-sub"><a href="#">Column Three</a>
-                                                    <div class="mega-img">
-                                                        <img src="{{asset('assets')}}/images/product/mega.jpg" alt="">
-                                                    </div>
-                                                </li>
-                                            </ul>
-                                        </li>-->
-                                        <!-- Categories -->
                                         @include('home._category')
-                                        <!-- BLOG -->
                                         <li><a href="{{ route('blog') }}">blog</a></li>
-                                        <!-- CONTACT US -->
                                         <li><a href="{{route('contact-us')}}">contact</a></li>
+                                        <li><a href="{{route('faq')}}">FAQ</a></li>
 
                                     </ul>
                                 </nav>
@@ -203,14 +174,13 @@ $setting = \App\Http\Controllers\HomeController::getsetting();
                     <div class="col-md-12">
                         <nav id="dropdown">
                             <ul>
-                                <li><a href="/">Home</a></li>
-                                <li><a href="about-us">about</a></li>
-                                <!-- Categories -->
+                                <li><a href="#">Account</a></li>
+                                <li><a href="{{route('home')}}">Home</a></li>
+                                <li><a href="{{route('about-us')}}">about</a></li>
                                 @include('home._category')
-                                <!-- BLOG -->
-                                <li><a href="/blog">blog</a></li>
-                                <!-- CONTACT US -->
-                                <li><a href="/contact-us">contact</a></li>
+                                <li><a href="{{route('blog')}}">blog</a></li>
+                                <li><a href="{{route('contact-us')}}">contact</a></li>
+                                <li><a href="{{route('faq')}}">FAQ</a></li>
                             </ul>
                         </nav>
                     </div>

@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 
 use App\Models\Category;
+use App\Models\Faq;
 use App\Models\Message;
 use App\Models\Service;
 use App\Models\Setting;
@@ -14,28 +15,34 @@ use Illuminate\Support\Facades\DB;
 
 class HomeController extends Controller
 {
-    // reviwes
-
+    // Reviews
     public static function countreviews($id)
     {
-        return Review::where('service_id',$id)->count();
+        return Review::where('service_id',$id)->where('status','True')->count();
     }
+
     public static function avrgreview($id)
     {
         return Review::where('service_id',$id)->average('rate');
     }
 
-    // Category list
+    // Category
     public static function categorylist()
     {
         return Category::with('children')->where('parent_id',0)->get();
     }
 
-    public static function getsetting()
+    public function categoryservice($id)
     {
-        return Setting::first();
+        $setting = HomeController::getsetting();
+        $datalist = Service::where('category_id', $id)->get();
+        $data = Service::find($id);
+        //print_r($data);
+        //exit();
+        return view('home.category_services', ['data'=>$data,'datalist'=>$datalist, 'setting'=>$setting]);
     }
 
+    // Services
     public function service($id)
     {
         $setting = HomeController::getsetting();
@@ -77,33 +84,34 @@ class HomeController extends Controller
         return view('home.search_services',['search'=>$search,'datalist'=>$datalist]);
     }
 
-    public function index()
+    // Settings
+    public static function getsetting()
     {
-        $setting = HomeController::getsetting();
-        $slider = Service::with('category')->limit(4)->get();
-        $daily = Service::with('category')->limit(3)->inRandomOrder()->get();
-        $category = Category::get();
-        //print_r($slider);
-        //exit();
-        $attributes = [
-            'setting'=>$setting,
-            'slider'=>$slider,
-            'category'=>$category,
-            'daily'=>$daily,
-        ];
-        return view('home.index', $attributes);
+        return Setting::first();
     }
 
-    public function categoryservice($id)
+    // Messages
+    public function sendmessage(Request $request)
     {
-        $setting = HomeController::getsetting();
-        $datalist = Service::where('category_id', $id)->get();
-        $data = Service::find($id);
-        //print_r($data);
-        //exit();
-        return view('home.category_services', ['data'=>$data,'datalist'=>$datalist, 'setting'=>$setting]);
+        $this->validate($request,[
+            'name'=>'required',
+            'email'=>'required',
+            'phone'=>'required',
+            'subject'=>'required',
+            'message'=>'required',
+        ]);
+
+        $data = new Message();
+        $data->name = $request->input('name');
+        $data->email = $request->input('email');
+        $data->phone = $request->input('phone');
+        $data->subject = $request->input('subject');
+        $data->message = $request->input('message');
+        $data->save();
+        return redirect('contact-us')->with('success', 'Successfully sent, Thank you.');
     }
 
+    // Login - Logout
     public function login()
     {
         return view('admin.login');
@@ -140,11 +148,41 @@ class HomeController extends Controller
         return redirect('/');
     }
 
-    // Home pages
+    // Pages
+    public function index()
+    {
+        $setting = HomeController::getsetting();
+        $slider = Service::with('category')->limit(4)->get();
+        $daily = Service::with('category')->limit(3)->inRandomOrder()->get();
+        $category = Category::get();
+        //print_r($slider);
+        //exit();
+        $attributes = [
+            'setting'=>$setting,
+            'slider'=>$slider,
+            'category'=>$category,
+            'daily'=>$daily,
+        ];
+        return view('home.index', $attributes);
+    }
+
     public function about()
     {
         $setting = HomeController::getsetting();
         return view('home.about', ['setting'=>$setting]);
+    }
+
+    public function faq()
+    {
+        $setting = HomeController::getsetting();
+        $datalist = Faq::all()->sortBy('position');
+
+        $attributes = [
+            'setting'=>$setting,
+            'datalist'=>$datalist,
+        ];
+
+        return view('home.faq', $attributes);
     }
 
     public function blog()
@@ -167,26 +205,6 @@ class HomeController extends Controller
     {
         $setting = HomeController::getsetting();
         return view('home.contact',['setting'=>$setting]);
-    }
-
-    public function sendmessage(Request $request)
-    {
-        $this->validate($request,[
-            'name'=>'required',
-            'email'=>'required',
-            'phone'=>'required',
-            'subject'=>'required',
-            'message'=>'required',
-        ]);
-
-        $data = new Message();
-        $data->name = $request->input('name');
-        $data->email = $request->input('email');
-        $data->phone = $request->input('phone');
-        $data->subject = $request->input('subject');
-        $data->message = $request->input('message');
-        $data->save();
-        return redirect('contact-us')->with('success', 'Successfully sent, Thank you.');
     }
 
     public function comingsoon()

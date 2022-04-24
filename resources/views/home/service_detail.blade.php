@@ -15,9 +15,7 @@
                 <div class="col-lg-5 col-md-5 col-sm-12 col-xs-12">
                     <div class="zoomWrapper clearfix">
                         <div id="img-1" class="zoomWrapper single-zoom">
-                            <a href="#">
-                                <img id="zoom1" src="{{ Storage::url($data->image)}}" data-zoom-image="{{ Storage::url($data->image)}}" alt="big-1">
-                            </a>
+                            <img id="zoom1" src="{{ Storage::url($data->image)}}" data-zoom-image="{{ Storage::url($data->image)}}" alt="big-1">
                         </div>
                         <div class="product-thumb">
                             <ul class="details-slider" id="gallery_01">
@@ -48,20 +46,22 @@
                             </div>
                         </div>
                         <h4>$ {{$data->price}}</h4>
-                        <h5>AVAILABILITY: <span>IN STOCK</span></h5>
                         <h5 class="overview">OVERVIEW:</h5>
                         <p>{{$data->description}}</p>
 
 
                         <div class="categories-size mt-20">
                             <p class="size">Day:</p>
-                            <a href="#">50gm </a>
-                            <a href="#">100gm </a>
-                            <a href="#">150gm </a>
-                            <a href="#" class="hidden-xs">200gm </a>
+                            <a href="#">Mon</a>
+                            <a href="#">Tue.</a>
+                            <a href="#">Wed.</a>
+                            <a href="#">Thu.</a>
+                            <a href="#">Fri.</a>
+                            <a href="#">Sat.</a>
+                            <a href="#">Sun.</a>
                         </div>
                         <div class="shop-buttons">
-                            <p>Quantity:</p>
+                            <p>Hour:</p>
                             <div id="quantity-wanted-p">
                                 <input type="number" value="0" class="cart-plus-minus-box">
                                 <div class="dec qtybutton">-</div>
@@ -106,26 +106,28 @@
                                 <div role="tabpanel" class="tab-pane" id="review">
                                     <div class="review-wrapper fix">
                                         @foreach($reviews as $rs)
-                                        <div class="sin-review">
-                                            <div class="review-details fix">
-                                                <div class="review-author float-left">
-                                                    <h3>{{substr($rs->user->name,0,4) }}****</h3>
-                                                    <div class="review-star float-left">
-                                                        <i class=" @if($rs->rate<1) zmdi zmdi-star-outline @else zmdi zmdi-star @endif"></i>
-                                                        <i class=" @if($rs->rate<2) zmdi zmdi-star-outline @else zmdi zmdi-star @endif"></i>
-                                                        <i class=" @if($rs->rate<3) zmdi zmdi-star-outline @else zmdi zmdi-star @endif"></i>
-                                                        <i class=" @if($rs->rate<4) zmdi zmdi-star-outline @else zmdi zmdi-star @endif"></i>
-                                                        <i class=" @if($rs->rate<5) zmdi zmdi-star-outline @else zmdi zmdi-star @endif"></i>
-                                                    </div>
-                                                    <span>{{ $rs->created_at }}</span>
-                                                </div>
-                                                <div>
-                                                    <h6><strong>{{ $rs->subject }}</strong></h6>
-                                                    <p>{{ $rs->review }}</p>
-                                                </div>
+                                            @if($rs->status == 'True')
+                                                <div class="sin-review">
+                                                    <div class="review-details fix">
+                                                        <div class="review-author float-left">
+                                                            <h3>{{substr($rs->user->name,0,4) }}****</h3>
+                                                            <div class="review-star float-left">
+                                                                <i class=" @if($rs->rate<1) zmdi zmdi-star-outline @else zmdi zmdi-star @endif"></i>
+                                                                <i class=" @if($rs->rate<2) zmdi zmdi-star-outline @else zmdi zmdi-star @endif"></i>
+                                                                <i class=" @if($rs->rate<3) zmdi zmdi-star-outline @else zmdi zmdi-star @endif"></i>
+                                                                <i class=" @if($rs->rate<4) zmdi zmdi-star-outline @else zmdi zmdi-star @endif"></i>
+                                                                <i class=" @if($rs->rate<5) zmdi zmdi-star-outline @else zmdi zmdi-star @endif"></i>
+                                                            </div>
+                                                            <span>{{ $rs->created_at }}</span>
+                                                        </div>
+                                                        <div>
+                                                            <h6><strong>{{ $rs->subject }}</strong></h6>
+                                                            <p>{{ $rs->review }}</p>
+                                                        </div>
 
-                                            </div>
-                                        </div>
+                                                    </div>
+                                                </div>
+                                            @endif
                                         @endforeach
                                     </div>
                                     <div class="review-form-wrapper fix">

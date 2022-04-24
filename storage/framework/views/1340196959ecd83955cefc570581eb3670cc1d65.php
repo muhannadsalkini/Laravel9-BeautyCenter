@@ -112,7 +112,8 @@
                                                 $status = $rs->status;
                                                 if ($status == "True") {
                                                     $temp = "badge rounded-pill badge-light-primary me-1";
-                                                } else {
+                                                }
+                                                else {
                                                     $temp ="badge rounded-pill badge-light-warning me-1";
                                                 }
                                                 ?>

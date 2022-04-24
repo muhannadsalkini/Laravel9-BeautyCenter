@@ -1,6 +1,6 @@
 @extends('layouts.admin')
 
-@section('title', 'Admin Panel Message List')
+@section('title', 'Admin Panel Messages')
 @section('Messages_status', 'active')
 
 @section('vendor_css')

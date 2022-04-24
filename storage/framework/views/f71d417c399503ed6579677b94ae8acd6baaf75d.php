@@ -41,7 +41,7 @@
                     </div>
                 </div>
                 <div class="col-md-10" >
-                    <?php echo $__env->make(\Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']), \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
+                    <?php echo $__env->make('profile.show', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
                 </div>
                 <!--shop sidebar end-->
             </div>

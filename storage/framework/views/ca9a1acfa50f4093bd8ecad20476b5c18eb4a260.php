@@ -50,39 +50,10 @@ $setting = \App\Http\Controllers\HomeController::getsetting();
                                     <ul>
                                         <li><a href="<?php echo e(route('home')); ?>">Home</a></li>
                                         <li><a href="<?php echo e(route('about-us')); ?>">about</a></li>
-                                        <!--<li class="mega-parent item-2"><a href="/shop">serivces</a>
-                                            <ul class="mgea-menu">
-                                                <li class="mega-sub"><a href="/shop">SHOP</a>
-                                                    <ul class="mega-sub-item">
-                                                        <li><a href="/shop">our products</a></li>
-                                                        <li><a href="/shop">top sales</a></li>
-                                                        <li><a href="wishlist.html">wishlist</a></li>
-                                                        <li><a href="product-details.html">product Details</a></li>
-                                                        <li><a href="/cart">cart</a></li>
-                                                    </ul>
-                                                </li>
-                                                <li class="mega-sub"><a href="#">reservations</a>
-                                                    <ul class="mega-sub-item">
-                                                        <li><a href="/checkout">lunch</a></li>
-                                                        <li><a href="gallery-2.html">skin care</a></li>
-                                                        <li><a href="gallery.html">hair cut</a></li>
-                                                        <li><a href="elements-feature.html">nail care</a></li>
-                                                        <li><a href="elements-fun-fact.html">beauty spa</a></li>
-                                                    </ul>
-                                                </li>
-                                                <li class="mega-sub"><a href="#">Column Three</a>
-                                                    <div class="mega-img">
-                                                        <img src="<?php echo e(asset('assets')); ?>/images/product/mega.jpg" alt="">
-                                                    </div>
-                                                </li>
-                                            </ul>
-                                        </li>-->
-                                        <!-- Categories -->
                                         <?php echo $__env->make('home._category', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
-                                        <!-- BLOG -->
                                         <li><a href="<?php echo e(route('blog')); ?>">blog</a></li>
-                                        <!-- CONTACT US -->
                                         <li><a href="<?php echo e(route('contact-us')); ?>">contact</a></li>
+                                        <li><a href="<?php echo e(route('faq')); ?>">FAQ</a></li>
 
                                     </ul>
                                 </nav>
@@ -177,15 +148,15 @@ $setting = \App\Http\Controllers\HomeController::getsetting();
                                         <?php
 if (! isset($_instance)) {
     $html = \Livewire\Livewire::mount('search')->html();
-} elseif ($_instance->childHasBeenRendered('jH1gSmp')) {
-    $componentId = $_instance->getRenderedChildComponentId('jH1gSmp');
-    $componentTag = $_instance->getRenderedChildComponentTagName('jH1gSmp');
+} elseif ($_instance->childHasBeenRendered('ksz6ojb')) {
+    $componentId = $_instance->getRenderedChildComponentId('ksz6ojb');
+    $componentTag = $_instance->getRenderedChildComponentTagName('ksz6ojb');
     $html = \Livewire\Livewire::dummyMount($componentId, $componentTag);
-    $_instance->preserveRenderedChild('jH1gSmp');
+    $_instance->preserveRenderedChild('ksz6ojb');
 } else {
     $response = \Livewire\Livewire::mount('search');
     $html = $response->html();
-    $_instance->logRenderedChild('jH1gSmp', $response->id(), \Livewire\Livewire::getRootElementTagName($html));
+    $_instance->logRenderedChild('ksz6ojb', $response->id(), \Livewire\Livewire::getRootElementTagName($html));
 }
 echo $html;
 ?>
@@ -218,14 +189,13 @@ echo $html;
                     <div class="col-md-12">
                         <nav id="dropdown">
                             <ul>
-                                <li><a href="/">Home</a></li>
-                                <li><a href="about-us">about</a></li>
-                                <!-- Categories -->
+                                <li><a href="#">Account</a></li>
+                                <li><a href="<?php echo e(route('home')); ?>">Home</a></li>
+                                <li><a href="<?php echo e(route('about-us')); ?>">about</a></li>
                                 <?php echo $__env->make('home._category', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
-                                <!-- BLOG -->
-                                <li><a href="/blog">blog</a></li>
-                                <!-- CONTACT US -->
-                                <li><a href="/contact-us">contact</a></li>
+                                <li><a href="<?php echo e(route('blog')); ?>">blog</a></li>
+                                <li><a href="<?php echo e(route('contact-us')); ?>">contact</a></li>
+                                <li><a href="<?php echo e(route('faq')); ?>">FAQ</a></li>
                             </ul>
                         </nav>
                     </div>
