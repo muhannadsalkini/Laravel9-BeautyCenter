@@ -80,7 +80,7 @@ class ServiceController extends Controller
      */
     public function show(Service $service, $id)
     {
-        $data = Service::find($id);
+        $data = Service::with('category')->find($id);
         //echo $data;
         return view('admin.service_show', ['data' => $data]);
     }

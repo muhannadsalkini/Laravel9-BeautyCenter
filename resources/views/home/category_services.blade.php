@@ -87,16 +87,14 @@
                             </aside>
                             <aside class="widget flicker grey-bg mb-30 hidden-sm fix">
                                 <div class="widget-title">
-                                    <h3>Flicker Widget</h3>
+                                    <h3>Categories</h3>
                                 </div>
                                 <div class="widget-filcker fix">
                                     <ul>
-                                        <li><a href="#"><img src="{{asset('assets')}}/images/blog/widget-flicker-1.jpg" alt=""></a></li>
-                                        <li><a href="#"><img src="{{asset('assets')}}/images/blog/widget-flicker-2.jpg" alt=""></a></li>
-                                        <li><a href="#"><img src="{{asset('assets')}}/images/blog/widget-flicker-3.jpg" alt=""></a></li>
-                                        <li><a href="#"><img src="{{asset('assets')}}/images/blog/widget-flicker-4.jpg" alt=""></a></li>
-                                        <li><a href="#"><img src="{{asset('assets')}}/images/blog/widget-flicker-5.jpg" alt=""></a></li>
-                                        <li><a href="#"><img src="{{asset('assets')}}/images/blog/widget-flicker-6.jpg" alt=""></a></li>
+                                        @foreach($datalist2 as $data)
+                                            @if($data->image)<li><a href="{{ route('categoryservice',['id'=>$data->id] )}}"><img src="{{ Storage::url($data->image)}}" alt=""></a><p style="height: 5px; font-size: xx-small;">{{$data->title}}</p></li>
+                                            @endif
+                                        @endforeach
                                     </ul>
                                 </div>
                             </aside>
@@ -126,18 +124,24 @@
                                     </ul>
                                 </div>
                             </aside>
+                            @auth
+                                welcome
+                            @endauth
+                            @guest
                             <aside class="widget newsletter grey-bg">
                                 <div class="widget-title">
-                                    <h3>Subscribe</h3>
+                                    <h3>Join Us</h3>
                                 </div>
                                 <div class="widget-newsletter">
                                     <p>Lorem ipsum dolor sit amet, love dost   consectetur adipisicing elit, </p>
-                                    <form action="#">
-                                        <input type="text" placeholder="Enter Your email">
-                                        <button type="submit">Send</button>
-                                    </form>
+                                    <div class="mini-cart" >
+                                        <div  class="cart-icon">
+                                            <a style="font-size: medium" href="{{ route('login') }}" > Login</a><a style="font-size: medium" href="{{ route('register') }}" >/ Register</a>
+                                        </div>
+                                    </div>
                                 </div>
                             </aside>
+                            @endguest
                         </div>
                     </div>
 

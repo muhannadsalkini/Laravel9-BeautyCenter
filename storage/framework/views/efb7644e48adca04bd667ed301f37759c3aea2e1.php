@@ -1,6 +1,7 @@
 <?php $__env->startSection('title', $setting->title. ' | Contact Us' ); ?>
 <?php $__env->startSection('description',$setting->description); ?>
 <?php $__env->startSection('keywords',$setting->keywords); ?>
+<?php $__env->startSection('breadcrumbs', 'Contact Us'); ?>
 
 <?php $__env->startSection('content'); ?>
     <?php echo $__env->make('home._breadcrumbs', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>

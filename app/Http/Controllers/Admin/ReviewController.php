@@ -15,7 +15,7 @@ class ReviewController extends Controller
      */
     public function index()
     {
-        $datalist = Review::all();
+        $datalist = Review::orderBy('id', 'desc')->get();
         return view('admin.review', ['datalist'=>$datalist]);
     }
 

@@ -22,7 +22,6 @@
             </div>
             <div class="row blog-list">
                 @foreach($datalist as $data)
-                <div class="col-md-6 col-sm-12 col-xs-12">
                     <div class="single-blog">
                         <div class="single-blog-top fix" style="box-shadow: 0 1px 3px rgb(0 0 0 / 20%); padding: 18px 30px;">
 
@@ -40,7 +39,6 @@
                             </div>
                         </div>
                     </div>
-                </div>
                 @endforeach
             </div>
         </div>
@@ -52,9 +50,9 @@
                         <div class="pagination-inner">
                             <ul>
                                 <li><a href="#"><i class="zmdi zmdi-caret-left"></i></a></li>
-                                <li><a href="#">1</a></li>
+                                <li class="active"><a href="#">1</a></li>
                                 <li><a href="#">2</a></li>
-                                <li class="active">3</li>
+                                <li><a href="#">3</a></li>
                                 <li><a href="#">4</a></li>
                                 <li><a href="#"><i class="zmdi zmdi-caret-right"></i></a></li>
                             </ul>

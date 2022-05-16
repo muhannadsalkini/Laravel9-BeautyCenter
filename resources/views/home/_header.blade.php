@@ -68,7 +68,7 @@ $setting = \App\Http\Controllers\HomeController::getsetting();
                                     <div class="cart-icon">
                                         <a href=""><i class="zmdi zmdi-account"></i><i style="font-size: small; padding-left: 8px; ">{{ \Illuminate\Support\Facades\Auth::user()->name }}</i></a>
                                     </div>
-                                    <div class="mini-cart-box left" style=" width:120px;">
+                                    <div class="mini-cart-box left" style=" width:160px;">
                                         <div class="mini-cart-product fix">
                                             <div class="content fix">
                                                 <a href="{{ route('myprofile') }}" class="title"><i class="zmdi zmdi-account" style="padding-right: 5px"></i> Account</a>
@@ -76,11 +76,18 @@ $setting = \App\Http\Controllers\HomeController::getsetting();
                                         </div>
                                         <div class="mini-cart-product fix">
                                             <div class="content fix">
-                                                <a href="#" class="title">
+                                                <a href="{{ route('wishlist') }}" class="title">
                                                     <svg
                                                         xmlns="http://www.w3.org/2000/svg" style="padding-right: 5px" width="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-heart">
                                                         <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path>
                                                     </svg> Wishlist</a>
+                                            </div>
+                                        </div>
+                                        <div class="mini-cart-product fix">
+                                            <div class="content fix">
+                                                <a href="{{ route('user_appointment') }}" class="title">
+                                                    <svg xmlns="http://www.w3.org/2000/svg" style="padding-right: 5px" width="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-check-square"><polyline points="9 11 12 14 22 4"></polyline><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"></path>
+                                                    </svg> Appointments</a>
                                             </div>
                                         </div>
                                         <div class="mini-cart-product fix">
@@ -93,7 +100,7 @@ $setting = \App\Http\Controllers\HomeController::getsetting();
                                         </div>
                                         <div class="mini-cart-product fix">
                                             <div class="content fix">
-                                                <a href="#" class="title"><i class="zmdi zmdi-settings" style="padding-right: 5px"></i> Settings</a>
+                                                <a href="{{ route('myprofile') }}" class="title"><i class="zmdi zmdi-settings" style="padding-right: 5px"></i> Settings</a>
                                             </div>
                                         </div>
                                         <div class="mini-cart-product fix">
@@ -117,50 +124,20 @@ $setting = \App\Http\Controllers\HomeController::getsetting();
                                         </div>
                                     </div>
                                 @endguest
-
-                                <!-- Mini Cart -->
-                                <div class="mini-cart" >
-                                    <div class="cart-icon">
-                                        <a href="/cart"><i class="zmdi zmdi-shopping-cart"></i></a>
-                                        <span>2</span>
-                                    </div>
-                                    <div class="mini-cart-box right">
-                                        <div class="mini-cart-product fix">
-                                            <a href="#" class="image"><img src="{{asset('assets')}}/images/cart/mini-1.jpg" alt="" /></a>
-                                            <div class="content fix">
-                                                <a href="#" class="title">wooden furniture</a>
-                                                <p>Color: Black</p>
-                                                <p>Size: SL</p>
-                                                <button class="remove"><i class="zmdi zmdi-close"></i></button>
-                                            </div>
-                                        </div>
-                                        <div class="mini-cart-checkout text-center">
-                                            <a href="/checkout">checkout</a>
-                                        </div>
-                                    </div>
+                                <div class="search">
+                                    <a href="#"><i class="zmdi zmdi-search"></i></a>
                                 </div>
-                                <!--mini cart end-->
-
-                                <div class="">
-                                    <!--<a href="#"><i class="zmdi zmdi-search"></i></a>-->
-                                    <form action="{{route('getservice')}}" method="post">
-                                        @csrf
-                                        @livewire('search')
-                                        <button type="submit" class="search-input"><i class="zmdi zmdi-search"></i> </button>
-                                    </form>
-                                    @livewireScripts
-                                </div>
-
                             </div>
-
                             <div class="search-box">
                                 <div class="search-form">
-                                    <form action="#" id="search-form">
-                                        <input type="search" name="search" placeholder="Search here...">
-                                        <button type="submit">
+                                    <form action="{{route('getservice')}}" method="post" id="search-form" >
+                                        @csrf
+                                        @livewire('search')
+                                        <button type="submit" class="search-input">
                                             <span><i class="fa fa-search"></i></span>
                                         </button>
                                     </form>
+                                    @livewireScripts
                                 </div>
                             </div>
 

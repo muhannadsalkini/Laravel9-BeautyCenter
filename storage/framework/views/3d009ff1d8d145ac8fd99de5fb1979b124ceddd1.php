@@ -1,6 +1,7 @@
-<?php $__env->startSection('title', 'About Us | ' .$setting->title); ?>
-<?php $__env->startSection('description',$setting->description); ?>
+<?php $__env->startSection('title', $setting->title. ' | About Us' ); ?>
+<?php $__env->startSection('description', $setting->description); ?>
 <?php $__env->startSection('keywords',$setting->keywords); ?>
+<?php $__env->startSection('breadcrumbs', 'About Us'); ?>
 
 
 <?php $__env->startSection('content'); ?>

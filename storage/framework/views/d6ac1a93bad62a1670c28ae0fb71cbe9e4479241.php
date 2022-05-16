@@ -454,25 +454,27 @@
     <!--Gallery section end-->
 
     <!--Offer section start-->
+    <?php if(auth()->guard()->guest()): ?>
     <div class="special-offer">
         <div class="bg-img">
             <div class="container">
                 <div class="row">
                     <div class="col-md-8 col-md-offset-2">
                         <div class="section-title bg_grey text-center">
-                            <h2>you get our special offer</h2>
+                            <h2>Get our special service</h2>
                             <p>  Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim nostrud exercitation ullamco laboris nisi.</p>
                         </div>
                     </div>
                     <div class="col-md-12">
                         <div class="offer-apoinment text-center">
-                            <a href="#">Make An Appoinment</a>
+                            <a style="font-size: medium" href="<?php echo e(route('login')); ?>" > Login</a><a style="font-size: medium; margin-left: 10px;" href="<?php echo e(route('register')); ?>" >Register</a>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
+    <?php endif; ?>
     <!--Offer section end-->
 
     <!--Our feature section-->
@@ -482,7 +484,6 @@
                 <div class="col-md-8 col-md-offset-2">
                     <div class="section-title text-center">
                         <h2>Deals Of The Day</h2>
-                        <p>  Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim nostrud exercitation ullamco laboris nisi.</p>
                     </div>
                 </div>
             </div>
@@ -494,7 +495,7 @@
                             <img src="<?php echo e(Storage::url($rs->image)); ?>" alt="">
                         </div>
                         <div class="feature-desc">
-                            <h3><a href="#"><?php echo e($rs->title); ?></a></h3>
+                            <h3><a href="<?php echo e(route('service',['id'=>$rs->id])); ?>"><?php echo e($rs->title); ?></a></h3>
                             <p>$<?php echo e($rs->price); ?></p>
                             <a href="<?php echo e(route('service',['id'=>$rs->id])); ?>">Book now</a>
                         </div>
@@ -606,33 +607,19 @@
         <div class="bg-img">
             <div class="container">
                 <div class="row">
+                    <div class="col-md-8 col-md-offset-2">
+                        <div class="section-title text-center">
+                            <h2>Frequently Asked Questions</h2>
+                        </div>
+                    </div>
                     <div class="col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2">
                         <div class="testimonail-list owl_pagination">
+                            <?php $__currentLoopData = $faqlist; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $faq): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
                             <div class="single-testimonial">
-                                <p><i class="fa fa-quote-left" aria-hidden="true"></i>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley </p>
-                                <h3>Erin Stinson</h3>
-                                <p class="title">Manager</p>
+                                <h6><?php echo e($faq->question); ?></h6>
+                                <p><?php echo $faq->answer; ?></p>
                             </div>
-                            <div class="single-testimonial">
-                                <p><i class="fa fa-quote-left" aria-hidden="true"></i>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley </p>
-                                <h3>Erin Stinson</h3>
-                                <p class="title">Manager</p>
-                            </div>
-                            <div class="single-testimonial">
-                                <p><i class="fa fa-quote-left" aria-hidden="true"></i>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley </p>
-                                <h3>Erin Stinson</h3>
-                                <p class="title">Manager</p>
-                            </div>
-                            <div class="single-testimonial">
-                                <p><i class="fa fa-quote-left" aria-hidden="true"></i>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley </p>
-                                <h3>Erin Stinson</h3>
-                                <p class="title">Manager</p>
-                            </div>
-                            <div class="single-testimonial">
-                                <p><i class="fa fa-quote-left" aria-hidden="true"></i>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley </p>
-                                <h3>Erin Stinson</h3>
-                                <p class="title">Manager</p>
-                            </div>
+                            <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
                         </div>
                     </div>
                 </div>
@@ -647,7 +634,7 @@
             <div class="row">
                 <div class="col-md-8 col-md-offset-2">
                     <div class="section-title text-center">
-                        <h2>our Blog</h2>
+                        <h2>Our Blog</h2>
                     </div>
                 </div>
                 <div class="error-area text-center ptb-100" style="width: 50%">

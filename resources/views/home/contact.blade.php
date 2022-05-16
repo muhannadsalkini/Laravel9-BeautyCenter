@@ -3,6 +3,7 @@
 @section('title', $setting->title. ' | Contact Us' )
 @section('description',$setting->description)
 @section('keywords',$setting->keywords)
+@section('breadcrumbs', 'Contact Us')
 
 @section('content')
     @include('home._breadcrumbs')

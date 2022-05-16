@@ -68,7 +68,7 @@ $setting = \App\Http\Controllers\HomeController::getsetting();
                                     <div class="cart-icon">
                                         <a href=""><i class="zmdi zmdi-account"></i><i style="font-size: small; padding-left: 8px; "><?php echo e(\Illuminate\Support\Facades\Auth::user()->name); ?></i></a>
                                     </div>
-                                    <div class="mini-cart-box left" style=" width:120px;">
+                                    <div class="mini-cart-box left" style=" width:160px;">
                                         <div class="mini-cart-product fix">
                                             <div class="content fix">
                                                 <a href="<?php echo e(route('myprofile')); ?>" class="title"><i class="zmdi zmdi-account" style="padding-right: 5px"></i> Account</a>
@@ -76,11 +76,18 @@ $setting = \App\Http\Controllers\HomeController::getsetting();
                                         </div>
                                         <div class="mini-cart-product fix">
                                             <div class="content fix">
-                                                <a href="#" class="title">
+                                                <a href="<?php echo e(route('wishlist')); ?>" class="title">
                                                     <svg
                                                         xmlns="http://www.w3.org/2000/svg" style="padding-right: 5px" width="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-heart">
                                                         <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path>
                                                     </svg> Wishlist</a>
+                                            </div>
+                                        </div>
+                                        <div class="mini-cart-product fix">
+                                            <div class="content fix">
+                                                <a href="<?php echo e(route('user_appointment')); ?>" class="title">
+                                                    <svg xmlns="http://www.w3.org/2000/svg" style="padding-right: 5px" width="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-check-square"><polyline points="9 11 12 14 22 4"></polyline><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"></path>
+                                                    </svg> Appointments</a>
                                             </div>
                                         </div>
                                         <div class="mini-cart-product fix">
@@ -93,7 +100,7 @@ $setting = \App\Http\Controllers\HomeController::getsetting();
                                         </div>
                                         <div class="mini-cart-product fix">
                                             <div class="content fix">
-                                                <a href="#" class="title"><i class="zmdi zmdi-settings" style="padding-right: 5px"></i> Settings</a>
+                                                <a href="<?php echo e(route('myprofile')); ?>" class="title"><i class="zmdi zmdi-settings" style="padding-right: 5px"></i> Settings</a>
                                             </div>
                                         </div>
                                         <div class="mini-cart-product fix">
@@ -117,65 +124,35 @@ $setting = \App\Http\Controllers\HomeController::getsetting();
                                         </div>
                                     </div>
                                 <?php endif; ?>
-
-                                <!-- Mini Cart -->
-                                <div class="mini-cart" >
-                                    <div class="cart-icon">
-                                        <a href="/cart"><i class="zmdi zmdi-shopping-cart"></i></a>
-                                        <span>2</span>
-                                    </div>
-                                    <div class="mini-cart-box right">
-                                        <div class="mini-cart-product fix">
-                                            <a href="#" class="image"><img src="<?php echo e(asset('assets')); ?>/images/cart/mini-1.jpg" alt="" /></a>
-                                            <div class="content fix">
-                                                <a href="#" class="title">wooden furniture</a>
-                                                <p>Color: Black</p>
-                                                <p>Size: SL</p>
-                                                <button class="remove"><i class="zmdi zmdi-close"></i></button>
-                                            </div>
-                                        </div>
-                                        <div class="mini-cart-checkout text-center">
-                                            <a href="/checkout">checkout</a>
-                                        </div>
-                                    </div>
+                                <div class="search">
+                                    <a href="#"><i class="zmdi zmdi-search"></i></a>
                                 </div>
-                                <!--mini cart end-->
-
-                                <div class="">
-                                    <!--<a href="#"><i class="zmdi zmdi-search"></i></a>-->
-                                    <form action="<?php echo e(route('getservice')); ?>" method="post">
+                            </div>
+                            <div class="search-box">
+                                <div class="search-form">
+                                    <form action="<?php echo e(route('getservice')); ?>" method="post" id="search-form" >
                                         <?php echo csrf_field(); ?>
                                         <?php
 if (! isset($_instance)) {
     $html = \Livewire\Livewire::mount('search')->html();
-} elseif ($_instance->childHasBeenRendered('ksz6ojb')) {
-    $componentId = $_instance->getRenderedChildComponentId('ksz6ojb');
-    $componentTag = $_instance->getRenderedChildComponentTagName('ksz6ojb');
+} elseif ($_instance->childHasBeenRendered('1kAfUY5')) {
+    $componentId = $_instance->getRenderedChildComponentId('1kAfUY5');
+    $componentTag = $_instance->getRenderedChildComponentTagName('1kAfUY5');
     $html = \Livewire\Livewire::dummyMount($componentId, $componentTag);
-    $_instance->preserveRenderedChild('ksz6ojb');
+    $_instance->preserveRenderedChild('1kAfUY5');
 } else {
     $response = \Livewire\Livewire::mount('search');
     $html = $response->html();
-    $_instance->logRenderedChild('ksz6ojb', $response->id(), \Livewire\Livewire::getRootElementTagName($html));
+    $_instance->logRenderedChild('1kAfUY5', $response->id(), \Livewire\Livewire::getRootElementTagName($html));
 }
 echo $html;
 ?>
-                                        <button type="submit" class="search-input"><i class="zmdi zmdi-search"></i> </button>
-                                    </form>
-                                    <?php echo \Livewire\Livewire::scripts(); ?>
-
-                                </div>
-
-                            </div>
-
-                            <div class="search-box">
-                                <div class="search-form">
-                                    <form action="#" id="search-form">
-                                        <input type="search" name="search" placeholder="Search here...">
-                                        <button type="submit">
+                                        <button type="submit" class="search-input">
                                             <span><i class="fa fa-search"></i></span>
                                         </button>
                                     </form>
+                                    <?php echo \Livewire\Livewire::scripts(); ?>
+
                                 </div>
                             </div>
 

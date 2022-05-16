@@ -77,7 +77,7 @@ use Illuminate\Support\Facades\Auth;
                     <a class="dropdown-item" href="{{ route('admin_setting') }}"><i class="me-50" data-feather="settings"></i> Settings</a>
                     <a class="dropdown-item" href="page-pricing.html"><i class="me-50" data-feather="credit-card"></i> Pricing</a>
                     <a class="dropdown-item" href="page-faq.html"><i class="me-50" data-feather="help-circle"></i> FAQ</a>
-                    <a class="dropdown-item" href="{{ route('admin_logout') }}"><i class="me-50" data-feather="power"></i> Logout</a>
+                    <a class="dropdown-item" href="{{ route('logout') }}"><i class="me-50" data-feather="power"></i> Logout</a>
                     @endauth
                 </div>
             </li>

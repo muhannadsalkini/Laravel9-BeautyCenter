@@ -37,21 +37,6 @@
 <?php endif; ?>
 
         <div class="min-h-screen bg-gray-100">
-            <?php
-if (! isset($_instance)) {
-    $html = \Livewire\Livewire::mount('navigation-menu')->html();
-} elseif ($_instance->childHasBeenRendered('0duQs01')) {
-    $componentId = $_instance->getRenderedChildComponentId('0duQs01');
-    $componentTag = $_instance->getRenderedChildComponentTagName('0duQs01');
-    $html = \Livewire\Livewire::dummyMount($componentId, $componentTag);
-    $_instance->preserveRenderedChild('0duQs01');
-} else {
-    $response = \Livewire\Livewire::mount('navigation-menu');
-    $html = $response->html();
-    $_instance->logRenderedChild('0duQs01', $response->id(), \Livewire\Livewire::getRootElementTagName($html));
-}
-echo $html;
-?>
 
             <!-- Page Heading -->
             <?php if(isset($header)): ?>

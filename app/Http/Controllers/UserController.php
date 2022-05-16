@@ -26,7 +26,7 @@ class UserController extends Controller
      */
     public function myreviews()
     {
-        $datalist = Review::where('user_id',Auth::user()->id)->get();
+        $datalist = Review::where('user_id',Auth::user()->id)->orderBy('created_at', 'desc')->get();
         return view('home.user_reviews', ['datalist' => $datalist]);
     }
 

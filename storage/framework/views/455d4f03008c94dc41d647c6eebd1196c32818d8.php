@@ -11,7 +11,7 @@
     <meta name="description" content="Vuexy admin is super flexible, powerful, clean &amp; modern responsive bootstrap 4 admin template with unlimited possibilities.">
     <meta name="keywords" content="admin template, Vuexy admin template, dashboard template, flat admin template, responsive admin template, web app">
     <meta name="author" content="PIXINVENT">
-    <title>Beauty House | Login Page</title>
+    <title>Beauty House | Admin Login Page</title>
     <link rel="apple-touch-icon" href="<?php echo e(asset('assets')); ?>/admin/app-assets/images/ico/apple-icon-120.html">
     <link rel="shortcut icon" type="image/x-icon" href="<?php echo e(asset('assets')); ?>/images/apple-touch-icon.png">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300;0,400;0,500;0,600;1,400;1,500;1,600" rel="stylesheet">
@@ -111,16 +111,7 @@
                                     </div>
                                 </div>
                                 <button class="btn btn-primary w-100" tabindex="4">Sign in</button>
-                                    <?php if($wronginput=='wrong'): ?>
-                                    <div class="demo-spacing-0">
-                                        <div class="alert alert-danger mt-1 alert-validation-msg" role="alert">
-                                            <div class="alert-body d-flex align-items-center">
-                                                <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-info me-50"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="16" x2="12" y2="12"></line><line x1="12" y1="8" x2="12.01" y2="8"></line></svg>
-                                                <span>The username or password you entered is <strong>incorrect!</strong></span>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <?php endif; ?>
+
                             </form>
                             <!-- end form -->
 

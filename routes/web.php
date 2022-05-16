@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\Admin\FaqController;
+use App\Http\Controllers\AppointmentController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
@@ -19,7 +20,8 @@ use Illuminate\Support\Facades\Route;
 // Home
 Route::get('/', [HomeController::class, 'index'])->name('home');
 Route::get('/blog', [HomeController::class, 'blog'])->name('blog');
-Route::get('/cart', [HomeController::class, 'cart']);
+Route::get('/wishlist', [HomeController::class, 'wishlist'])->name('wishlist');
+Route::get('/wishlist', [HomeController::class, 'wishlist'])->name('wishlist');
 Route::get('/checkout', [HomeController::class, 'checkout']);
 Route::get('/contact-us', [HomeController::class, 'contact'])->name('contact-us');
 Route::get('/about-us', [HomeController::class, 'about'])->name('about-us');
@@ -98,6 +100,7 @@ Route::middleware('auth')->prefix('admin')->group(function (){
 
 });
 
+// User
 Route::middleware('auth')->prefix('myaccount')->namespace('myaccount')->group(function (){
     Route::get('/', [UserController::class, 'index'])->name('myprofile');
     Route::get('/myreviews', [UserController::class, 'myreviews'])->name('myreviews');
@@ -106,12 +109,23 @@ Route::middleware('auth')->prefix('myaccount')->namespace('myaccount')->group(fu
 
 Route::middleware('auth')->prefix('user')->namespace('user')->group(function (){
     Route::get('/profile', [UserController::class, 'index'])->name('profile');
+
+    route::prefix('appointment')->group(function (){
+        Route::get('/', [AppointmentController::class, 'index'])->name('user_appointment');
+        Route::post('/create', [AppointmentController::class, 'create'])->name('user_appointment_add');
+        Route::post('/store', [AppointmentController::class, 'store'])->name('user_appointment_store');
+        Route::get('/show/{id}', [AppointmentController::class, 'show'])->name('user_appointment_show');
+        Route::get('/edit/{id}', [AppointmentController::class, 'edit'])->name('user_appointment_edit');
+        Route::post('/update/{id}', [AppointmentController::class, 'update'])->name('user_appointment_update');
+        Route::get('/delete/{id}', [AppointmentController::class, 'destroy'])->name('user_appointment_delete');
+    });
 });
 
-
-Route::get('/admin/login', [HomeController::class, 'login'])->name('admin_login');
+// Login
+Route::get('/admin/login', [HomeController::class, 'admin_login'])->name('admin_login');
+Route::get('/login2', [HomeController::class, 'login'])->name('login2');
 Route::post('/admin/logincheck', [HomeController::class, 'logincheck'])->name('admin_logincheck');
-Route::get('/logout', [HomeController::class, 'logout'])->name('admin_logout');
+Route::get('/logout', [HomeController::class, 'logout'])->name('logout');
 
 
 Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {

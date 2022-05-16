@@ -85,16 +85,14 @@
                             </aside>
                             <aside class="widget flicker grey-bg mb-30 hidden-sm fix">
                                 <div class="widget-title">
-                                    <h3>Flicker Widget</h3>
+                                    <h3>Categories</h3>
                                 </div>
                                 <div class="widget-filcker fix">
                                     <ul>
-                                        <li><a href="#"><img src="<?php echo e(asset('assets')); ?>/images/blog/widget-flicker-1.jpg" alt=""></a></li>
-                                        <li><a href="#"><img src="<?php echo e(asset('assets')); ?>/images/blog/widget-flicker-2.jpg" alt=""></a></li>
-                                        <li><a href="#"><img src="<?php echo e(asset('assets')); ?>/images/blog/widget-flicker-3.jpg" alt=""></a></li>
-                                        <li><a href="#"><img src="<?php echo e(asset('assets')); ?>/images/blog/widget-flicker-4.jpg" alt=""></a></li>
-                                        <li><a href="#"><img src="<?php echo e(asset('assets')); ?>/images/blog/widget-flicker-5.jpg" alt=""></a></li>
-                                        <li><a href="#"><img src="<?php echo e(asset('assets')); ?>/images/blog/widget-flicker-6.jpg" alt=""></a></li>
+                                        <?php $__currentLoopData = $datalist2; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $data): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+                                            <?php if($data->image): ?><li><a href="<?php echo e(route('categoryservice',['id'=>$data->id] )); ?>"><img src="<?php echo e(Storage::url($data->image)); ?>" alt=""></a><p style="height: 5px; font-size: xx-small;"><?php echo e($data->title); ?></p></li>
+                                            <?php endif; ?>
+                                        <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
                                     </ul>
                                 </div>
                             </aside>
@@ -124,18 +122,24 @@
                                     </ul>
                                 </div>
                             </aside>
+                            <?php if(auth()->guard()->check()): ?>
+                                welcome
+                            <?php endif; ?>
+                            <?php if(auth()->guard()->guest()): ?>
                             <aside class="widget newsletter grey-bg">
                                 <div class="widget-title">
-                                    <h3>Subscribe</h3>
+                                    <h3>Join Us</h3>
                                 </div>
                                 <div class="widget-newsletter">
                                     <p>Lorem ipsum dolor sit amet, love dost   consectetur adipisicing elit, </p>
-                                    <form action="#">
-                                        <input type="text" placeholder="Enter Your email">
-                                        <button type="submit">Send</button>
-                                    </form>
+                                    <div class="mini-cart" >
+                                        <div  class="cart-icon">
+                                            <a style="font-size: medium" href="<?php echo e(route('login')); ?>" > Login</a><a style="font-size: medium" href="<?php echo e(route('register')); ?>" >/ Register</a>
+                                        </div>
+                                    </div>
                                 </div>
                             </aside>
+                            <?php endif; ?>
                         </div>
                     </div>
 

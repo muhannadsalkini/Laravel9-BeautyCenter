@@ -36,10 +36,11 @@ class HomeController extends Controller
     {
         $setting = HomeController::getsetting();
         $datalist = Service::where('category_id', $id)->get();
+        $datalist2 = Category::limit(6)->get();
         $data = Service::find($id);
         //print_r($data);
         //exit();
-        return view('home.category_services', ['data'=>$data,'datalist'=>$datalist, 'setting'=>$setting]);
+        return view('home.category_services', ['data'=>$data,'datalist'=>$datalist, 'datalist2'=>$datalist2, 'setting'=>$setting]);
     }
 
     // Services
@@ -112,9 +113,14 @@ class HomeController extends Controller
     }
 
     // Login - Logout
-    public function login()
+    public function admin_login()
     {
         return view('admin.login');
+    }
+
+    public function login()
+    {
+        return view('home.login');
     }
 
     public function logincheck(Request $request)
@@ -154,6 +160,7 @@ class HomeController extends Controller
         $setting = HomeController::getsetting();
         $slider = Service::with('category')->limit(4)->get();
         $daily = Service::with('category')->limit(3)->inRandomOrder()->get();
+        $faqlist = Faq::limit(5)->get();
         $category = Category::get();
         //print_r($slider);
         //exit();
@@ -162,6 +169,7 @@ class HomeController extends Controller
             'slider'=>$slider,
             'category'=>$category,
             'daily'=>$daily,
+            'faqlist'=>$faqlist,
         ];
         return view('home.index', $attributes);
     }
@@ -191,6 +199,12 @@ class HomeController extends Controller
         return view('home._coming_soon',['setting'=>$setting]);
     }
 
+    public function wishlist()
+    {
+        $setting = HomeController::getsetting();
+        return view('home._coming_soon',['setting'=>$setting]);
+    }
+
     public function cart()
     {
         return view('home.cart');
@@ -205,10 +219,5 @@ class HomeController extends Controller
     {
         $setting = HomeController::getsetting();
         return view('home.contact',['setting'=>$setting]);
-    }
-
-    public function comingsoon()
-    {
-        return view('home._coming_soon');
     }
 }

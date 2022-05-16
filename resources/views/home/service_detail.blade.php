@@ -48,39 +48,21 @@
                         <h4>$ {{$data->price}}</h4>
                         <h5 class="overview">OVERVIEW:</h5>
                         <p>{{$data->description}}</p>
-
-
-                        <div class="categories-size mt-20">
-                            <p class="size">Day:</p>
-                            <a href="#">Mon</a>
-                            <a href="#">Tue.</a>
-                            <a href="#">Wed.</a>
-                            <a href="#">Thu.</a>
-                            <a href="#">Fri.</a>
-                            <a href="#">Sat.</a>
-                            <a href="#">Sun.</a>
-                        </div>
-                        <div class="shop-buttons">
-                            <p>Hour:</p>
-                            <div id="quantity-wanted-p">
-                                <input type="number" value="0" class="cart-plus-minus-box">
-                                <div class="dec qtybutton">-</div>
-                                <div class="inc qtybutton">+</div>
-                                <span class="clearfix"></span>
-                            </div>
-                        </div>
-                        <ul class="product-action">
-                            <li><a href="#"><i class="zmdi zmdi-refresh"></i></a></li>
-                            <li><a href="cart.html" class="add-to-cart">add to cart</a></li>
-                            <li><a href="#"><i class="zmdi zmdi-favorite-outline"></i></a></li>
-                        </ul>
+                        <form action="{{route('user_appointment_add')}}" method="post">
+                            @csrf
+                            <input type="hidden" value="{{$data->price}}" name="price">
+                            <input type="hidden" value="{{$data->id}}" name="service_id">
+                            <ul class="product-action">
+                                <input type="submit" value="Make Appointment">
+                            </ul>
+                        </form>
                         <div class="share mt-30">
                             <p>share:</p>
                             <ul>
-                                <li class="facebook"><a href="#"><i class="zmdi zmdi-facebook"></i></a></li>
-                                <li class="twitter"><a href="#"><i class="zmdi zmdi-twitter"></i></a></li>
-                                <li class="pinterest"><a href="#"><i class="zmdi zmdi-pinterest"></i></a></li>
-                                <li class="google-plus"><a href="#"><i class="zmdi zmdi-google-plus"></i></a></li>
+                                <li class="facebook"><a href="#"><i class="zmdi zmdi-facebook pt-10"></i></a></li>
+                                <li class="twitter"><a href="#"><i class="zmdi zmdi-twitter pt-10"></i></a></li>
+                                <li class="pinterest"><a href="#"><i class="zmdi zmdi-pinterest pt-10"></i></a></li>
+                                <li class="google-plus"><a href="#"><i class="zmdi zmdi-google-plus pt-10"></i></a></li>
                             </ul>
                         </div>
                     </div>
@@ -162,7 +144,7 @@
                                 <div class="feature-desc">
                                     <h3><a href="#">{{$service->title}}</a></h3>
                                     <p>${{$service->price}}</p>
-                                    <a href="{{route('service',['id'=>$service->id])}}">Book now</a>
+                                    <a href="{{route('service',['id'=>$service->id])}}">Show Details</a>
                                 </div>
                             </div>
                         </div>
@@ -175,5 +157,14 @@
     </div>
     <!-- product details end -->
 </div>
+
+
+    <script>
+        date = new Date();
+        year = date.getFullYear();
+        month = date.getMonth() + 1;
+        day = date.getDate();
+        document.getElementById("current_date").innerHTML = year + "-" + month + "-" + day;
+    </script>
 @endsection
 

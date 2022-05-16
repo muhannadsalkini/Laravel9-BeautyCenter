@@ -1,4 +1,4 @@
-<?php $__env->startSection('title', 'Admin Panel Category'); ?>
+<?php $__env->startSection('title', 'Admin Panel Categories'); ?>
 <?php $__env->startSection('Categories_status', 'active'); ?>
 
 <?php $__env->startSection('vendor_css'); ?>

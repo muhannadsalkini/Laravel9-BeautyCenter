@@ -1,6 +1,6 @@
 
 ----- Category Table Commends -----
-1- php artisan make:model Category -m  // migration dosyalari ile olusur
+1- php artisan make:model Appointment -m  // migration dosyalari ile olusur
 2- Databse->Migration->xxx_create_categories_table.php  // olusan tabloya alanlari ekleme
 3- php artisan migrate  // degisiklikleri kayd etme
 4- php artisan make:controller Admin\CategoryController --resource
