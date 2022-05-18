@@ -124,22 +124,6 @@
                     </tr>
                     </tbody>
                 </table>
-                <div class="d-flex justify-content-between mx-0 row">
-                    <div class="col-sm-12 col-md-6">
-                        <div class="dataTables_info" id="DataTables_Table_0_info" role="status" aria-live="polite">Showing 0 to 0 of 0 entries
-                        </div>
-                    </div>
-                    <div class="col-sm-12 col-md-6">
-                        <div class="dataTables_paginate paging_simple_numbers" id="DataTables_Table_0_paginate"><ul class="pagination">
-                                <li class="paginate_button page-item previous disabled" id="DataTables_Table_0_previous">
-                                    <a href="#" aria-controls="DataTables_Table_0" data-dt-idx="0" tabindex="0" class="page-link">&nbsp;</a>
-                                </li><li class="paginate_button page-item next disabled" id="DataTables_Table_0_next">
-                                    <a href="#" aria-controls="DataTables_Table_0" data-dt-idx="1" tabindex="0" class="page-link">&nbsp;</a>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
             </div>
 
         </div>

@@ -91,6 +91,12 @@
                     <span class="menu-title text-truncate" data-i18n="settings">Appointments</span>
                 </a>
             </li>
+            <li class=" nav-item @yield('User_status')">
+                <a class="d-flex align-items-center" href="{{route('admin_user')}}">
+                    <i data-feather='users'></i>
+                    <span class="menu-title text-truncate" data-i18n="settings">Users</span>
+                </a>
+            </li>
             <li class=" nav-item @yield('Setting_status')">
                 <a class="d-flex align-items-center" href="{{route('admin_setting')}}">
                     <i data-feather='settings'></i>

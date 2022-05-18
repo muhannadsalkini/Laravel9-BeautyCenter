@@ -62,8 +62,16 @@ use Illuminate\Support\Facades\Auth;
                         <span class="user-name fw-bolder"><?php echo e(\Illuminate\Support\Facades\Auth::user()->name); ?></span>
                         <span class="user-status">Admin</span>
                     </div>
+
                     <span class="avatar">
-                        <img class="round" src="<?php echo e(asset('assets')); ?>/admin/app-assets/images/portrait/small/avatar-s-11.jpg" alt="avatar" height="40" width="40">
+                        <img class="round" src="
+                        <?php if(Auth::user()->profile_photo_path): ?>
+                        <?php echo e(Storage::url(Auth::user()->profile_photo_path)); ?>
+
+                        <?php else: ?>
+                        <?php echo e(asset('assets')); ?>/admin/app-assets/images/portrait/small/avatar-s-11.jpg
+                        <?php endif; ?>
+                        " alt="avatar" height="40" width="40">
                         <span class="avatar-status-online"></span>
                     </span>
                 </a>

@@ -1,4 +1,4 @@
-<?php $__env->startSection('title', 'Category Edit'); ?>
+<?php $__env->startSection('title', 'Admin Panel Edit Service'); ?>
 <?php $__env->startSection('Services_status', 'active'); ?>
 
 <?php $__env->startSection('vendor_css'); ?>
@@ -78,19 +78,6 @@
                             <div class="mb-1">
                                 <label class="form-label">Price</label>
                                 <input type="number" name="price" value="<?php echo e($data->price); ?>" class="form-control" placeholder="Price">
-                            </div>
-                            <!-- Multiple -->
-                            <div class="col-md-6 mb-1">
-                                <label class="form-label" for="select2-multiple">Days</label>
-                                <select name="days" id="days" multiple>
-                                    <option value="Sunday">Sunday</option>
-                                    <option value="Monday">Monday</option>
-                                    <option value="Tuesday">Tuesday</option>
-                                    <option value="Wednesday">Wednesday</option>
-                                    <option value="Thursday">Thursday</option>
-                                    <option value="Friday">Friday</option>
-                                    <option value="Saturday ">Saturday</option>
-                                </select>
                             </div>
                             <div class="mb-1">
                                 <label class="form-label">Tax</label>

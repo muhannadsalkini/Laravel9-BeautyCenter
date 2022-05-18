@@ -1,5 +1,6 @@
 <?php
 $setting = \App\Http\Controllers\HomeController::getsetting();
+$userRole = Auth::user()->roles->pluck('name');
 ?>
 
 <!--[if lt IE 8]>
@@ -74,6 +75,15 @@ $setting = \App\Http\Controllers\HomeController::getsetting();
                                                 <a href="<?php echo e(route('myprofile')); ?>" class="title"><i class="zmdi zmdi-account" style="padding-right: 5px"></i> Account</a>
                                             </div>
                                         </div>
+                                        <?php if($userRole): ?>
+                                            <div class="mini-cart-product fix">
+                                                <div class="content fix">
+                                                    <a href="<?php echo e(route('admin_home')); ?>" class="title">
+                                                        <svg xmlns="http://www.w3.org/2000/svg" style="padding-right: 5px" width="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-columns"><path d="M12 3h7a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2h-7m0-18H5a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h7m0-18v18"></path>
+                                                        </svg> Admin Panel</a>
+                                                </div>
+                                            </div>
+                                        <?php endif; ?>
                                         <div class="mini-cart-product fix">
                                             <div class="content fix">
                                                 <a href="<?php echo e(route('wishlist')); ?>" class="title">
@@ -135,15 +145,15 @@ $setting = \App\Http\Controllers\HomeController::getsetting();
                                         <?php
 if (! isset($_instance)) {
     $html = \Livewire\Livewire::mount('search')->html();
-} elseif ($_instance->childHasBeenRendered('F3L3vlx')) {
-    $componentId = $_instance->getRenderedChildComponentId('F3L3vlx');
-    $componentTag = $_instance->getRenderedChildComponentTagName('F3L3vlx');
+} elseif ($_instance->childHasBeenRendered('IwqxgbD')) {
+    $componentId = $_instance->getRenderedChildComponentId('IwqxgbD');
+    $componentTag = $_instance->getRenderedChildComponentTagName('IwqxgbD');
     $html = \Livewire\Livewire::dummyMount($componentId, $componentTag);
-    $_instance->preserveRenderedChild('F3L3vlx');
+    $_instance->preserveRenderedChild('IwqxgbD');
 } else {
     $response = \Livewire\Livewire::mount('search');
     $html = $response->html();
-    $_instance->logRenderedChild('F3L3vlx', $response->id(), \Livewire\Livewire::getRootElementTagName($html));
+    $_instance->logRenderedChild('IwqxgbD', $response->id(), \Livewire\Livewire::getRootElementTagName($html));
 }
 echo $html;
 ?>

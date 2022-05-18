@@ -62,8 +62,15 @@ use Illuminate\Support\Facades\Auth;
                         <span class="user-name fw-bolder">{{ \Illuminate\Support\Facades\Auth::user()->name }}</span>
                         <span class="user-status">Admin</span>
                     </div>
+
                     <span class="avatar">
-                        <img class="round" src="{{asset('assets')}}/admin/app-assets/images/portrait/small/avatar-s-11.jpg" alt="avatar" height="40" width="40">
+                        <img class="round" src="
+                        @if (Auth::user()->profile_photo_path)
+                        {{ Storage::url(Auth::user()->profile_photo_path) }}
+                        @else
+                        {{asset('assets')}}/admin/app-assets/images/portrait/small/avatar-s-11.jpg
+                        @endif
+                        " alt="avatar" height="40" width="40">
                         <span class="avatar-status-online"></span>
                     </span>
                 </a>
