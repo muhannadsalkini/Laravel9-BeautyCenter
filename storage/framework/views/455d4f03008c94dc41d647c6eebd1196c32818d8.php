@@ -111,6 +111,7 @@
                                     </div>
                                 </div>
                                 <button class="btn btn-primary w-100" tabindex="4">Sign in</button>
+                                    <?php echo $__env->make('home.flash-message', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
 
                             </form>
                             <!-- end form -->

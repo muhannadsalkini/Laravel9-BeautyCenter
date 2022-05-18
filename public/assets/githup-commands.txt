@@ -1,6 +1,6 @@
 ----- Update Project -----
 1- git add .
-2- git commit -m "home page add appointments"  // yorum ekleme kismi
+2- git commit -m "add user admin role permissions"  // yorum ekleme kismi
 3- git push -u origin master
 
 

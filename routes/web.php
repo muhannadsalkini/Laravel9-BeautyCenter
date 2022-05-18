@@ -42,78 +42,81 @@ Route::post('/getservice', [HomeController::class, 'getservice'])->name('getserv
 
 // Admin
 Route::middleware('auth')->prefix('admin')->group(function (){
-    Route::get('/', [App\Http\Controllers\Admin\HomeController::class, 'index'])->name('admin_home');
 
-    // Category table
-    Route::get('category', [CategoryController::class, 'index'])->name('admin_category');
-    Route::get('category/add', [CategoryController::class, 'add'])->name('admin_category_add');
-    Route::post('category/store', [CategoryController::class, 'store'])->name('admin_category_store');
-    Route::get('category/show', [CategoryController::class, 'show'])->name('admin_category_show');
-    Route::get('category/edit/{id}', [CategoryController::class, 'edit'])->name('admin_category_edit');
-    Route::post('category/update/{id}', [CategoryController::class, 'update'])->name('admin_category_update');
-    Route::get('category/delete/{id}', [CategoryController::class, 'destroy'])->name('admin_category_delete');
+    // Admin role
+    Route::middleware('admin')->group(function () {
+        Route::get('/', [App\Http\Controllers\Admin\HomeController::class, 'index'])->name('admin_home');
 
-    // Service Table
-    route::prefix('service')->group(function (){
-        Route::get('/', [ServiceController::class, 'index'])->name('admin_service');
-        Route::get('/create', [ServiceController::class, 'create'])->name('admin_service_add');
-        Route::post('/store', [ServiceController::class, 'store'])->name('admin_service_store');
-        Route::get('/show/{id}', [ServiceController::class, 'show'])->name('admin_service_show');
-        Route::get('/edit/{id}', [ServiceController::class, 'edit'])->name('admin_service_edit');
-        Route::post('/update/{id}', [ServiceController::class, 'update'])->name('admin_service_update');
-        Route::get('/delete/{id}', [ServiceController::class, 'destroy'])->name('admin_service_delete');
+        // Category table
+        Route::get('category', [CategoryController::class, 'index'])->name('admin_category');
+        Route::get('category/add', [CategoryController::class, 'add'])->name('admin_category_add');
+        Route::post('category/store', [CategoryController::class, 'store'])->name('admin_category_store');
+        Route::get('category/show', [CategoryController::class, 'show'])->name('admin_category_show');
+        Route::get('category/edit/{id}', [CategoryController::class, 'edit'])->name('admin_category_edit');
+        Route::post('category/update/{id}', [CategoryController::class, 'update'])->name('admin_category_update');
+        Route::get('category/delete/{id}', [CategoryController::class, 'destroy'])->name('admin_category_delete');
+
+        // Service Table
+        route::prefix('service')->group(function (){
+            Route::get('/', [ServiceController::class, 'index'])->name('admin_service');
+            Route::get('/create', [ServiceController::class, 'create'])->name('admin_service_add');
+            Route::post('/store', [ServiceController::class, 'store'])->name('admin_service_store');
+            Route::get('/show/{id}', [ServiceController::class, 'show'])->name('admin_service_show');
+            Route::get('/edit/{id}', [ServiceController::class, 'edit'])->name('admin_service_edit');
+            Route::post('/update/{id}', [ServiceController::class, 'update'])->name('admin_service_update');
+            Route::get('/delete/{id}', [ServiceController::class, 'destroy'])->name('admin_service_delete');
+        });
+
+        // Service Image Gallery
+        route::prefix('image')->group(function (){
+            Route::get('/create/{service_id}', [ImageController::class, 'create'])->name('admin_image_add');
+            Route::post('/store/{service_id}', [ImageController::class, 'store'])->name('admin_image_store');
+            Route::get('/show', [ImageController::class, 'show'])->name('admin_image_show');
+            Route::get('/delete/{id}/{service_id}', [ImageController::class, 'destroy'])->name('admin_image_delete');
+        });
+
+        // Messages
+        route::prefix('message')->group(function (){
+            Route::get('/', [MessageController::class, 'index'])->name('admin_message');
+            Route::get('/edit/{id}', [MessageController::class, 'edit'])->name('admin_message_edit');
+            Route::post('/update/{id}', [MessageController::class, 'update'])->name('admin_message_update');
+            Route::get('/delete/{id}', [MessageController::class, 'destroy'])->name('admin_message_delete');
+        });
+
+        // Review
+        route::prefix('review')->group(function (){
+            Route::get('/', [ReviewController::class, 'index'])->name('admin_review');
+            Route::post('/update/{id}', [ReviewController::class, 'update'])->name('admin_review_update');
+            Route::get('/delete/{id}', [ReviewController::class, 'destroy'])->name('admin_review_delete');
+            Route::get('/show/{id}', [ReviewController::class, 'show'])->name('admin_review_show');
+        });
+
+        // Faq
+        route::prefix('faq')->group(function (){
+            Route::get('/', [FaqController::class, 'index'])->name('admin_faq');
+            Route::get('/create', [FaqController::class, 'create'])->name('admin_faq_add');
+            Route::post('/store', [FaqController::class, 'store'])->name('admin_faq_store');
+            Route::get('/show/{id}', [FaqController::class, 'show'])->name('admin_faq_show');
+            Route::get('/edit/{id}', [FaqController::class, 'edit'])->name('admin_faq_edit');
+            Route::post('/update/{id}', [FaqController::class, 'update'])->name('admin_faq_update');
+            Route::get('/delete/{id}', [FaqController::class, 'destroy'])->name('admin_faq_delete');
+        });
+
+        // Settings
+        Route::get('setting', [App\Http\Controllers\Admin\SettingController::class, 'index'])->name('admin_setting');
+        Route::post('setting/update', [App\Http\Controllers\Admin\SettingController::class, 'update'])->name('admin_setting_update');
+
+        // Appointment
+        route::prefix('appointment')->group(function (){
+            Route::get('/', [App\Http\Controllers\Admin\AppointmentController::class, 'index'])->name('admin_appointment');
+            Route::post('/create', [App\Http\Controllers\Admin\AppointmentController::class, 'create'])->name('admin_appointment_add');
+            Route::post('/store', [App\Http\Controllers\Admin\AppointmentController::class, 'store'])->name('admin_appointment_store');
+            Route::get('/show/{id}', [App\Http\Controllers\Admin\AppointmentController::class, 'show'])->name('admin_appointment_show');
+            Route::get('/edit/{id}', [App\Http\Controllers\Admin\AppointmentController::class, 'edit'])->name('admin_appointment_edit');
+            Route::post('/update/{id}', [App\Http\Controllers\Admin\AppointmentController::class, 'update'])->name('admin_appointment_update');
+            Route::get('/delete/{id}', [App\Http\Controllers\Admin\AppointmentController::class, 'destroy'])->name('admin_appointment_delete');
+        });
     });
-
-    // Service Image Gallery
-    route::prefix('image')->group(function (){
-        Route::get('/create/{service_id}', [ImageController::class, 'create'])->name('admin_image_add');
-        Route::post('/store/{service_id}', [ImageController::class, 'store'])->name('admin_image_store');
-        Route::get('/show', [ImageController::class, 'show'])->name('admin_image_show');
-        Route::get('/delete/{id}/{service_id}', [ImageController::class, 'destroy'])->name('admin_image_delete');
-    });
-
-    // Messages
-    route::prefix('message')->group(function (){
-        Route::get('/', [MessageController::class, 'index'])->name('admin_message');
-        Route::get('/edit/{id}', [MessageController::class, 'edit'])->name('admin_message_edit');
-        Route::post('/update/{id}', [MessageController::class, 'update'])->name('admin_message_update');
-        Route::get('/delete/{id}', [MessageController::class, 'destroy'])->name('admin_message_delete');
-    });
-
-    // Review
-    route::prefix('review')->group(function (){
-        Route::get('/', [ReviewController::class, 'index'])->name('admin_review');
-        Route::post('/update/{id}', [ReviewController::class, 'update'])->name('admin_review_update');
-        Route::get('/delete/{id}', [ReviewController::class, 'destroy'])->name('admin_review_delete');
-        Route::get('/show/{id}', [ReviewController::class, 'show'])->name('admin_review_show');
-    });
-
-    // Faq
-    route::prefix('faq')->group(function (){
-        Route::get('/', [FaqController::class, 'index'])->name('admin_faq');
-        Route::get('/create', [FaqController::class, 'create'])->name('admin_faq_add');
-        Route::post('/store', [FaqController::class, 'store'])->name('admin_faq_store');
-        Route::get('/show/{id}', [FaqController::class, 'show'])->name('admin_faq_show');
-        Route::get('/edit/{id}', [FaqController::class, 'edit'])->name('admin_faq_edit');
-        Route::post('/update/{id}', [FaqController::class, 'update'])->name('admin_faq_update');
-        Route::get('/delete/{id}', [FaqController::class, 'destroy'])->name('admin_faq_delete');
-    });
-
-    // Settings
-    Route::get('setting', [App\Http\Controllers\Admin\SettingController::class, 'index'])->name('admin_setting');
-    Route::post('setting/update', [App\Http\Controllers\Admin\SettingController::class, 'update'])->name('admin_setting_update');
-
-    // Appointment
-    route::prefix('appointment')->group(function (){
-        Route::get('/', [App\Http\Controllers\Admin\AppointmentController::class, 'index'])->name('admin_appointment');
-        Route::post('/create', [App\Http\Controllers\Admin\AppointmentController::class, 'create'])->name('admin_appointment_add');
-        Route::post('/store', [App\Http\Controllers\Admin\AppointmentController::class, 'store'])->name('admin_appointment_store');
-        Route::get('/show/{id}', [App\Http\Controllers\Admin\AppointmentController::class, 'show'])->name('admin_appointment_show');
-        Route::get('/edit/{id}', [App\Http\Controllers\Admin\AppointmentController::class, 'edit'])->name('admin_appointment_edit');
-        Route::post('/update/{id}', [App\Http\Controllers\Admin\AppointmentController::class, 'update'])->name('admin_appointment_update');
-        Route::get('/delete/{id}', [App\Http\Controllers\Admin\AppointmentController::class, 'destroy'])->name('admin_appointment_delete');
-    });
-
 });
 
 // User
