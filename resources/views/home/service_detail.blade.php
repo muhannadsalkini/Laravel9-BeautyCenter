@@ -129,7 +129,7 @@
                 <div class="row">
                     <div class="col-md-8 col-md-offset-2">
                         <div class="section-title text-center">
-                            <h2>Related product</h2>
+                            <h2>Related</h2>
                         </div>
                     </div>
                 </div>

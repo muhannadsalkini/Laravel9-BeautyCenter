@@ -70,7 +70,7 @@
                             margin-top: 40px;
                             text-transform: uppercase;
                             transition-duration: 0.3s;
-                            width: 100%;">Add Category</button>
+                            width: 100%;">Send Message</button>
                             @include('home.flash-message')
                         </form>
                     </div>

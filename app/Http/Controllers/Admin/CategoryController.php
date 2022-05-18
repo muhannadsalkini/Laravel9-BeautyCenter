@@ -22,10 +22,13 @@ class CategoryController extends Controller
             return $title;
         }
 
-        $parent = Category::find($category->parent_id);
-        $title = $parent->title.' > '.$title;
+        else{
+            $parent = Category::find($category->parent_id);
+            $title = $parent->title.' > '.$title;
 
-        return CategoryController::getParentTree($parent,$title);
+            return CategoryController::getParentTree($parent,$title);
+        }
+
     }
 
     /**

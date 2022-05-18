@@ -28,7 +28,7 @@
                         <h2>About Our Beauty House</h2>
                         <p class="text-1">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec aliquet dolor libero, eget loved venenatis mauris finibus dictum. Vestibulum quis elit eget neque porttitor  no amet dolor. Proin pretium purus a lorem ornare</p>
                         <p class="text-2">sed lobortis pulvinar. Integer laoreet mi id eros porta euismod. Suspendisse potenti. Nulla eros mauris, convallis et sem tempus, viverra hendrerit sapien  Lorem  amet, consectetur adipiscing elit. Donec aliquet dolor libero, </p>
-                        <a href="#">Read more</a>
+                        <a href="{{route('about-us')}}">Read more</a>
                     </div>
                 </div>
             </div>
@@ -498,7 +498,7 @@
                         <div class="feature-desc">
                             <h3><a href="{{route('service',['id'=>$rs->id])}}">{{ $rs->title }}</a></h3>
                             <p>${{$rs->price}}</p>
-                            <a href="{{route('service',['id'=>$rs->id])}}">Book now</a>
+                            <a href="{{route('service',['id'=>$rs->id])}}">Show Details</a>
                         </div>
                     </div>
                 </div>

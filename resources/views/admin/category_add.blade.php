@@ -41,6 +41,7 @@
                                 <label class="form-label">Parent ID</label>
                                 <select class="form-select" name="parent_id" required="">
                                     <option value="0" selected="selected">Main Category</option>
+                                    @sort
                                     @foreach ($datalist as $rs)
                                         <option value="{{ $rs->id }}">{{ \App\Http\Controllers\Admin\CategoryController::getParentTree($rs, $rs->title) }}</option>
                                     @endforeach

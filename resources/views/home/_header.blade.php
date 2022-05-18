@@ -151,7 +151,8 @@ $setting = \App\Http\Controllers\HomeController::getsetting();
                     <div class="col-md-12">
                         <nav id="dropdown">
                             <ul>
-                                <li><a href="#">Account</a></li>
+                                @auth <li><a href="{{ route('myprofile') }}">Account</a></li> @endauth
+                                @guest <li><a href="/login" > Login</a></li> @endguest
                                 <li><a href="{{route('home')}}">Home</a></li>
                                 <li><a href="{{route('about-us')}}">about</a></li>
                                 @include('home._category')
@@ -168,4 +169,4 @@ $setting = \App\Http\Controllers\HomeController::getsetting();
     </div>
     <!--header section end-->
     <!--header section end-->
-</div>
+

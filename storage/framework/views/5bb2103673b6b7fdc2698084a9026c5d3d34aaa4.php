@@ -39,6 +39,7 @@
                                 <label class="form-label">Parent ID</label>
                                 <select class="form-select" name="parent_id" required="">
                                     <option value="0" selected="selected">Main Category</option>
+                                    @sort
                                     <?php $__currentLoopData = $datalist; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $rs): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
                                         <option value="<?php echo e($rs->id); ?>"><?php echo e(\App\Http\Controllers\Admin\CategoryController::getParentTree($rs, $rs->title)); ?></option>
                                     <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>

@@ -85,6 +85,12 @@
                     <span class="menu-title text-truncate" data-i18n="settings">Faq</span>
                 </a>
             </li>
+            <li class=" nav-item <?php echo $__env->yieldContent('Appointment_status'); ?>">
+                <a class="d-flex align-items-center" href="<?php echo e(route('admin_appointment')); ?>">
+                    <i data-feather='check-square'></i>
+                    <span class="menu-title text-truncate" data-i18n="settings">Appointments</span>
+                </a>
+            </li>
             <li class=" nav-item <?php echo $__env->yieldContent('Setting_status'); ?>">
                 <a class="d-flex align-items-center" href="<?php echo e(route('admin_setting')); ?>">
                     <i data-feather='settings'></i>

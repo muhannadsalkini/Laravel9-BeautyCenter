@@ -139,7 +139,7 @@ unset($__errorArgs, $__bag); ?>
                             margin-top: 40px;
                             text-transform: uppercase;
                             transition-duration: 0.3s;
-                            width: 100%;">Add Category</button>
+                            width: 100%;">Send Message</button>
                             <?php echo $__env->make('home.flash-message', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
                         </form>
                     </div>

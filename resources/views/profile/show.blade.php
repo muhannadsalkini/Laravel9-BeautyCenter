@@ -14,7 +14,7 @@
             @endif
 
             @if (Laravel\Fortify\Features::enabled(Laravel\Fortify\Features::updatePasswords()))
-                <div class="mt-10 sm:mt-0">
+                <div class="mt-10 sm:mt-0 border-1">
                     @livewire('profile.update-password-form')
                 </div>
 
@@ -29,14 +29,14 @@
                 <x-jet-section-border />
             @endif
 
-            <div class="mt-10 sm:mt-0">
+            <div class="mt-10 sm:mt-0 pt-15">
                 @livewire('profile.logout-other-browser-sessions-form')
             </div>
 
             @if (Laravel\Jetstream\Jetstream::hasAccountDeletionFeatures())
                 <x-jet-section-border />
 
-                <div class="mt-10 sm:mt-0">
+                <div class="mt-10 sm:mt-0 pt-15">
                     @livewire('profile.delete-user-form')
                 </div>
             @endif

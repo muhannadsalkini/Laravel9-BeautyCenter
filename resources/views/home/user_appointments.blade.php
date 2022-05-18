@@ -21,9 +21,9 @@
                             <tr>
                                 <th>Id</th>
                                 <th>Service</th>
-                                <th>Date & Time</th>
-                                <th>Price</th>
                                 <th>Name</th>
+                                <th>Appointment Date</th>
+                                <th>Price</th>
                                 <th>Status</th>
                             </tr>
                             </thead>
@@ -32,9 +32,9 @@
                                 <tr>
                                     <th>{{ $rs->id }}</th>
                                     <td> @if($rs->service_id) <a href="{{ route('service', ['id'=>$rs->service_id]) }}" target="_blank">{{ $rs->service->title }}</a> @else NO SERVICE! @endif</td>
+                                    <td>{{ $rs->name }}</td>
                                     <td>{{ $rs->date }} / {{ $rs->time }}</td>
                                     <td>{{ $rs->price }}</td>
-                                    <td>{{ $rs->name }}</td>
                                     <td>
                                         @if ($rs->status == 'True')
                                             <i style="color: #6bc513">Approved</i>

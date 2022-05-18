@@ -116,15 +116,15 @@
                                         <?php
 if (! isset($_instance)) {
     $html = \Livewire\Livewire::mount('review', ['id'=>$data->id])->html();
-} elseif ($_instance->childHasBeenRendered('LccExjH')) {
-    $componentId = $_instance->getRenderedChildComponentId('LccExjH');
-    $componentTag = $_instance->getRenderedChildComponentTagName('LccExjH');
+} elseif ($_instance->childHasBeenRendered('JVPvYBs')) {
+    $componentId = $_instance->getRenderedChildComponentId('JVPvYBs');
+    $componentTag = $_instance->getRenderedChildComponentTagName('JVPvYBs');
     $html = \Livewire\Livewire::dummyMount($componentId, $componentTag);
-    $_instance->preserveRenderedChild('LccExjH');
+    $_instance->preserveRenderedChild('JVPvYBs');
 } else {
     $response = \Livewire\Livewire::mount('review', ['id'=>$data->id]);
     $html = $response->html();
-    $_instance->logRenderedChild('LccExjH', $response->id(), \Livewire\Livewire::getRootElementTagName($html));
+    $_instance->logRenderedChild('JVPvYBs', $response->id(), \Livewire\Livewire::getRootElementTagName($html));
 }
 echo $html;
 ?>
@@ -142,7 +142,7 @@ echo $html;
                 <div class="row">
                     <div class="col-md-8 col-md-offset-2">
                         <div class="section-title text-center">
-                            <h2>Related product</h2>
+                            <h2>Related</h2>
                         </div>
                     </div>
                 </div>

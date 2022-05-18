@@ -8,5 +8,11 @@
 
 @section('content')
     @include('home._breadcrumbs')
-    {!! $setting->aboutus !!}
+    <div class="about-us ptb-100">
+        <div class="container">
+            <div class="row">
+                {!! $setting->aboutus !!}
+            </div>
+        </div>
+    </div>
 @endsection

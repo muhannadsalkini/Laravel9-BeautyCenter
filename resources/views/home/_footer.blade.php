@@ -33,11 +33,11 @@
                             <h3>Quick links</h3>
                         </div>
                         <ul>
-                            <li><a href="/">Home</a></li>
-                            <li><a href="/about-us">about</a></li>
+                            <li><a href="{{ route('home') }}">Home</a></li>
+                            <li><a href="{{route('about-us')}}">about</a></li>
                             <li><a href="#">serivces</a></li>
-                            <li><a href="#">portfolio</a></li>
-                            <li><a href="/contact-us">contact us</a></li>
+                            <li><a href="{{route('faq')}}">FAQ</a></li>
+                            <li><a href="{{route('contact-us')}}">contact us</a></li>
                         </ul>
                     </div>
                 </div>

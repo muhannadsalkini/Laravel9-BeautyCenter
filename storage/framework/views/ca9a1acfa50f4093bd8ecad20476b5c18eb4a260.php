@@ -135,15 +135,15 @@ $setting = \App\Http\Controllers\HomeController::getsetting();
                                         <?php
 if (! isset($_instance)) {
     $html = \Livewire\Livewire::mount('search')->html();
-} elseif ($_instance->childHasBeenRendered('1kAfUY5')) {
-    $componentId = $_instance->getRenderedChildComponentId('1kAfUY5');
-    $componentTag = $_instance->getRenderedChildComponentTagName('1kAfUY5');
+} elseif ($_instance->childHasBeenRendered('F3L3vlx')) {
+    $componentId = $_instance->getRenderedChildComponentId('F3L3vlx');
+    $componentTag = $_instance->getRenderedChildComponentTagName('F3L3vlx');
     $html = \Livewire\Livewire::dummyMount($componentId, $componentTag);
-    $_instance->preserveRenderedChild('1kAfUY5');
+    $_instance->preserveRenderedChild('F3L3vlx');
 } else {
     $response = \Livewire\Livewire::mount('search');
     $html = $response->html();
-    $_instance->logRenderedChild('1kAfUY5', $response->id(), \Livewire\Livewire::getRootElementTagName($html));
+    $_instance->logRenderedChild('F3L3vlx', $response->id(), \Livewire\Livewire::getRootElementTagName($html));
 }
 echo $html;
 ?>
@@ -166,7 +166,8 @@ echo $html;
                     <div class="col-md-12">
                         <nav id="dropdown">
                             <ul>
-                                <li><a href="#">Account</a></li>
+                                <?php if(auth()->guard()->check()): ?> <li><a href="<?php echo e(route('myprofile')); ?>">Account</a></li> <?php endif; ?>
+                                <?php if(auth()->guard()->guest()): ?> <li><a href="/login" > Login</a></li> <?php endif; ?>
                                 <li><a href="<?php echo e(route('home')); ?>">Home</a></li>
                                 <li><a href="<?php echo e(route('about-us')); ?>">about</a></li>
                                 <?php echo $__env->make('home._category', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
@@ -183,5 +184,5 @@ echo $html;
     </div>
     <!--header section end-->
     <!--header section end-->
-</div>
+
 <?php /**PATH C:\Php\Laravel9-BeautyCenter\resources\views/home/_header.blade.php ENDPATH**/ ?>

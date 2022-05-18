@@ -20,15 +20,15 @@
                 <?php
 if (! isset($_instance)) {
     $html = \Livewire\Livewire::mount('profile.update-profile-information-form')->html();
-} elseif ($_instance->childHasBeenRendered('8i91yMO')) {
-    $componentId = $_instance->getRenderedChildComponentId('8i91yMO');
-    $componentTag = $_instance->getRenderedChildComponentTagName('8i91yMO');
+} elseif ($_instance->childHasBeenRendered('b9PDcbR')) {
+    $componentId = $_instance->getRenderedChildComponentId('b9PDcbR');
+    $componentTag = $_instance->getRenderedChildComponentTagName('b9PDcbR');
     $html = \Livewire\Livewire::dummyMount($componentId, $componentTag);
-    $_instance->preserveRenderedChild('8i91yMO');
+    $_instance->preserveRenderedChild('b9PDcbR');
 } else {
     $response = \Livewire\Livewire::mount('profile.update-profile-information-form');
     $html = $response->html();
-    $_instance->logRenderedChild('8i91yMO', $response->id(), \Livewire\Livewire::getRootElementTagName($html));
+    $_instance->logRenderedChild('b9PDcbR', $response->id(), \Livewire\Livewire::getRootElementTagName($html));
 }
 echo $html;
 ?>
@@ -51,19 +51,19 @@ echo $html;
             <?php endif; ?>
 
             <?php if(Laravel\Fortify\Features::enabled(Laravel\Fortify\Features::updatePasswords())): ?>
-                <div class="mt-10 sm:mt-0">
+                <div class="mt-10 sm:mt-0 border-1">
                     <?php
 if (! isset($_instance)) {
     $html = \Livewire\Livewire::mount('profile.update-password-form')->html();
-} elseif ($_instance->childHasBeenRendered('zapHvdV')) {
-    $componentId = $_instance->getRenderedChildComponentId('zapHvdV');
-    $componentTag = $_instance->getRenderedChildComponentTagName('zapHvdV');
+} elseif ($_instance->childHasBeenRendered('4tkcOuD')) {
+    $componentId = $_instance->getRenderedChildComponentId('4tkcOuD');
+    $componentTag = $_instance->getRenderedChildComponentTagName('4tkcOuD');
     $html = \Livewire\Livewire::dummyMount($componentId, $componentTag);
-    $_instance->preserveRenderedChild('zapHvdV');
+    $_instance->preserveRenderedChild('4tkcOuD');
 } else {
     $response = \Livewire\Livewire::mount('profile.update-password-form');
     $html = $response->html();
-    $_instance->logRenderedChild('zapHvdV', $response->id(), \Livewire\Livewire::getRootElementTagName($html));
+    $_instance->logRenderedChild('4tkcOuD', $response->id(), \Livewire\Livewire::getRootElementTagName($html));
 }
 echo $html;
 ?>
@@ -91,15 +91,15 @@ echo $html;
                     <?php
 if (! isset($_instance)) {
     $html = \Livewire\Livewire::mount('profile.two-factor-authentication-form')->html();
-} elseif ($_instance->childHasBeenRendered('YKFCTnE')) {
-    $componentId = $_instance->getRenderedChildComponentId('YKFCTnE');
-    $componentTag = $_instance->getRenderedChildComponentTagName('YKFCTnE');
+} elseif ($_instance->childHasBeenRendered('SHA5VtX')) {
+    $componentId = $_instance->getRenderedChildComponentId('SHA5VtX');
+    $componentTag = $_instance->getRenderedChildComponentTagName('SHA5VtX');
     $html = \Livewire\Livewire::dummyMount($componentId, $componentTag);
-    $_instance->preserveRenderedChild('YKFCTnE');
+    $_instance->preserveRenderedChild('SHA5VtX');
 } else {
     $response = \Livewire\Livewire::mount('profile.two-factor-authentication-form');
     $html = $response->html();
-    $_instance->logRenderedChild('YKFCTnE', $response->id(), \Livewire\Livewire::getRootElementTagName($html));
+    $_instance->logRenderedChild('SHA5VtX', $response->id(), \Livewire\Livewire::getRootElementTagName($html));
 }
 echo $html;
 ?>
@@ -122,19 +122,19 @@ echo $html;
 <?php endif; ?>
             <?php endif; ?>
 
-            <div class="mt-10 sm:mt-0">
+            <div class="mt-10 sm:mt-0 pt-15">
                 <?php
 if (! isset($_instance)) {
     $html = \Livewire\Livewire::mount('profile.logout-other-browser-sessions-form')->html();
-} elseif ($_instance->childHasBeenRendered('tRqjQtH')) {
-    $componentId = $_instance->getRenderedChildComponentId('tRqjQtH');
-    $componentTag = $_instance->getRenderedChildComponentTagName('tRqjQtH');
+} elseif ($_instance->childHasBeenRendered('ISjnlcP')) {
+    $componentId = $_instance->getRenderedChildComponentId('ISjnlcP');
+    $componentTag = $_instance->getRenderedChildComponentTagName('ISjnlcP');
     $html = \Livewire\Livewire::dummyMount($componentId, $componentTag);
-    $_instance->preserveRenderedChild('tRqjQtH');
+    $_instance->preserveRenderedChild('ISjnlcP');
 } else {
     $response = \Livewire\Livewire::mount('profile.logout-other-browser-sessions-form');
     $html = $response->html();
-    $_instance->logRenderedChild('tRqjQtH', $response->id(), \Livewire\Livewire::getRootElementTagName($html));
+    $_instance->logRenderedChild('ISjnlcP', $response->id(), \Livewire\Livewire::getRootElementTagName($html));
 }
 echo $html;
 ?>
@@ -157,19 +157,19 @@ echo $html;
 <?php unset($__componentOriginalc254754b9d5db91d5165876f9d051922ca0066f4); ?>
 <?php endif; ?>
 
-                <div class="mt-10 sm:mt-0">
+                <div class="mt-10 sm:mt-0 pt-15">
                     <?php
 if (! isset($_instance)) {
     $html = \Livewire\Livewire::mount('profile.delete-user-form')->html();
-} elseif ($_instance->childHasBeenRendered('a5ECq2D')) {
-    $componentId = $_instance->getRenderedChildComponentId('a5ECq2D');
-    $componentTag = $_instance->getRenderedChildComponentTagName('a5ECq2D');
+} elseif ($_instance->childHasBeenRendered('rE1glap')) {
+    $componentId = $_instance->getRenderedChildComponentId('rE1glap');
+    $componentTag = $_instance->getRenderedChildComponentTagName('rE1glap');
     $html = \Livewire\Livewire::dummyMount($componentId, $componentTag);
-    $_instance->preserveRenderedChild('a5ECq2D');
+    $_instance->preserveRenderedChild('rE1glap');
 } else {
     $response = \Livewire\Livewire::mount('profile.delete-user-form');
     $html = $response->html();
-    $_instance->logRenderedChild('a5ECq2D', $response->id(), \Livewire\Livewire::getRootElementTagName($html));
+    $_instance->logRenderedChild('rE1glap', $response->id(), \Livewire\Livewire::getRootElementTagName($html));
 }
 echo $html;
 ?>

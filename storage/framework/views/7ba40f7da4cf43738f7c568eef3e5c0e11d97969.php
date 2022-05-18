@@ -93,9 +93,7 @@
                                     <?php $__currentLoopData = $datalist; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $rs): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
                                         <tr class="item">
                                             <td><?php echo e($rs->id); ?></td>
-                                            <td><?php if($rs->parent): ?><?php echo e(\App\Http\Controllers\Admin\CategoryController::getParentTree($rs, $rs->title)); ?>
-
-                                            <?php else: ?> MAIN CATEGORY <?php endif; ?></td>
+                                            <td><?php echo e(\App\Http\Controllers\Admin\CategoryController::getParentTree($rs, $rs->title)); ?></td>
                                             <td>
                                                 <div class="avatar-group">
                                                     <div data-bs-toggle="tooltip" data-popup="tooltip-custom" data-bs-placement="top" class="avatar pull-up my-0" title="" data-bs-original-title="<?php echo e($rs->title); ?>">
