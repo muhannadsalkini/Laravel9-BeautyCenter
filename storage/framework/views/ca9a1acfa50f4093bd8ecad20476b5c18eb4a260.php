@@ -1,6 +1,8 @@
 <?php
 $setting = \App\Http\Controllers\HomeController::getsetting();
-$userRole = Auth::user()->roles->pluck('name');
+if(Auth::user()){
+    $userRole = Auth::user()->roles->pluck('name');
+};
 ?>
 
 <!--[if lt IE 8]>
@@ -49,7 +51,7 @@ $userRole = Auth::user()->roles->pluck('name');
                             <div class="menu" >
                                 <nav>
                                     <ul>
-                                        <li><a href="<?php echo e(route('home')); ?>">Home</a></li>
+                                        <li><a href="<?php echo e(route('home')); ?>">Home </a></li>
                                         <li><a href="<?php echo e(route('about-us')); ?>">about</a></li>
                                         <?php echo $__env->make('home._category', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
                                         <li><a href="<?php echo e(route('blog')); ?>">blog</a></li>
@@ -75,7 +77,7 @@ $userRole = Auth::user()->roles->pluck('name');
                                                 <a href="<?php echo e(route('myprofile')); ?>" class="title"><i class="zmdi zmdi-account" style="padding-right: 5px"></i> Account</a>
                                             </div>
                                         </div>
-                                        <?php if($userRole): ?>
+                                        <?php if($userRole == '["admin"]'): ?>
                                             <div class="mini-cart-product fix">
                                                 <div class="content fix">
                                                     <a href="<?php echo e(route('admin_home')); ?>" class="title">
@@ -145,15 +147,15 @@ $userRole = Auth::user()->roles->pluck('name');
                                         <?php
 if (! isset($_instance)) {
     $html = \Livewire\Livewire::mount('search')->html();
-} elseif ($_instance->childHasBeenRendered('IwqxgbD')) {
-    $componentId = $_instance->getRenderedChildComponentId('IwqxgbD');
-    $componentTag = $_instance->getRenderedChildComponentTagName('IwqxgbD');
+} elseif ($_instance->childHasBeenRendered('k3Fslf5')) {
+    $componentId = $_instance->getRenderedChildComponentId('k3Fslf5');
+    $componentTag = $_instance->getRenderedChildComponentTagName('k3Fslf5');
     $html = \Livewire\Livewire::dummyMount($componentId, $componentTag);
-    $_instance->preserveRenderedChild('IwqxgbD');
+    $_instance->preserveRenderedChild('k3Fslf5');
 } else {
     $response = \Livewire\Livewire::mount('search');
     $html = $response->html();
-    $_instance->logRenderedChild('IwqxgbD', $response->id(), \Livewire\Livewire::getRootElementTagName($html));
+    $_instance->logRenderedChild('k3Fslf5', $response->id(), \Livewire\Livewire::getRootElementTagName($html));
 }
 echo $html;
 ?>

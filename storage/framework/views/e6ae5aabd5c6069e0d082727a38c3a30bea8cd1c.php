@@ -21,9 +21,9 @@
                             <tr>
                                 <th>Id</th>
                                 <th>Service</th>
-                                <th>Date & Time</th>
-                                <th>Price</th>
                                 <th>Name</th>
+                                <th>Appointment Date</th>
+                                <th>Price</th>
                                 <th>Status</th>
                             </tr>
                             </thead>
@@ -32,9 +32,9 @@
                                 <tr>
                                     <th><?php echo e($rs->id); ?></th>
                                     <td> <?php if($rs->service_id): ?> <a href="<?php echo e(route('service', ['id'=>$rs->service_id])); ?>" target="_blank"><?php echo e($rs->service->title); ?></a> <?php else: ?> NO SERVICE! <?php endif; ?></td>
+                                    <td><?php echo e($rs->name); ?></td>
                                     <td><?php echo e($rs->date); ?> / <?php echo e($rs->time); ?></td>
                                     <td><?php echo e($rs->price); ?></td>
-                                    <td><?php echo e($rs->name); ?></td>
                                     <td>
                                         <?php if($rs->status == 'True'): ?>
                                             <i style="color: #6bc513">Approved</i>

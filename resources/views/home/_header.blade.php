@@ -1,6 +1,8 @@
 @php
 $setting = \App\Http\Controllers\HomeController::getsetting();
-$userRole = Auth::user()->roles->pluck('name');
+if(Auth::user()){
+    $userRole = Auth::user()->roles->pluck('name');
+};
 @endphp
 
 <!--[if lt IE 8]>
@@ -49,7 +51,7 @@ $userRole = Auth::user()->roles->pluck('name');
                             <div class="menu" >
                                 <nav>
                                     <ul>
-                                        <li><a href="{{route('home')}}">Home</a></li>
+                                        <li><a href="{{route('home')}}">Home </a></li>
                                         <li><a href="{{route('about-us')}}">about</a></li>
                                         @include('home._category')
                                         <li><a href="{{ route('blog') }}">blog</a></li>
@@ -75,7 +77,7 @@ $userRole = Auth::user()->roles->pluck('name');
                                                 <a href="{{ route('myprofile') }}" class="title"><i class="zmdi zmdi-account" style="padding-right: 5px"></i> Account</a>
                                             </div>
                                         </div>
-                                        @if($userRole)
+                                        @if($userRole == '["admin"]')
                                             <div class="mini-cart-product fix">
                                                 <div class="content fix">
                                                     <a href="{{ route('admin_home') }}" class="title">

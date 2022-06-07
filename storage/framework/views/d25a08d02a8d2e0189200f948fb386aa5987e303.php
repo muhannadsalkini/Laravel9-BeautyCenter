@@ -4,7 +4,7 @@
         <?php $__currentLoopData = $slider; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $rs): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
         <div class="single-slider">
             <div class="slider-img">
-                <img  style="width: 50%; display: block; margin-left: auto; margin-right: auto;" src="<?php echo e(Storage::url($rs->image)); ?>" alt="">
+                <img  style="width: 100%; height: 700px; display: block; margin-left: auto; margin-right: auto; object-fit: cover;" src="<?php echo e(Storage::url($rs->image)); ?>" alt="">
             </div>
             <div class="slider-text-tablecell">
                 <div class="middle-text">

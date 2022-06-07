@@ -81,7 +81,6 @@
                                         <th>Category</th>
                                         <th>Title</th>
                                         <th>Price</th>
-                                        <th>Days</th>
                                         <th>Image</th>
                                         <th>Status</th>
                                         <th>Actions</th>
@@ -96,7 +95,6 @@
 
                                                 <?php else: ?> NO CATEGORY! <?php endif; ?></td>
                                             <td><?php echo e($rs->title); ?></td>
-                                            <td><?php echo e($rs->price); ?></td>
                                             <td><?php echo e($rs->price); ?></td>
                                             <td>
                                                 <div class="avatar-group">

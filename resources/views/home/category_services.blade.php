@@ -199,7 +199,7 @@
                                             <div class="feature-desc">
                                                 <h3><a href="{{route('service',['id'=>$rs->id])}}">{{ $rs->title }}</a></h3>
                                                 <p>$ {{ $rs->price }}</p>
-                                                <a href="{{route('service',['id'=>$rs->id])}}">Book now</a>
+                                                <a href="{{route('service',['id'=>$rs->id])}}">Make Appointment</a>
                                             </div>
                                         </div>
                                     </div>

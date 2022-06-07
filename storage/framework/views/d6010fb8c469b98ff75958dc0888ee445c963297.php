@@ -128,15 +128,6 @@
                                                             </svg>
                                                             <span>Edit</span>
                                                         </a>
-                                                        <a class="dropdown-item"href="<?php echo e(route('admin_service_show', ['id' => $rs->id])); ?>" onclick="return !window.open(this.href, '','top=50 left=100 width=1100, height=700')">
-                                                            <i data-feather='eye'></i>
-                                                            <span style="padding-left: 7px;">Show</span>
-                                                        </a>
-                                                        <a class="dropdown-item"href="<?php echo e(route('admin_image_add', ['service_id' => $rs->id])); ?>" onclick="return !window.open(this.href, '','top=50 left=100 width=1100, height=700')">
-                                                            <i data-feather='image'></i>
-                                                            <span style="padding-left: 7px;">Gallery</span>
-                                                        </a>
-
                                                         <a class="dropdown-item" href="<?php echo e(route('admin_service_delete', ['id' => $rs->id])); ?>" onclick="return confirm('Delete! Are you sure?');">
                                                             <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-trash me-50">
                                                                 <polyline points="3 6 5 6 21 6"></polyline>

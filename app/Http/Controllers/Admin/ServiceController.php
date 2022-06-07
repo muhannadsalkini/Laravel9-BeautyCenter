@@ -63,7 +63,6 @@ class ServiceController extends Controller
         $data->user_id = Auth::id();
         $data->category_id = $request->input('category_id');
         $data->price = $request->input('price');
-        $data->days = $request->input('days');
         $data->tax = $request->input('tax');
         $data->detail = $request->input('detail');
         $data->status = $request->input('status');
@@ -117,7 +116,6 @@ class ServiceController extends Controller
         }
         $data->category_id = $request->input('category_id');
         $data->price = $request->input('price');
-        $data->days = $request->input('days');
         $data->tax = $request->input('tax');
         $data->detail = $request->input('detail');
         $data->status = $request->input('status');

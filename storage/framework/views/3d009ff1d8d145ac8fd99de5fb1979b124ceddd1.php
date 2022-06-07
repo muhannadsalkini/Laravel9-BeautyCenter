@@ -9,7 +9,7 @@
     <div class="about-us ptb-100">
         <div class="container">
             <div class="row">
-    <?php echo $setting->aboutus; ?>
+                <?php echo $setting->aboutus; ?>
 
             </div>
         </div>

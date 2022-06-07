@@ -4,7 +4,7 @@
         @foreach($slider as $rs)
         <div class="single-slider">
             <div class="slider-img">
-                <img  style="width: 50%; display: block; margin-left: auto; margin-right: auto;" src="{{ Storage::url($rs->image)}}" alt="">
+                <img  style="width: 100%; height: 700px; display: block; margin-left: auto; margin-right: auto; object-fit: cover;" src="{{ Storage::url($rs->image)}}" alt="">
             </div>
             <div class="slider-text-tablecell">
                 <div class="middle-text">
