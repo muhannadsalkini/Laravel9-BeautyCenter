@@ -197,7 +197,7 @@
                                             <div class="feature-desc">
                                                 <h3><a href="<?php echo e(route('service',['id'=>$rs->id])); ?>"><?php echo e($rs->title); ?></a></h3>
                                                 <p>$ <?php echo e($rs->price); ?></p>
-                                                <a href="<?php echo e(route('service',['id'=>$rs->id])); ?>">Book now</a>
+                                                <a href="<?php echo e(route('service',['id'=>$rs->id])); ?>">Make Appointment</a>
                                             </div>
                                         </div>
                                     </div>

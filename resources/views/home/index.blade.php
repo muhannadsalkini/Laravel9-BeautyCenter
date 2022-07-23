@@ -81,7 +81,7 @@
     </div>
     <!--fun fact area end-->
 
-    <!--Gallery section start-->
+    <!--
     <div class="galllery ptb-100">
         <div class="container">
             <div class="row">
@@ -452,7 +452,7 @@
             </div>
         </div>
     </div>
-    <!--Gallery section end-->
+    -->
 
     <!--Offer section start-->
     @guest
@@ -526,82 +526,6 @@
     </div>
     <!--Video section end-->
 
-    <!--pricing palaning start-->
-    <div class="pricing-plan ptb-100">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-8 col-md-offset-2">
-                    <div class="section-title text-center">
-                        <h2>our pricing plan</h2>
-                        <p>  Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim nostrud exercitation ullamco laboris nisi.</p>
-                    </div>
-                </div>
-            </div>
-            <div class="row">
-                <!-- basic pack -->
-                <div class="col-md-4 col-sm-6 col-xs-12">
-                    <div class="pricing-table text-center">
-                        <div class="pricing-title">
-                            <h3>basic pack</h3>
-                        </div>
-                        <div class="pricing-desc">
-                            <h2><span class="currency">$</span>49.99<span class="date">/month</span></h2>
-                            <ul>
-                                <li>Nail cutting & styling</li>
-                                <li>Hot Ayurvedic spa</li>
-                                <li>Hot oil massage</li>
-                                <li>Body wraps</li>
-                            </ul>
-                            <div class="book-now">
-                                <a href="#">Book now</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <!-- silver pack -->
-                <div class="col-md-4 col-sm-6 col-xs-12">
-                    <div class="pricing-table text-center">
-                        <div class="pricing-title">
-                            <h3>silver pack</h3>
-                        </div>
-                        <div class="pricing-desc">
-                            <h2><span class="currency">$</span>77.99<span class="date">/month</span></h2>
-                            <ul>
-                                <li>Nail cutting & styling</li>
-                                <li>Hot Ayurvedic spa</li>
-                                <li>Hot oil massage</li>
-                                <li>Body wraps</li>
-                            </ul>
-                            <div class="book-now">
-                                <a href="#">Book now</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <!-- premium pack -->
-                <div class="col-md-4 hidden-sm col-xs-12">
-                    <div class="pricing-table text-center">
-                        <div class="pricing-title">
-                            <h3>premium pack</h3>
-                        </div>
-                        <div class="pricing-desc">
-                            <h2><span class="currency">$</span>99.99<span class="date">/month</span></h2>
-                            <ul>
-                                <li>Nail cutting & styling</li>
-                                <li>Hot Ayurvedic spa</li>
-                                <li>Hot oil massage</li>
-                                <li>Body wraps</li>
-                            </ul>
-                            <div class="book-now">
-                                <a href="#">Book now</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!--pricing palaning end-->
 
     <!--Testimonial start-->
     <div class="testimonial">
